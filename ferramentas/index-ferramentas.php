@@ -17,7 +17,7 @@
   <main>
     <div class="container" style="padding-top:2.5rem; padding-bottom:4rem;">
       <div class="breadcrumb">
-        <a href="../index.html">Início</a>
+        <a href="../index.php">Início</a>
         <span class="sep">›</span>
         <span>Ferramentas</span>
       </div>
@@ -31,7 +31,7 @@
 
       <h2 style="font-size:1.1rem; margin:2rem 0 1rem; color:var(--text2);">💰 Finanças</h2>
       <div class="tools-grid">
-        <a href="juros-simples.html" class="tool-card">
+        <a href="juros-simples.php" class="tool-card">
           <div class="tool-card-icon" style="background:linear-gradient(135deg,#e8f0fe,#c5d8ff)">💰</div>
           <div>
             <div class="tool-card-title">Calculadora de Juros Simples</div>
@@ -39,7 +39,7 @@
             <span class="tool-card-tag">Finanças</span>
           </div>
         </a>
-        <a href="juros-compostos.html" class="tool-card">
+        <a href="juros-compostos.php" class="tool-card">
           <div class="tool-card-icon" style="background:linear-gradient(135deg,#e6f9f4,#b8f0e0)">📈</div>
           <div>
             <div class="tool-card-title">Calculadora de Juros Compostos</div>
@@ -47,7 +47,7 @@
             <span class="tool-card-tag">Finanças</span>
           </div>
         </a>
-        <a href="simulador-financiamento.html" class="tool-card">
+        <a href="simulador-financiamento.php" class="tool-card">
           <div class="tool-card-icon" style="background:linear-gradient(135deg,#fff3e8,#ffd8b8)">🏠</div>
           <div>
             <div class="tool-card-title">Simulador de Financiamento</div>
@@ -55,7 +55,7 @@
             <span class="tool-card-tag">Finanças</span>
           </div>
         </a>
-        <a href="calculadora-porcentagem.html" class="tool-card">
+        <a href="calculadora-porcentagem.php" class="tool-card">
           <div class="tool-card-icon" style="background:linear-gradient(135deg,#fef3e8,#fde0bd)">%</div>
           <div>
             <div class="tool-card-title">Calculadora de Porcentagem</div>
@@ -67,7 +67,7 @@
 
       <h2 style="font-size:1.1rem; margin:2.5rem 0 1rem; color:var(--text2);">📝 Texto e Produtividade</h2>
       <div class="tools-grid">
-        <a href="contador-caracteres.html" class="tool-card">
+        <a href="contador-caracteres.php" class="tool-card">
           <div class="tool-card-icon" style="background:linear-gradient(135deg,#fff8e1,#ffe082)">🔢</div>
           <div>
             <div class="tool-card-title">Contador de Caracteres</div>
@@ -75,7 +75,7 @@
             <span class="tool-card-tag">Texto</span>
           </div>
         </a>
-        <a href="conversor-texto.html" class="tool-card">
+        <a href="conversor-texto.php" class="tool-card">
           <div class="tool-card-icon" style="background:linear-gradient(135deg,#e8f4fd,#b3d9f5)">🔄</div>
           <div>
             <div class="tool-card-title">Conversor de Texto</div>
@@ -87,7 +87,7 @@
 
       <h2 style="font-size:1.1rem; margin:2.5rem 0 1rem; color:var(--text2);">🎲 Geradores</h2>
       <div class="tools-grid">
-        <a href="gerador-nomes.html" class="tool-card">
+        <a href="gerador-nomes.php" class="tool-card">
           <div class="tool-card-icon" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">👤</div>
           <div>
             <div class="tool-card-title">Gerador de Nomes</div>
@@ -95,7 +95,7 @@
             <span class="tool-card-tag">Criatividade</span>
           </div>
         </a>
-        <a href="gerador-senhas.html" class="tool-card">
+        <a href="gerador-senhas.php" class="tool-card">
           <div class="tool-card-icon" style="background:linear-gradient(135deg,#e8eaff,#c5caff)">🔐</div>
           <div>
             <div class="tool-card-title">Gerador de Senhas</div>
@@ -103,7 +103,7 @@
             <span class="tool-card-tag">Segurança</span>
           </div>
         </a>
-        <a href="gerador-cpf.html" class="tool-card">
+        <a href="gerador-cpf.php" class="tool-card">
           <div class="tool-card-icon" style="background:linear-gradient(135deg,#fde8e8,#ffbbbb)">🪪</div>
           <div>
             <div class="tool-card-title">Gerador de CPF</div>
@@ -115,7 +115,7 @@
 
       <h2 style="font-size:1.1rem; margin:2.5rem 0 1rem; color:var(--text2);">📅 Datas</h2>
       <div class="tools-grid">
-        <a href="calculadora-idade.html" class="tool-card">
+        <a href="calculadora-idade.php" class="tool-card">
           <div class="tool-card-icon" style="background:linear-gradient(135deg,#fce8ff,#f0c8ff)">🎂</div>
           <div>
             <div class="tool-card-title">Calculadora de Idade</div>

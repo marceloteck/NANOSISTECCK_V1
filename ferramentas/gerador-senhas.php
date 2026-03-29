@@ -7,7 +7,7 @@
   <meta name="description" content="Gere senhas fortes e seguras online. Personalize o tamanho, letras maiúsculas, minúsculas, números e símbolos. Gerador de senhas gratuito e sem cadastro." />
   <meta name="keywords" content="gerador de senhas, criar senha forte, senha segura online, gerador senha aleatória, password generator" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/gerador-senhas.html" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/gerador-senhas.php" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -18,8 +18,8 @@
   <main>
     <div class="tool-page">
       <nav class="breadcrumb">
-        <a href="../index.html">Início</a><span class="sep">›</span>
-        <a href="index-ferramentas.html">Ferramentas</a><span class="sep">›</span>
+        <a href="../index.php">Início</a><span class="sep">›</span>
+        <a href="index-ferramentas.php">Ferramentas</a><span class="sep">›</span>
         <span>Gerador de Senhas</span>
       </nav>
 
@@ -124,9 +124,9 @@
       <div class="related-tools">
         <h2>Ferramentas Relacionadas</h2>
         <div class="related-grid">
-          <a href="gerador-nomes.html" class="related-card"><span class="related-card-icon">👤</span> Gerador de Nomes</a>
-          <a href="gerador-cpf.html" class="related-card"><span class="related-card-icon">🪪</span> Gerador de CPF</a>
-          <a href="contador-caracteres.html" class="related-card"><span class="related-card-icon">🔢</span> Contador de Caracteres</a>
+          <a href="gerador-nomes.php" class="related-card"><span class="related-card-icon">👤</span> Gerador de Nomes</a>
+          <a href="gerador-cpf.php" class="related-card"><span class="related-card-icon">🪪</span> Gerador de CPF</a>
+          <a href="contador-caracteres.php" class="related-card"><span class="related-card-icon">🔢</span> Contador de Caracteres</a>
         </div>
       </div>
     </div>

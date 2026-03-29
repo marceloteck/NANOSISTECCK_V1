@@ -7,7 +7,7 @@
   <meta name="description" content="Simule o crescimento de investimentos com juros compostos. Veja quanto seu dinheiro vai render com capitalização mensal ou anual. Calculadora gratuita online." />
   <meta name="keywords" content="calculadora juros compostos, calcular juros compostos, montante juros compostos, capitalização composta, rendimento investimento" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/juros-compostos.html" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/juros-compostos.php" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -18,9 +18,9 @@
   <main>
     <div class="tool-page">
       <nav class="breadcrumb" aria-label="Navegação breadcrumb">
-        <a href="../index.html">Início</a>
+        <a href="../index.php">Início</a>
         <span class="sep">›</span>
-        <a href="index-ferramentas.html">Ferramentas</a>
+        <a href="index-ferramentas.php">Ferramentas</a>
         <span class="sep">›</span>
         <span>Juros Compostos</span>
       </nav>
@@ -116,9 +116,9 @@
       <div class="related-tools">
         <h2>Ferramentas Relacionadas</h2>
         <div class="related-grid">
-          <a href="juros-simples.html" class="related-card"><span class="related-card-icon">💰</span> Juros Simples</a>
-          <a href="simulador-financiamento.html" class="related-card"><span class="related-card-icon">🏠</span> Simulador de Financiamento</a>
-          <a href="calculadora-porcentagem.html" class="related-card"><span class="related-card-icon">%</span> Calculadora de Porcentagem</a>
+          <a href="juros-simples.php" class="related-card"><span class="related-card-icon">💰</span> Juros Simples</a>
+          <a href="simulador-financiamento.php" class="related-card"><span class="related-card-icon">🏠</span> Simulador de Financiamento</a>
+          <a href="calculadora-porcentagem.php" class="related-card"><span class="related-card-icon">%</span> Calculadora de Porcentagem</a>
         </div>
       </div>
     </div>

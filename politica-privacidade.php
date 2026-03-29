@@ -6,7 +6,7 @@
   <title>Política de Privacidade | NANOSISTECCK Tools</title>
   <meta name="description" content="Política de Privacidade do NANOSISTECCK Tools. Entenda como coletamos e usamos informações." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tools.nanosistecck.com/politica-privacidade.html" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/politica-privacidade.php" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
