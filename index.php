@@ -66,7 +66,7 @@
               <a href="#ferramentas" class="btn btn-primary btn-lg">
                 🚀 Ver Ferramentas
               </a>
-              <a href="ferramentas/index-ferramentas.html" class="btn btn-secondary btn-lg">
+              <a href="ferramentas/index-ferramentas.php" class="btn btn-secondary btn-lg">
                 Todas as Ferramentas
               </a>
             </div>
@@ -149,7 +149,7 @@
         <div class="tools-grid" id="tools-grid">
 
           <!-- 1. Juros Simples -->
-          <a href="ferramentas/juros-simples.html" class="tool-card" aria-label="Calculadora de Juros Simples">
+          <a href="ferramentas/juros-simples.php" class="tool-card" aria-label="Calculadora de Juros Simples">
             <div class="tool-card-icon" style="background:linear-gradient(135deg,#e8f0fe,#c5d8ff)">💰</div>
             <div>
               <div class="tool-card-title">Calculadora de Juros Simples</div>
@@ -159,7 +159,7 @@
           </a>
 
           <!-- 2. Juros Compostos -->
-          <a href="ferramentas/juros-compostos.html" class="tool-card" aria-label="Calculadora de Juros Compostos">
+          <a href="ferramentas/juros-compostos.php" class="tool-card" aria-label="Calculadora de Juros Compostos">
             <div class="tool-card-icon" style="background:linear-gradient(135deg,#e6f9f4,#b8f0e0)">📈</div>
             <div>
               <div class="tool-card-title">Calculadora de Juros Compostos</div>
@@ -169,7 +169,7 @@
           </a>
 
           <!-- 3. Simulador de Financiamento -->
-          <a href="ferramentas/simulador-financiamento.html" class="tool-card" aria-label="Simulador de Financiamento">
+          <a href="ferramentas/simulador-financiamento.php" class="tool-card" aria-label="Simulador de Financiamento">
             <div class="tool-card-icon" style="background:linear-gradient(135deg,#fff3e8,#ffd8b8)">🏠</div>
             <div>
               <div class="tool-card-title">Simulador de Financiamento</div>
@@ -179,7 +179,7 @@
           </a>
 
           <!-- 4. Calculadora de Porcentagem -->
-          <a href="ferramentas/calculadora-porcentagem.html" class="tool-card" aria-label="Calculadora de Porcentagem">
+          <a href="ferramentas/calculadora-porcentagem.php" class="tool-card" aria-label="Calculadora de Porcentagem">
             <div class="tool-card-icon" style="background:linear-gradient(135deg,#fef3e8,#fde0bd)">%</div>
             <div>
               <div class="tool-card-title">Calculadora de Porcentagem</div>
@@ -189,7 +189,7 @@
           </a>
 
           <!-- 5. Calculadora de Idade -->
-          <a href="ferramentas/calculadora-idade.html" class="tool-card" aria-label="Calculadora de Idade">
+          <a href="ferramentas/calculadora-idade.php" class="tool-card" aria-label="Calculadora de Idade">
             <div class="tool-card-icon" style="background:linear-gradient(135deg,#fce8ff,#f0c8ff)">🎂</div>
             <div>
               <div class="tool-card-title">Calculadora de Idade</div>
@@ -199,7 +199,7 @@
           </a>
 
           <!-- 6. Gerador de Nomes -->
-          <a href="ferramentas/gerador-nomes.html" class="tool-card" aria-label="Gerador de Nomes">
+          <a href="ferramentas/gerador-nomes.php" class="tool-card" aria-label="Gerador de Nomes">
             <div class="tool-card-icon" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">👤</div>
             <div>
               <div class="tool-card-title">Gerador de Nomes</div>
@@ -209,7 +209,7 @@
           </a>
 
           <!-- 7. Gerador de Senhas -->
-          <a href="ferramentas/gerador-senhas.html" class="tool-card" aria-label="Gerador de Senhas">
+          <a href="ferramentas/gerador-senhas.php" class="tool-card" aria-label="Gerador de Senhas">
             <div class="tool-card-icon" style="background:linear-gradient(135deg,#e8eaff,#c5caff)">🔐</div>
             <div>
               <div class="tool-card-title">Gerador de Senhas</div>
@@ -219,7 +219,7 @@
           </a>
 
           <!-- 8. Contador de Caracteres -->
-          <a href="ferramentas/contador-caracteres.html" class="tool-card" aria-label="Contador de Caracteres">
+          <a href="ferramentas/contador-caracteres.php" class="tool-card" aria-label="Contador de Caracteres">
             <div class="tool-card-icon" style="background:linear-gradient(135deg,#fff8e1,#ffe082)">🔢</div>
             <div>
               <div class="tool-card-title">Contador de Caracteres</div>
@@ -229,7 +229,7 @@
           </a>
 
           <!-- 9. Conversor de Texto -->
-          <a href="ferramentas/conversor-texto.html" class="tool-card" aria-label="Conversor de Texto">
+          <a href="ferramentas/conversor-texto.php" class="tool-card" aria-label="Conversor de Texto">
             <div class="tool-card-icon" style="background:linear-gradient(135deg,#e8f4fd,#b3d9f5)">🔄</div>
             <div>
               <div class="tool-card-title">Conversor de Texto</div>
@@ -239,7 +239,7 @@
           </a>
 
           <!-- 10. Gerador de CPF -->
-          <a href="ferramentas/gerador-cpf.html" class="tool-card" aria-label="Gerador de CPF Educacional">
+          <a href="ferramentas/gerador-cpf.php" class="tool-card" aria-label="Gerador de CPF Educacional">
             <div class="tool-card-icon" style="background:linear-gradient(135deg,#fde8e8,#ffbbbb)">🪪</div>
             <div>
               <div class="tool-card-title">Gerador de CPF</div>
@@ -251,7 +251,7 @@
         </div>
 
         <div style="text-align:center; margin-top:2.5rem;">
-          <a href="ferramentas/index-ferramentas.html" class="btn btn-outline btn-lg">
+          <a href="ferramentas/index-ferramentas.php" class="btn btn-outline btn-lg">
             Ver todas as ferramentas →
           </a>
         </div>

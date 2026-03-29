@@ -9,5 +9,6 @@ Sitemap: https://tools.nanosistecck.com/sitemap.xml
 
 # Bloquear pastas desnecessárias (se existirem)
 Disallow: /admin/
+Disallow: /admin.php
 Disallow: /draft/
 Disallow: /private/

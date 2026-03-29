@@ -21,16 +21,16 @@ Foco inicial: `tools.nanosistecck.com`
 
 | # | Ferramenta | URL |
 |---|-----------|-----|
-| 1 | Calculadora de Juros Simples | `/ferramentas/juros-simples.html` |
-| 2 | Calculadora de Juros Compostos | `/ferramentas/juros-compostos.html` |
-| 3 | Simulador de Financiamento (Price/SAC) | `/ferramentas/simulador-financiamento.html` |
-| 4 | Calculadora de Porcentagem | `/ferramentas/calculadora-porcentagem.html` |
-| 5 | Calculadora de Idade | `/ferramentas/calculadora-idade.html` |
-| 6 | Gerador de Nomes | `/ferramentas/gerador-nomes.html` |
-| 7 | Gerador de Senhas | `/ferramentas/gerador-senhas.html` |
-| 8 | Contador de Caracteres | `/ferramentas/contador-caracteres.html` |
-| 9 | Conversor de Texto | `/ferramentas/conversor-texto.html` |
-| 10 | Gerador de CPF (educacional) | `/ferramentas/gerador-cpf.html` |
+| 1 | Calculadora de Juros Simples | `/ferramentas/juros-simples.php` |
+| 2 | Calculadora de Juros Compostos | `/ferramentas/juros-compostos.php` |
+| 3 | Simulador de Financiamento (Price/SAC) | `/ferramentas/simulador-financiamento.php` |
+| 4 | Calculadora de Porcentagem | `/ferramentas/calculadora-porcentagem.php` |
+| 5 | Calculadora de Idade | `/ferramentas/calculadora-idade.php` |
+| 6 | Gerador de Nomes | `/ferramentas/gerador-nomes.php` |
+| 7 | Gerador de Senhas | `/ferramentas/gerador-senhas.php` |
+| 8 | Contador de Caracteres | `/ferramentas/contador-caracteres.php` |
+| 9 | Conversor de Texto | `/ferramentas/conversor-texto.php` |
+| 10 | Gerador de CPF (educacional) | `/ferramentas/gerador-cpf.php` |
 
 ### ✅ SEO
 - Title + meta description únicos por página
@@ -68,11 +68,11 @@ Foco inicial: `tools.nanosistecck.com`
 
 ```
 /
-├── index.html                     → Página inicial
+├── index.php                     → Página inicial
 ├── sitemap.xml                    → Sitemap para SEO
 ├── robots.txt                     → Regras para crawlers
-├── politica-privacidade.html
-├── termos-de-uso.html
+├── politica-privacidade.php
+├── termos-de-uso.php
 │
 ├── css/
 │   └── style.css                  → CSS global e componentes
@@ -82,17 +82,17 @@ Foco inicial: `tools.nanosistecck.com`
 │   └── layout.js                  → Header/Footer dinâmicos
 │
 └── ferramentas/
-    ├── index-ferramentas.html     → Índice categorizado
-    ├── juros-simples.html
-    ├── juros-compostos.html
-    ├── simulador-financiamento.html
-    ├── calculadora-porcentagem.html
-    ├── calculadora-idade.html
-    ├── gerador-nomes.html
-    ├── gerador-senhas.html
-    ├── contador-caracteres.html
-    ├── conversor-texto.html
-    └── gerador-cpf.html
+    ├── index-ferramentas.php     → Índice categorizado
+    ├── juros-simples.php
+    ├── juros-compostos.php
+    ├── simulador-financiamento.php
+    ├── calculadora-porcentagem.php
+    ├── calculadora-idade.php
+    ├── gerador-nomes.php
+    ├── gerador-senhas.php
+    ├── contador-caracteres.php
+    ├── conversor-texto.php
+    └── gerador-cpf.php
 ```
 
 ---

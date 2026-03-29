@@ -7,7 +7,7 @@
   <meta name="description" content="Conte caracteres, palavras, frases e parágrafos de qualquer texto em tempo real. Ideal para redes sociais, SEO, SMS e limites de caracteres. Gratuito e online." />
   <meta name="keywords" content="contador de caracteres, contar palavras online, contador palavras, contagem caracteres texto, contador caracteres gratuito" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/contador-caracteres.html" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/contador-caracteres.php" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -18,8 +18,8 @@
   <main>
     <div class="tool-page">
       <nav class="breadcrumb">
-        <a href="../index.html">Início</a><span class="sep">›</span>
-        <a href="index-ferramentas.html">Ferramentas</a><span class="sep">›</span>
+        <a href="../index.php">Início</a><span class="sep">›</span>
+        <a href="index-ferramentas.php">Ferramentas</a><span class="sep">›</span>
         <span>Contador de Caracteres</span>
       </nav>
 
@@ -121,9 +121,9 @@
       <div class="related-tools">
         <h2>Ferramentas Relacionadas</h2>
         <div class="related-grid">
-          <a href="conversor-texto.html" class="related-card"><span class="related-card-icon">🔄</span> Conversor de Texto</a>
-          <a href="gerador-nomes.html" class="related-card"><span class="related-card-icon">👤</span> Gerador de Nomes</a>
-          <a href="gerador-senhas.html" class="related-card"><span class="related-card-icon">🔐</span> Gerador de Senhas</a>
+          <a href="conversor-texto.php" class="related-card"><span class="related-card-icon">🔄</span> Conversor de Texto</a>
+          <a href="gerador-nomes.php" class="related-card"><span class="related-card-icon">👤</span> Gerador de Nomes</a>
+          <a href="gerador-senhas.php" class="related-card"><span class="related-card-icon">🔐</span> Gerador de Senhas</a>
         </div>
       </div>
     </div>

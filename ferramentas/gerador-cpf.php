@@ -7,7 +7,7 @@
   <meta name="description" content="Gere CPFs válidos para fins educacionais e de desenvolvimento de sistemas. CPF gerado com algoritmo oficial para testes de formulários e validações." />
   <meta name="keywords" content="gerador de cpf, cpf para teste, cpf válido gerador, gerar cpf online, cpf educacional, cpf desenvolvimento" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/gerador-cpf.html" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/gerador-cpf.php" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -18,8 +18,8 @@
   <main>
     <div class="tool-page">
       <nav class="breadcrumb">
-        <a href="../index.html">Início</a><span class="sep">›</span>
-        <a href="index-ferramentas.html">Ferramentas</a><span class="sep">›</span>
+        <a href="../index.php">Início</a><span class="sep">›</span>
+        <a href="index-ferramentas.php">Ferramentas</a><span class="sep">›</span>
         <span>Gerador de CPF</span>
       </nav>
 
@@ -102,9 +102,9 @@
       <div class="related-tools">
         <h2>Ferramentas Relacionadas</h2>
         <div class="related-grid">
-          <a href="gerador-senhas.html" class="related-card"><span class="related-card-icon">🔐</span> Gerador de Senhas</a>
-          <a href="gerador-nomes.html" class="related-card"><span class="related-card-icon">👤</span> Gerador de Nomes</a>
-          <a href="conversor-texto.html" class="related-card"><span class="related-card-icon">🔄</span> Conversor de Texto</a>
+          <a href="gerador-senhas.php" class="related-card"><span class="related-card-icon">🔐</span> Gerador de Senhas</a>
+          <a href="gerador-nomes.php" class="related-card"><span class="related-card-icon">👤</span> Gerador de Nomes</a>
+          <a href="conversor-texto.php" class="related-card"><span class="related-card-icon">🔄</span> Conversor de Texto</a>
         </div>
       </div>
     </div>

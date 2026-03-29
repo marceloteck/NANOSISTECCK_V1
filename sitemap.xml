@@ -19,70 +19,70 @@
 
   <!-- Ferramentas Individuais -->
   <url>
-    <loc>https://tools.nanosistecck.com/ferramentas/juros-simples.html</loc>
+    <loc>https://tools.nanosistecck.com/ferramentas/juros-simples.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tools.nanosistecck.com/ferramentas/juros-compostos.html</loc>
+    <loc>https://tools.nanosistecck.com/ferramentas/juros-compostos.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tools.nanosistecck.com/ferramentas/simulador-financiamento.html</loc>
+    <loc>https://tools.nanosistecck.com/ferramentas/simulador-financiamento.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tools.nanosistecck.com/ferramentas/calculadora-porcentagem.html</loc>
+    <loc>https://tools.nanosistecck.com/ferramentas/calculadora-porcentagem.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tools.nanosistecck.com/ferramentas/calculadora-idade.html</loc>
+    <loc>https://tools.nanosistecck.com/ferramentas/calculadora-idade.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tools.nanosistecck.com/ferramentas/gerador-nomes.html</loc>
+    <loc>https://tools.nanosistecck.com/ferramentas/gerador-nomes.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tools.nanosistecck.com/ferramentas/gerador-senhas.html</loc>
+    <loc>https://tools.nanosistecck.com/ferramentas/gerador-senhas.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tools.nanosistecck.com/ferramentas/contador-caracteres.html</loc>
+    <loc>https://tools.nanosistecck.com/ferramentas/contador-caracteres.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tools.nanosistecck.com/ferramentas/conversor-texto.html</loc>
+    <loc>https://tools.nanosistecck.com/ferramentas/conversor-texto.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tools.nanosistecck.com/ferramentas/gerador-cpf.html</loc>
+    <loc>https://tools.nanosistecck.com/ferramentas/gerador-cpf.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -90,14 +90,14 @@
 
   <!-- Páginas institucionais -->
   <url>
-    <loc>https://tools.nanosistecck.com/politica-privacidade.html</loc>
+    <loc>https://tools.nanosistecck.com/politica-privacidade.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://tools.nanosistecck.com/termos-de-uso.html</loc>
+    <loc>https://tools.nanosistecck.com/termos-de-uso.php</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

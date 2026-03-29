@@ -7,7 +7,7 @@
   <meta name="description" content="Simule financiamentos e descubra o valor das parcelas, os juros totais e o custo total do crédito. Sistema Price ou SAC. Calculadora gratuita online." />
   <meta name="keywords" content="simulador financiamento, calcular parcelas financiamento, tabela price, tabela SAC, simulador empréstimo, calculadora parcelas" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/simulador-financiamento.html" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/simulador-financiamento.php" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -18,8 +18,8 @@
   <main>
     <div class="tool-page">
       <nav class="breadcrumb">
-        <a href="../index.html">Início</a><span class="sep">›</span>
-        <a href="index-ferramentas.html">Ferramentas</a><span class="sep">›</span>
+        <a href="../index.php">Início</a><span class="sep">›</span>
+        <a href="index-ferramentas.php">Ferramentas</a><span class="sep">›</span>
         <span>Simulador de Financiamento</span>
       </nav>
 
@@ -114,9 +114,9 @@
       <div class="related-tools">
         <h2>Ferramentas Relacionadas</h2>
         <div class="related-grid">
-          <a href="juros-simples.html" class="related-card"><span class="related-card-icon">💰</span> Juros Simples</a>
-          <a href="juros-compostos.html" class="related-card"><span class="related-card-icon">📈</span> Juros Compostos</a>
-          <a href="calculadora-porcentagem.html" class="related-card"><span class="related-card-icon">%</span> Porcentagem</a>
+          <a href="juros-simples.php" class="related-card"><span class="related-card-icon">💰</span> Juros Simples</a>
+          <a href="juros-compostos.php" class="related-card"><span class="related-card-icon">📈</span> Juros Compostos</a>
+          <a href="calculadora-porcentagem.php" class="related-card"><span class="related-card-icon">%</span> Porcentagem</a>
         </div>
       </div>
     </div>

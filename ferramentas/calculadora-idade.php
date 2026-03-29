@@ -7,7 +7,7 @@
   <meta name="description" content="Descubra sua idade exata em anos, meses, dias e horas. Saiba quando é seu próximo aniversário e quantos dias faltam. Calculadora de idade online gratuita." />
   <meta name="keywords" content="calculadora de idade, quantos anos tenho, calcular idade, próximo aniversário, dias para aniversário" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/calculadora-idade.html" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/calculadora-idade.php" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -18,8 +18,8 @@
   <main>
     <div class="tool-page">
       <nav class="breadcrumb">
-        <a href="../index.html">Início</a><span class="sep">›</span>
-        <a href="index-ferramentas.html">Ferramentas</a><span class="sep">›</span>
+        <a href="../index.php">Início</a><span class="sep">›</span>
+        <a href="index-ferramentas.php">Ferramentas</a><span class="sep">›</span>
         <span>Calculadora de Idade</span>
       </nav>
 
@@ -98,9 +98,9 @@
       <div class="related-tools">
         <h2>Ferramentas Relacionadas</h2>
         <div class="related-grid">
-          <a href="calculadora-porcentagem.html" class="related-card"><span class="related-card-icon">%</span> Porcentagem</a>
-          <a href="contador-caracteres.html" class="related-card"><span class="related-card-icon">🔢</span> Contador de Caracteres</a>
-          <a href="gerador-nomes.html" class="related-card"><span class="related-card-icon">👤</span> Gerador de Nomes</a>
+          <a href="calculadora-porcentagem.php" class="related-card"><span class="related-card-icon">%</span> Porcentagem</a>
+          <a href="contador-caracteres.php" class="related-card"><span class="related-card-icon">🔢</span> Contador de Caracteres</a>
+          <a href="gerador-nomes.php" class="related-card"><span class="related-card-icon">👤</span> Gerador de Nomes</a>
         </div>
       </div>
     </div>

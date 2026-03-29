@@ -1,0 +1,18 @@
+{
+  "branding": {
+    "site_name": "NANOSISTECCK",
+    "description": "Ecossistema de ferramentas digitais úteis, rápidas e inteligentes."
+  },
+  "ads": {
+    "leaderboard": {
+      "enabled": false,
+      "html": "",
+      "fallback_text": "📢 Espaço para Anúncio – Google AdSense"
+    },
+    "rectangle": {
+      "enabled": false,
+      "html": "",
+      "fallback_text": "📢 Espaço para Anúncio – Google AdSense"
+    }
+  }
+}

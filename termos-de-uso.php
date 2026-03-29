@@ -6,7 +6,7 @@
   <title>Termos de Uso | NANOSISTECCK Tools</title>
   <meta name="description" content="Termos de Uso do NANOSISTECCK Tools. Leia os termos e condições de uso das ferramentas." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tools.nanosistecck.com/termos-de-uso.html" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/termos-de-uso.php" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />

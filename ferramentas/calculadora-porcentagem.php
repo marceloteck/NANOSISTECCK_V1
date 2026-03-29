@@ -7,7 +7,7 @@
   <meta name="description" content="Calcule porcentagens online: desconto, aumento, variação percentual, percentual de um valor e muito mais. Rápido, gratuito e sem cadastro." />
   <meta name="keywords" content="calculadora porcentagem, calcular porcentagem, calcular desconto, calcular aumento percentual, variação percentual online" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/calculadora-porcentagem.html" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/calculadora-porcentagem.php" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -18,8 +18,8 @@
   <main>
     <div class="tool-page">
       <nav class="breadcrumb">
-        <a href="../index.html">Início</a><span class="sep">›</span>
-        <a href="index-ferramentas.html">Ferramentas</a><span class="sep">›</span>
+        <a href="../index.php">Início</a><span class="sep">›</span>
+        <a href="index-ferramentas.php">Ferramentas</a><span class="sep">›</span>
         <span>Calculadora de Porcentagem</span>
       </nav>
 
@@ -87,9 +87,9 @@
       <div class="related-tools">
         <h2>Ferramentas Relacionadas</h2>
         <div class="related-grid">
-          <a href="juros-simples.html" class="related-card"><span class="related-card-icon">💰</span> Juros Simples</a>
-          <a href="juros-compostos.html" class="related-card"><span class="related-card-icon">📈</span> Juros Compostos</a>
-          <a href="calculadora-idade.html" class="related-card"><span class="related-card-icon">🎂</span> Calculadora de Idade</a>
+          <a href="juros-simples.php" class="related-card"><span class="related-card-icon">💰</span> Juros Simples</a>
+          <a href="juros-compostos.php" class="related-card"><span class="related-card-icon">📈</span> Juros Compostos</a>
+          <a href="calculadora-idade.php" class="related-card"><span class="related-card-icon">🎂</span> Calculadora de Idade</a>
         </div>
       </div>
     </div>
