@@ -1,0 +1,13 @@
+# NANOSISTECCK Tools – robots.txt
+# https://tools.nanosistecck.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tools.nanosistecck.com/sitemap.xml
+
+# Bloquear pastas desnecessárias (se existirem)
+Disallow: /admin/
+Disallow: /draft/
+Disallow: /private/

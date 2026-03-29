@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversor de Texto Online – Maiúsculas, Minúsculas, Título | NANOSISTECCK Tools</title>
+  <meta name="description" content="Converta texto online: maiúsculas, minúsculas, formato título, slug, camelCase, inverso e remoção de acentos. Conversor de texto gratuito e rápido." />
+  <meta name="keywords" content="conversor de texto, texto maiúsculas, texto minúsculas, converter texto, slug online, camelcase, texto title case" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/conversor-texto.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+  <main>
+    <div class="tool-page">
+      <nav class="breadcrumb">
+        <a href="../index.html">Início</a><span class="sep">›</span>
+        <a href="index-ferramentas.html">Ferramentas</a><span class="sep">›</span>
+        <span>Conversor de Texto</span>
+      </nav>
+
+      <div class="ad-slot ad-slot-leaderboard">📢 Espaço para Anúncio – Google AdSense</div>
+
+      <div class="tool-header">
+        <div class="tool-page-icon" style="background:linear-gradient(135deg,#e8f4fd,#b3d9f5)">🔄</div>
+        <div>
+          <h1>Conversor de Texto</h1>
+          <p>Transforme texto em maiúsculas, minúsculas, título, slug, camelCase, inverso e muito mais com um clique.</p>
+          <span class="tag tag-blue">Texto</span>
+        </div>
+      </div>
+
+      <div class="tool-box">
+        <div class="form-group">
+          <label for="entrada">Texto Original</label>
+          <textarea id="entrada" class="form-control" rows="5" placeholder="Digite ou cole seu texto aqui..."></textarea>
+        </div>
+
+        <!-- Botões de conversão -->
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+          <button class="btn btn-outline" onclick="converter('upper')">MAIÚSCULAS</button>
+          <button class="btn btn-outline" onclick="converter('lower')">minúsculas</button>
+          <button class="btn btn-outline" onclick="converter('title')">Formato Título</button>
+          <button class="btn btn-outline" onclick="converter('sentence')">Primeira maiúscula</button>
+          <button class="btn btn-outline" onclick="converter('camel')">camelCase</button>
+          <button class="btn btn-outline" onclick="converter('pascal')">PascalCase</button>
+          <button class="btn btn-outline" onclick="converter('snake')">snake_case</button>
+          <button class="btn btn-outline" onclick="converter('slug')">slug-url</button>
+          <button class="btn btn-outline" onclick="converter('inverso')">esrevenI</button>
+          <button class="btn btn-outline" onclick="converter('remover-acentos')">Remover Acentos</button>
+          <button class="btn btn-outline" onclick="converter('remover-espacos')">Remover Espaços Extras</button>
+          <button class="btn btn-outline" onclick="converter('alternar')">aLtErNaDo</button>
+        </div>
+
+        <div class="form-group">
+          <label for="saida">Texto Convertido</label>
+          <div style="display:flex;gap:.5rem;align-items:flex-start;">
+            <textarea id="saida" class="form-control" rows="5" readonly placeholder="Resultado aparecerá aqui..."></textarea>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <button class="copy-btn" id="copy-btn" onclick="copiarResultado()">📋 Copiar Resultado</button>
+          <button class="btn btn-outline" style="padding:.4rem .85rem;font-size:.85rem;" onclick="usarComoEntrada()">↩️ Usar como Entrada</button>
+          <button class="btn btn-outline" style="padding:.4rem .85rem;font-size:.85rem;color:var(--text3);" onclick="limpar()">🗑️ Limpar</button>
+        </div>
+      </div>
+
+      <div class="ad-slot ad-slot-rectangle">📢 Espaço para Anúncio – Google AdSense</div>
+
+      <div class="seo-content">
+        <h2>Conversor de Texto – Todos os Formatos</h2>
+        <p>
+          Nosso <strong>conversor de texto online</strong> oferece múltiplas opções de transformação para atender desde necessidades simples (maiúsculas/minúsculas) até formatos técnicos usados em programação (camelCase, snake_case, slug).
+        </p>
+        <h3>Formatos Disponíveis</h3>
+        <ul>
+          <li><strong>MAIÚSCULAS:</strong> Todo o texto em letras maiúsculas</li>
+          <li><strong>minúsculas:</strong> Todo o texto em letras minúsculas</li>
+          <li><strong>Formato Título:</strong> Primeira letra de cada palavra em maiúscula</li>
+          <li><strong>camelCase:</strong> primeiraLetraMinúsculas, resto em maiúscula</li>
+          <li><strong>PascalCase:</strong> TodasPalavrasComMaiúscula</li>
+          <li><strong>snake_case:</strong> palavras_separadas_por_underline</li>
+          <li><strong>slug-url:</strong> palavras-separadas-por-hífen (ideal para URLs)</li>
+          <li><strong>Inverso:</strong> escreve o texto de trás para frente</li>
+          <li><strong>Remover Acentos:</strong> substitui acentos por letras simples</li>
+        </ul>
+        <h3>Casos de Uso</h3>
+        <ul>
+          <li>Desenvolvedores precisam de variáveis em camelCase ou snake_case</li>
+          <li>Criadores de conteúdo precisam padronizar títulos</li>
+          <li>SEO exige URLs sem acentos e no formato slug</li>
+          <li>Textos copiados de PDF frequentemente vêm em caixa alta</li>
+        </ul>
+      </div>
+
+      <div class="related-tools">
+        <h2>Ferramentas Relacionadas</h2>
+        <div class="related-grid">
+          <a href="contador-caracteres.html" class="related-card"><span class="related-card-icon">🔢</span> Contador de Caracteres</a>
+          <a href="gerador-nomes.html" class="related-card"><span class="related-card-icon">👤</span> Gerador de Nomes</a>
+          <a href="gerador-senhas.html" class="related-card"><span class="related-card-icon">🔐</span> Gerador de Senhas</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/layout.js"></script>
+  <script>
+    function removerAcentos(s) {
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function converter(tipo) {
+      const entrada = document.getElementById('entrada').value;
+      if (!entrada.trim()) { alert('Digite algum texto primeiro.'); return; }
+      let saida = '';
+
+      switch (tipo) {
+        case 'upper':   saida = entrada.toUpperCase(); break;
+        case 'lower':   saida = entrada.toLowerCase(); break;
+        case 'title':
+          saida = entrada.toLowerCase().replace(/(?:^|\s)\S/g, l => l.toUpperCase()); break;
+        case 'sentence':
+          saida = entrada.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, l => l.toUpperCase()); break;
+        case 'inverso': saida = entrada.split('').reverse().join(''); break;
+        case 'remover-acentos': saida = removerAcentos(entrada); break;
+        case 'remover-espacos': saida = entrada.replace(/\s+/g, ' ').trim(); break;
+        case 'alternar':
+          saida = entrada.split('').map((c, i) => i % 2 === 0 ? c.toLowerCase() : c.toUpperCase()).join(''); break;
+        case 'slug':
+          saida = removerAcentos(entrada).toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim(); break;
+        case 'snake':
+          saida = removerAcentos(entrada).toLowerCase()
+            .replace(/[^a-z0-9\s_]/g, '').replace(/\s+/g, '_').replace(/_+/g, '_').trim(); break;
+        case 'camel':
+          saida = removerAcentos(entrada).toLowerCase()
+            .replace(/[^a-z0-9\s]/g, '').replace(/\s+(\w)/g, (_, c) => c.toUpperCase()); break;
+        case 'pascal':
+          saida = removerAcentos(entrada).toLowerCase()
+            .replace(/[^a-z0-9\s]/g, '')
+            .replace(/(?:^|\s)(\w)/g, (_, c) => c.toUpperCase())
+            .replace(/\s/g, ''); break;
+        default: saida = entrada;
+      }
+
+      document.getElementById('saida').value = saida;
+    }
+
+    function copiarResultado() {
+      const s = document.getElementById('saida').value;
+      if (s) copyToClipboard(s, document.getElementById('copy-btn'));
+    }
+    function usarComoEntrada() {
+      const s = document.getElementById('saida').value;
+      if (s) document.getElementById('entrada').value = s;
+    }
+    function limpar() {
+      document.getElementById('entrada').value = '';
+      document.getElementById('saida').value   = '';
+    }
+  </script>
+</body>
+</html>

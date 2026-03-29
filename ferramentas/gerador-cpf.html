@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de CPF Online – Educacional e Teste | NANOSISTECCK Tools</title>
+  <meta name="description" content="Gere CPFs válidos para fins educacionais e de desenvolvimento de sistemas. CPF gerado com algoritmo oficial para testes de formulários e validações." />
+  <meta name="keywords" content="gerador de cpf, cpf para teste, cpf válido gerador, gerar cpf online, cpf educacional, cpf desenvolvimento" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tools.nanosistecck.com/ferramentas/gerador-cpf.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+  <main>
+    <div class="tool-page">
+      <nav class="breadcrumb">
+        <a href="../index.html">Início</a><span class="sep">›</span>
+        <a href="index-ferramentas.html">Ferramentas</a><span class="sep">›</span>
+        <span>Gerador de CPF</span>
+      </nav>
+
+      <div class="ad-slot ad-slot-leaderboard">📢 Espaço para Anúncio – Google AdSense</div>
+
+      <div class="tool-header">
+        <div class="tool-page-icon" style="background:linear-gradient(135deg,#fde8e8,#ffbbbb)">🪪</div>
+        <div>
+          <h1>Gerador de CPF</h1>
+          <p>Gere CPFs com dígitos verificadores válidos para uso educacional e testes de sistemas. Exclusivamente para fins técnicos e de desenvolvimento.</p>
+          <span class="tag tag-orange">Dev / Teste</span>
+        </div>
+      </div>
+
+      <div class="notice notice-warn" style="margin-bottom:1.5rem;">
+        <span>⚠️</span>
+        <span><strong>Aviso importante:</strong> Os CPFs gerados são fictícios e criados exclusivamente para fins educacionais, testes de formulários e desenvolvimento de sistemas. O uso indevido é crime. Não use para fraudes.</span>
+      </div>
+
+      <div class="tool-box">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="quantidade">Quantidade de CPFs</label>
+            <select id="quantidade" class="form-control">
+              <option value="1">1 CPF</option>
+              <option value="5" selected>5 CPFs</option>
+              <option value="10">10 CPFs</option>
+              <option value="20">20 CPFs</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formato">Formato</label>
+            <select id="formato" class="form-control">
+              <option value="formatado">Formatado (000.000.000-00)</option>
+              <option value="numeros">Somente Números (00000000000)</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg" onclick="gerarCPFs()">
+          🪪 Gerar CPF
+        </button>
+
+        <div id="resultado-cpf" style="display:none;margin-top:1.5rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;">
+            <span style="font-size:.85rem;font-weight:600;color:var(--text3);">CPFs gerados</span>
+            <button class="copy-btn" id="copy-all-btn" onclick="copiarTodos()">📋 Copiar Todos</button>
+          </div>
+          <div id="lista-cpfs"></div>
+        </div>
+      </div>
+
+      <div class="ad-slot ad-slot-rectangle">📢 Espaço para Anúncio – Google AdSense</div>
+
+      <div class="seo-content">
+        <h2>Para Que Serve o Gerador de CPF?</h2>
+        <p>
+          O <strong>gerador de CPF</strong> é uma ferramenta técnica usada por desenvolvedores e estudantes de programação para criar dados fictícios durante o desenvolvimento e teste de sistemas. O algoritmo utilizado segue as mesmas regras da Receita Federal para os dígitos verificadores.
+        </p>
+
+        <h3>Como Funciona o Algoritmo do CPF?</h3>
+        <p>
+          O CPF brasileiro é composto por 11 dígitos, sendo os 9 primeiros o número base e os 2 últimos os dígitos verificadores. Os dígitos verificadores são calculados por um algoritmo de módulo 11 que garante a validade matemática do número.
+        </p>
+        <ul>
+          <li>O 1º dígito verificador é calculado com base nos 9 primeiros dígitos</li>
+          <li>O 2º dígito verificador usa os 9 primeiros + o 1º verificador</li>
+          <li>CPFs com todos os dígitos iguais (111.111.111-11) são inválidos</li>
+        </ul>
+
+        <h3>Usos Legítimos do Gerador de CPF</h3>
+        <ul>
+          <li>Testes de formulários de cadastro em desenvolvimento</li>
+          <li>Dados de preenchimento para protótipos e mockups</li>
+          <li>Material didático sobre algoritmos de validação</li>
+          <li>Seed de banco de dados com dados fictícios para testes</li>
+          <li>Estudo do algoritmo de validação de documentos</li>
+        </ul>
+      </div>
+
+      <div class="related-tools">
+        <h2>Ferramentas Relacionadas</h2>
+        <div class="related-grid">
+          <a href="gerador-senhas.html" class="related-card"><span class="related-card-icon">🔐</span> Gerador de Senhas</a>
+          <a href="gerador-nomes.html" class="related-card"><span class="related-card-icon">👤</span> Gerador de Nomes</a>
+          <a href="conversor-texto.html" class="related-card"><span class="related-card-icon">🔄</span> Conversor de Texto</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/layout.js"></script>
+  <script>
+    function gerarDigito(cpfParcial, pesos) {
+      let soma = 0;
+      for (let i = 0; i < pesos.length; i++) {
+        soma += parseInt(cpfParcial[i]) * pesos[i];
+      }
+      const resto = soma % 11;
+      return resto < 2 ? 0 : 11 - resto;
+    }
+
+    function gerarCPF(formatado) {
+      let nums = [];
+      for (let i = 0; i < 9; i++) nums.push(Math.floor(Math.random() * 10));
+      // Evitar sequências inválidas (111.111.111-11)
+      if (nums.every(n => n === nums[0])) nums[0] = (nums[0] + 1) % 10;
+
+      const d1 = gerarDigito(nums, [10, 9, 8, 7, 6, 5, 4, 3, 2]);
+      nums.push(d1);
+      const d2 = gerarDigito(nums, [11, 10, 9, 8, 7, 6, 5, 4, 3, 2]);
+      nums.push(d2);
+
+      const raw = nums.join('');
+      if (formatado) {
+        return `${raw.slice(0,3)}.${raw.slice(3,6)}.${raw.slice(6,9)}-${raw.slice(9,11)}`;
+      }
+      return raw;
+    }
+
+    let cpfsGerados = [];
+
+    function gerarCPFs() {
+      const qtd = parseInt(document.getElementById('quantidade').value);
+      const fmt = document.getElementById('formato').value === 'formatado';
+      cpfsGerados = Array.from({length: qtd}, () => gerarCPF(fmt));
+
+      const lista = document.getElementById('lista-cpfs');
+      lista.innerHTML = cpfsGerados.map(cpf => `
+        <div style="display:flex;align-items:center;gap:.5rem;padding:.6rem .9rem;background:var(--surface2);border-radius:var(--radius-sm);margin-bottom:.4rem;">
+          <span style="flex:1;font-family:monospace;font-size:1rem;font-weight:700;letter-spacing:1px;">${cpf}</span>
+          <button class="copy-btn" onclick="copyToClipboard('${cpf}',this)" style="flex-shrink:0;">📋</button>
+        </div>
+      `).join('');
+
+      document.getElementById('resultado-cpf').style.display = 'block';
+    }
+
+    function copiarTodos() {
+      copyToClipboard(cpfsGerados.join('\n'), document.getElementById('copy-all-btn'));
+    }
+  </script>
+</body>
+</html>
