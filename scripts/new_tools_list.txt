@@ -1,0 +1,500 @@
+001. calculadora-mmc | Calculadora de MMC | matematica | calcular mínimo múltiplo comum
+002. calculadora-mdc | Calculadora de MDC | matematica | calcular máximo divisor comum
+003. calculadora-fracao-equivalente | Calculadora de Fração Equivalente | matematica | gerar frações equivalentes
+004. simplificador-fracoes | Simplificador de Frações | matematica | reduzir frações
+005. somador-fracoes | Somador de Frações | matematica | somar frações
+006. subtrator-fracoes | Subtrator de Frações | matematica | subtrair frações
+007. multiplicador-fracoes | Multiplicador de Frações | matematica | multiplicar frações
+008. divisor-fracoes | Divisor de Frações | matematica | dividir frações
+009. conversor-fracao-decimal | Conversor de Fração para Decimal | matematica | converter fração em decimal
+010. conversor-decimal-fracao | Conversor de Decimal para Fração | matematica | converter decimal em fração
+011. calculadora-equacao-primeiro-grau | Calculadora de Equação do 1º Grau | matematica | resolver ax+b=0
+012. calculadora-equacao-segundo-grau | Calculadora de Equação do 2º Grau | matematica | resolver fórmula de bhaskara
+013. calculadora-sistema-2x2 | Calculadora de Sistema 2x2 | matematica | resolver sistema linear 2x2
+014. calculadora-fatorial | Calculadora de Fatorial | matematica | calcular fatorial
+015. calculadora-permutacao | Calculadora de Permutação | matematica | calcular permutação simples
+016. calculadora-combinacao | Calculadora de Combinação | matematica | calcular combinação simples
+017. calculadora-arranjo | Calculadora de Arranjo | matematica | calcular arranjo simples
+018. calculadora-logaritmo | Calculadora de Logaritmo | matematica | calcular logaritmo em base qualquer
+019. calculadora-seno-cosseno-tangente | Calculadora de Seno Cosseno Tangente | matematica | calcular razões trigonométricas
+020. calculadora-hipotenusa | Calculadora de Hipotenusa | matematica | teorema de pitágoras
+021. calculadora-distancia-pontos | Calculadora de Distância entre Pontos | matematica | distância no plano cartesiano
+022. calculadora-ponto-medio | Calculadora de Ponto Médio | matematica | ponto médio entre coordenadas
+023. calculadora-raizes-equacao | Calculadora de Raízes da Equação | matematica | resolver raízes reais
+024. calculadora-progressao-aritmetica | Calculadora de PA | matematica | progressão aritmética
+025. calculadora-progressao-geometrica | Calculadora de PG | matematica | progressão geométrica
+026. calculadora-media-ponderada | Calculadora de Média Ponderada | matematica-avancada | calcular média com pesos
+027. calculadora-media-harmonica | Calculadora de Média Harmônica | matematica-avancada | calcular média harmônica
+028. calculadora-media-geometrica | Calculadora de Média Geométrica | matematica-avancada | calcular média geométrica
+029. calculadora-mediana | Calculadora de Mediana | matematica-avancada | calcular mediana
+030. calculadora-moda | Calculadora de Moda | matematica-avancada | calcular moda
+031. calculadora-variancia | Calculadora de Variância | matematica-avancada | calcular variância
+032. calculadora-desvio-medio | Calculadora de Desvio Médio | matematica-avancada | calcular desvio médio
+033. calculadora-coeficiente-variacao | Calculadora de Coeficiente de Variação | matematica-avancada | calcular CV
+034. calculadora-erro-percentual | Calculadora de Erro Percentual | matematica-avancada | calcular erro relativo percentual
+035. calculadora-intervalo-confianca | Calculadora de Intervalo de Confiança | matematica-avancada | estimativa estatística simples
+036. calculadora-z-score | Calculadora de Z-Score | matematica-avancada | padronização estatística
+037. calculadora-probabilidade-simples | Calculadora de Probabilidade Simples | matematica-avancada | p = casos favoráveis / total
+038. calculadora-probabilidade-condicional | Calculadora de Probabilidade Condicional | matematica-avancada | calcular P(A|B)
+039. calculadora-binomial | Calculadora Binomial | matematica-avancada | distribuição binomial simples
+040. calculadora-matriz-2x2 | Calculadora de Matriz 2x2 | matematica-avancada | soma subtração multiplicação determinante
+041. calculadora-determinante-2x2 | Calculadora de Determinante 2x2 | matematica-avancada | calcular determinante
+042. calculadora-determinante-3x3 | Calculadora de Determinante 3x3 | matematica-avancada | calcular determinante
+043. calculadora-polinomio | Calculadora de Polinômio | matematica-avancada | avaliar polinômio
+044. calculadora-derivada-basica | Calculadora de Derivada Básica | matematica-avancada | derivadas simples por regras
+045. calculadora-integral-basica | Calculadora de Integral Básica | matematica-avancada | integrais simples
+046. calculadora-conversao-graus-radianos | Conversor de Graus para Radianos | matematica-avancada | converter ângulos
+047. calculadora-conversao-radianos-graus | Conversor de Radianos para Graus | matematica-avancada | converter ângulos
+048. calculadora-area-trapezio | Calculadora de Área do Trapézio | matematica-avancada | calcular área
+049. calculadora-area-losango | Calculadora de Área do Losango | matematica-avancada | calcular área
+050. calculadora-volume-cone | Calculadora de Volume do Cone | matematica-avancada | calcular volume
+051. calculadora-peso-ideal | Calculadora de Peso Ideal | saude | estimar peso ideal
+052. calculadora-tmb | Calculadora de TMB | saude | taxa metabólica basal
+053. calculadora-calorias-diarias | Calculadora de Calorias Diárias | saude | gasto calórico estimado
+054. calculadora-agua-diaria | Calculadora de Água Diária | saude | consumo de água recomendado
+055. calculadora-percentual-gordura | Calculadora de Percentual de Gordura | saude | estimativa corporal
+056. calculadora-macros | Calculadora de Macronutrientes | saude | proteínas carboidratos gorduras
+057. calculadora-calculo-ovulacao | Calculadora de Ovulação | saude | janela fértil estimada
+058. calculadora-idade-gestacional | Calculadora de Idade Gestacional | saude | semanas de gestação
+059. calculadora-data-parto | Calculadora de Data Provável do Parto | saude | estimativa de parto
+060. calculadora-frequencia-cardiaca | Calculadora de Frequência Cardíaca | saude | zona alvo de treino
+061. calculadora-ritmo-corrida | Calculadora de Ritmo de Corrida | saude | pace por km
+062. calculadora-gasto-calorico-caminhada | Calculadora de Gasto Calórico Caminhada | saude | estimar calorias
+063. calculadora-gasto-calorico-corrida | Calculadora de Gasto Calórico Corrida | saude | estimar calorias
+064. calculadora-dosagem-agua-infantil | Calculadora de Água Infantil | saude | consumo de água para crianças
+065. calculadora-dias-gravidez | Calculadora de Dias de Gravidez | saude | dias corridos gestacionais
+066. calculadora-idade-pet | Calculadora de Idade de Pet | saude | idade equivalente de cachorro ou gato
+067. calculadora-superavit-calorico | Calculadora de Superávit Calórico | saude | ganho de massa
+068. calculadora-deficit-calorico | Calculadora de Déficit Calórico | saude | perda de peso
+069. calculadora-sono-recomendado | Calculadora de Sono Recomendado | saude | horas ideais por faixa etária
+070. calculadora-horas-sono | Calculadora de Horas de Sono | saude | calcular duração do sono
+071. calculadora-ciclos-sono | Calculadora de Ciclos de Sono | saude | melhor horário para dormir/acordar
+072. calculadora-pressao-media | Calculadora de Pressão Média | saude | média de leituras
+073. calculadora-velocidade-esteira | Calculadora de Ritmo na Esteira | saude | converter km/h em pace
+074. calculadora-glicemia-media | Calculadora de Glicemia Média | saude | média de medições
+075. calculadora-ingestao-proteina | Calculadora de Ingestão de Proteína | saude | proteína diária estimada
+076. calculadora-13o-salario | Calculadora de 13º Salário | financas | estimativa de décimo terceiro
+077. calculadora-ferias | Calculadora de Férias | financas | estimativa de férias e abono
+078. calculadora-hora-extra | Calculadora de Hora Extra | financas | valor da hora extra
+079. calculadora-comissao-vendas | Calculadora de Comissão de Vendas | financas | comissão percentual
+080. calculadora-custo-oportunidade | Calculadora de Custo de Oportunidade | financas | comparar investimentos
+081. calculadora-payback | Calculadora de Payback | financas | retorno do investimento
+082. calculadora-vpl | Calculadora de VPL | financas | valor presente líquido
+083. calculadora-tir | Calculadora de TIR | financas | taxa interna de retorno aproximada
+084. calculadora-parcela-price | Calculadora Tabela Price | financas | parcelas fixas
+085. calculadora-parcela-sac | Calculadora Tabela SAC | financas | amortização constante
+086. calculadora-lucro-liquido | Calculadora de Lucro Líquido | financas | receita menos custos e impostos
+087. calculadora-ticket-medio | Calculadora de Ticket Médio | financas | valor médio por venda
+088. calculadora-ponto-equilibrio-unidades | Calculadora de Ponto de Equilíbrio em Unidades | financas | unidades para empatar
+089. calculadora-giro-estoque | Calculadora de Giro de Estoque | financas | indicador de estoque
+090. calculadora-margem-contribuicao | Calculadora de Margem de Contribuição | financas | margem por produto
+091. calculadora-preco-venda | Calculadora de Preço de Venda | financas | preço final com custos
+092. calculadora-juros-ao-dia | Calculadora de Juros ao Dia | financas | juros simples diários
+093. calculadora-amortizacao | Calculadora de Amortização | financas | abatimento de saldo
+094. calculadora-reserva-emergencia | Calculadora de Reserva de Emergência | financas | meta de reserva
+095. calculadora-meta-poupanca | Calculadora de Meta de Poupança | financas | quanto guardar por mês
+096. calculadora-valor-futuro | Calculadora de Valor Futuro | financas | montante futuro
+097. calculadora-valor-presente | Calculadora de Valor Presente | financas | desconto financeiro
+098. calculadora-desconto-comercial | Calculadora de Desconto Comercial | financas | desconto bancário
+099. calculadora-custo-efetivo-total | Calculadora de CET Simplificado | financas | custo efetivo total aproximado
+100. calculadora-rentabilidade-acumulada | Calculadora de Rentabilidade Acumulada | financas | retorno acumulado
+101. calculadora-consumo-combustivel | Calculadora de Consumo de Combustível | cotidiano | km por litro
+102. calculadora-custo-por-km | Calculadora de Custo por KM | cotidiano | custo total por quilômetro
+103. calculadora-autonomia-veiculo | Calculadora de Autonomia do Veículo | cotidiano | distância com tanque
+104. calculadora-custo-viagem | Calculadora de Custo de Viagem | cotidiano | combustível + pedágio
+105. calculadora-pedagio | Calculadora de Pedágio | cotidiano | soma de pedágios
+106. calculadora-litragem-tanque | Calculadora de Litros Necessários | cotidiano | litros para percurso
+107. calculadora-consumo-energia | Calculadora de Consumo de Energia | cotidiano | kWh por aparelho
+108. calculadora-conta-luz | Calculadora de Conta de Luz | cotidiano | custo mensal estimado
+109. calculadora-conta-agua | Calculadora de Conta de Água | cotidiano | custo estimado
+110. calculadora-gas-cozinha | Calculadora de Gás de Cozinha | cotidiano | consumo mensal estimado
+111. calculadora-tinta-parede | Calculadora de Tinta para Parede | cotidiano | litros de tinta necessários
+112. calculadora-piso-por-metro | Calculadora de Piso por Metro Quadrado | cotidiano | quantidade de peças
+113. calculadora-cimento-areia | Calculadora de Cimento e Areia | cotidiano | traço simples
+114. calculadora-tijolos | Calculadora de Tijolos | cotidiano | quantidade por parede
+115. calculadora-caixa-dagua | Calculadora de Caixa d’Água | cotidiano | volume necessário
+116. calculadora-consumo-internet | Calculadora de Consumo de Internet | cotidiano | uso de dados
+117. calculadora-velocidade-download | Calculadora de Velocidade de Download | cotidiano | Mbps para MB/s
+118. calculadora-tempo-download | Calculadora de Tempo de Download | cotidiano | tempo estimado
+119. calculadora-custo-impressao | Calculadora de Custo de Impressão | cotidiano | custo por página
+120. calculadora-orcamento-festa | Calculadora de Orçamento de Festa | cotidiano | custo por convidado
+121. calculadora-consumo-churrasco | Calculadora de Consumo para Churrasco | cotidiano | carnes e bebidas
+122. calculadora-lista-mercado | Calculadora de Total de Mercado | cotidiano | soma de itens
+123. calculadora-divisao-conta | Calculadora de Divisão de Conta | cotidiano | dividir conta por pessoas
+124. calculadora-gorjeta | Calculadora de Gorjeta | cotidiano | valor da gorjeta
+125. calculadora-metros-para-passos | Calculadora de Metros para Passos | cotidiano | converter distância em passos
+126. conversor-moedas-fixo | Conversor de Moedas Manual | conversores | conversão por taxa informada
+127. conversor-metros-pes | Conversor de Metros para Pés | conversores | medida linear
+128. conversor-pes-metros | Conversor de Pés para Metros | conversores | medida linear
+129. conversor-kg-libras | Conversor de KG para Libras | conversores | massa
+130. conversor-libras-kg | Conversor de Libras para KG | conversores | massa
+131. conversor-gramas-oncas | Conversor de Gramas para Onças | conversores | massa
+132. conversor-oncas-gramas | Conversor de Onças para Gramas | conversores | massa
+133. conversor-litros-galoes | Conversor de Litros para Galões | conversores | volume
+134. conversor-galoes-litros | Conversor de Galões para Litros | conversores | volume
+135. conversor-cm-polegadas | Conversor de CM para Polegadas | conversores | comprimento
+136. conversor-polegadas-cm | Conversor de Polegadas para CM | conversores | comprimento
+137. conversor-m2-ft2 | Conversor de m² para ft² | conversores | área
+138. conversor-ft2-m2 | Conversor de ft² para m² | conversores | área
+139. conversor-hectares-m2 | Conversor de Hectares para m² | conversores | área
+140. conversor-m2-hectares | Conversor de m² para Hectares | conversores | área
+141. conversor-lt-ml | Conversor de Litros para ml | conversores | volume
+142. conversor-ml-lt | Conversor de ml para Litros | conversores | volume
+143. conversor-horas-decimais | Conversor de Horas para Decimal | conversores | tempo
+144. conversor-decimal-horas | Conversor Decimal para Horas | conversores | tempo
+145. conversor-minutos-decimais | Conversor de Minutos para Decimal | conversores | tempo
+146. conversor-semanas-meses | Conversor de Semanas para Meses | conversores | tempo
+147. conversor-meses-semanas | Conversor de Meses para Semanas | conversores | tempo
+148. conversor-dias-semanas | Conversor de Dias para Semanas | conversores | tempo
+149. conversor-semanas-dias | Conversor de Semanas para Dias | conversores | tempo
+150. conversor-anos-meses | Conversor de Anos para Meses | conversores | tempo
+151. conversor-celsius-kelvin | Conversor de Celsius para Kelvin | conversores | temperatura
+152. conversor-kelvin-celsius | Conversor de Kelvin para Celsius | conversores | temperatura
+153. conversor-fahrenheit-kelvin | Conversor de Fahrenheit para Kelvin | conversores | temperatura
+154. conversor-kelvin-fahrenheit | Conversor de Kelvin para Fahrenheit | conversores | temperatura
+155. conversor-mbps-mbs | Conversor de Mbps para MB/s | conversores | internet
+156. conversor-mbs-mbps | Conversor de MB/s para Mbps | conversores | internet
+157. conversor-bits-bytes | Conversor de Bits para Bytes | conversores | dados
+158. conversor-bytes-bits | Conversor de Bytes para Bits | conversores | dados
+159. conversor-kb-mb | Conversor de KB para MB | conversores | dados
+160. conversor-mb-gb | Conversor de MB para GB | conversores | dados
+161. conversor-gb-tb | Conversor de GB para TB | conversores | dados
+162. conversor-binario-decimal | Conversor de Binário para Decimal | conversores | numérico
+163. conversor-decimal-binario | Conversor de Decimal para Binário | conversores | numérico
+164. conversor-decimal-hexadecimal | Conversor Decimal para Hexadecimal | conversores | numérico
+165. conversor-hexadecimal-decimal | Conversor Hexadecimal para Decimal | conversores | numérico
+166. conversor-decimal-octal | Conversor Decimal para Octal | conversores | numérico
+167. conversor-octal-decimal | Conversor Octal para Decimal | conversores | numérico
+168. conversor-romano-decimal | Conversor Romano para Decimal | conversores | numérico
+169. conversor-decimal-romano | Conversor Decimal para Romano | conversores | numérico
+170. conversor-ascii-texto | Conversor ASCII para Texto | conversores | codificação
+171. conversor-texto-ascii | Conversor Texto para ASCII | conversores | codificação
+172. conversor-unicode-texto | Conversor Unicode para Texto | conversores | codificação
+173. conversor-texto-unicode | Conversor Texto para Unicode | conversores | codificação
+174. conversor-porcentagem-decimal | Conversor Porcentagem para Decimal | conversores | matemática
+175. conversor-decimal-porcentagem | Conversor Decimal para Porcentagem | conversores | matemática
+176. removedor-linhas-vazias | Removedor de Linhas Vazias | texto | limpar texto
+177. removedor-linhas-duplicadas | Removedor de Linhas Duplicadas | texto | deduplicar linhas
+178. ordenador-linhas-alfabetico | Ordenador de Linhas Alfabético | texto | ordenar A-Z
+179. ordenador-linhas-reverso | Ordenador de Linhas Reverso | texto | ordenar Z-A
+180. embaralhador-linhas | Embaralhador de Linhas | texto | randomizar linhas
+181. separador-linhas-virgula | Linhas para Vírgulas | texto | unir linhas com vírgula
+182. separador-virgula-linhas | Vírgulas para Linhas | texto | quebrar por vírgula
+183. separador-espaco-linhas | Espaços para Linhas | texto | quebrar por espaço
+184. separador-linhas-espaco | Linhas para Espaços | texto | unir linhas com espaço
+185. removedor-acentos | Removedor de Acentos | texto | normalizar caracteres
+186. removedor-pontuacao | Removedor de Pontuação | texto | remover pontuação
+187. removedor-numeros-texto | Removedor de Números do Texto | texto | remover dígitos
+188. removedor-letras-texto | Removedor de Letras do Texto | texto | manter somente números/símbolos
+189. extrator-numeros | Extrator de Números | texto | extrair números
+190. extrator-emails-texto | Extrator de Emails | texto | localizar emails em texto
+191. extrator-urls-texto | Extrator de URLs | texto | localizar links em texto
+192. extrator-hashtags | Extrator de Hashtags | texto | localizar hashtags
+193. extrator-mencoes | Extrator de Menções | texto | localizar @menções
+194. contador-frases | Contador de Frases | texto | contar frases
+195. contador-paragrafos | Contador de Parágrafos | texto | contar parágrafos
+196. contador-vogais | Contador de Vogais | texto | contar vogais
+197. contador-consoantes | Contador de Consoantes | texto | contar consoantes
+198. contador-digitos | Contador de Dígitos | texto | contar números
+199. texto-snake-case | Conversor para snake_case | texto | transformar texto
+200. texto-kebab-case | Conversor para kebab-case | texto | transformar texto
+201. texto-camel-case | Conversor para camelCase | texto | transformar texto
+202. texto-pascal-case | Conversor para PascalCase | texto | transformar texto
+203. texto-title-case | Conversor para Title Case | texto | transformar texto
+204. texto-inverter-caixa | Inverter Caixa do Texto | texto | maiúsculas/minúsculas alternadas
+205. texto-repetir | Repetidor de Texto | texto | repetir texto N vezes
+206. texto-truncar | Truncador de Texto | texto | cortar texto por limite
+207. texto-prefixo | Adicionar Prefixo em Linhas | texto | prefixar linhas
+208. texto-sufixo | Adicionar Sufixo em Linhas | texto | sufixar linhas
+209. texto-envolver-aspas | Envolver Linhas em Aspas | texto | envolver linhas
+210. texto-envolver-parenteses | Envolver Linhas em Parênteses | texto | envolver linhas
+211. texto-numerar-linhas | Numerador de Linhas | texto | numerar linhas
+212. texto-remover-html | Removedor de HTML | texto | limpar tags
+213. texto-escapar-html | Escapador de HTML | texto | converter < > &
+214. texto-desescapar-html | Desescapador de HTML | texto | reverter entidades
+215. texto-normalizar-espacos | Normalizador de Espaços | texto | reduzir múltiplos espaços
+216. texto-remover-quebras | Removedor de Quebras de Linha | texto | texto em linha única
+217. texto-quebrar-por-tamanho | Quebrador de Texto por Tamanho | texto | quebrar em blocos
+218. texto-palavras-unicas | Lista de Palavras Únicas | texto | remover palavras repetidas
+219. texto-frequencia-palavras | Frequência de Palavras | texto | contar ocorrência
+220. texto-gerador-iniciais | Gerador de Iniciais | texto | iniciais de nomes
+221. texto-mascarar-cpf | Mascarador de CPF | texto | aplicar máscara
+222. texto-mascarar-cnpj | Mascarador de CNPJ | texto | aplicar máscara
+223. texto-mascarar-telefone | Mascarador de Telefone | texto | aplicar máscara
+224. texto-mascarar-cartao | Mascarador de Cartão | texto | aplicar máscara
+225. texto-ofuscar-email | Ofuscador de Email | texto | esconder parcialmente email
+226. gerador-cnpj | Gerador de CNPJ | dev | gerar CNPJ válido
+227. validador-cpf | Validador de CPF | dev | validar CPF
+228. validador-cnpj | Validador de CNPJ | dev | validar CNPJ
+229. gerador-renavam | Gerador de RENAVAM | dev | gerar número exemplo
+230. validador-renavam | Validador de RENAVAM | dev | validar número
+231. gerador-pis | Gerador de PIS | dev | gerar PIS válido
+232. validador-pis | Validador de PIS | dev | validar PIS
+233. gerador-ie-simples | Gerador de Inscrição Estadual Simples | dev | gerar exemplo
+234. gerador-cartao-teste | Gerador de Cartão de Teste | dev | números para testes
+235. validador-luhn | Validador Luhn | dev | validar número pelo algoritmo luhn
+236. gerador-hash-md5 | Gerador de Hash MD5 | dev | gerar hash md5
+237. gerador-hash-sha1 | Gerador de Hash SHA1 | dev | gerar hash sha1
+238. gerador-hmac-sha256 | Gerador de HMAC SHA256 | dev | hash com chave
+239. gerador-base32 | Gerador Base32 | dev | codificar texto em base32
+240. decoder-base32 | Decoder Base32 | dev | decodificar base32
+241. gerador-uuid-v4-lote | Gerador de UUID em Lote | dev | vários UUIDs
+242. gerador-nanoid | Gerador Nano ID | dev | ids curtos
+243. gerador-api-key | Gerador de API Key | dev | chaves aleatórias
+244. gerador-token-hex | Gerador de Token Hex | dev | token aleatório
+245. gerador-token-base64 | Gerador de Token Base64 | dev | token aleatório
+246. gerador-jwt-payload | Gerador de JWT Payload Demo | dev | header/payload mock
+247. decoder-jwt | Decoder JWT | dev | ler payload sem validar assinatura
+248. gerador-lorem-codigo | Gerador de Lorem para Código | dev | nomes e dados fake
+249. gerador-dados-json-fake | Gerador de JSON Fake | dev | objetos simulados
+250. gerador-dados-csv-fake | Gerador de CSV Fake | dev | linhas simuladas
+251. gerador-dados-sql-fake | Gerador de SQL Fake | dev | inserts simulados
+252. gerador-usuarios-fake | Gerador de Usuários Fake | dev | nomes emails senhas
+253. gerador-cep-fake | Gerador de CEP Fake | dev | dados de teste
+254. gerador-telefone-fake | Gerador de Telefone Fake | dev | números de exemplo
+255. gerador-senha-lote | Gerador de Senhas em Lote | dev | várias senhas
+256. formatador-xml | Formatador XML | dev | identar xml
+257. minificador-xml | Minificador XML | dev | remover espaços
+258. validador-xml | Validador XML | dev | validar estrutura
+259. conversor-json-xml | Conversor JSON para XML | dev | converter estruturas simples
+260. conversor-xml-json | Conversor XML para JSON | dev | converter estruturas simples
+261. conversor-json-yaml | Conversor JSON para YAML | dev | converter estruturas simples
+262. conversor-yaml-json | Conversor YAML para JSON | dev | converter estruturas simples
+263. conversor-csv-json | Conversor CSV para JSON | dev | converter tabela
+264. conversor-json-csv | Conversor JSON para CSV | dev | converter tabela
+265. conversor-csv-html-table | Conversor CSV para Tabela HTML | dev | gerar tabela
+266. conversor-html-table-csv | Conversor Tabela HTML para CSV | dev | extrair tabela
+267. minificador-css | Minificador CSS | dev | remover espaços
+268. beautifier-css | Beautifier CSS | dev | formatar CSS
+269. minificador-js | Minificador JS Simples | dev | remover espaços e comentários simples
+270. beautifier-js | Beautifier JS Simples | dev | formatar js
+271. formatador-sql | Formatador SQL | dev | quebrar linhas e palavras-chave
+272. minificador-sql | Minificador SQL | dev | compactar query
+273. encoder-hex | Encoder Hexadecimal | dev | texto para hex
+274. decoder-hex | Decoder Hexadecimal | dev | hex para texto
+275. calculadora-timestamp | Calculadora de Timestamp | dev | data para unix e unix para data
+276. gerador-cron-basico | Gerador de Cron Básico | devops | montar expressão cron
+277. leitor-cron | Leitor de Expressão Cron | devops | explicar cron simples
+278. gerador-htaccess-basico | Gerador de .htaccess Básico | devops | redirects e segurança
+279. verificador-regex | Verificador de Regex | devops | testar padrão
+280. gerador-regex-email | Gerador de Regex para Email | devops | regex pronta
+281. gerador-regex-url | Gerador de Regex para URL | devops | regex pronta
+282. comparador-json | Comparador de JSON | devops | diferenças simples
+283. comparador-csv | Comparador de CSV | devops | diferenças simples
+284. comparador-listas | Comparador de Listas | devops | itens em comum e exclusivos
+285. diff-texto-lado-a-lado | Diff de Texto Lado a Lado | devops | comparar dois textos
+286. escapador-json | Escapador de JSON | devops | escapar string
+287. desescapador-json | Desescapador de JSON | devops | reverter escape
+288. gerador-query-string | Gerador de Query String | devops | params para URL
+289. parser-query-string | Parser de Query String | devops | URL params para lista
+290. gerador-user-agent-fake | Gerador de User-Agent Fake | devops | strings variadas
+291. analisador-user-agent | Analisador de User-Agent | devops | identificar navegador simples
+292. gerador-curl | Gerador de Comando cURL | devops | montar curl
+293. gerador-fetch-js | Gerador de Código fetch() | devops | código JS de requisição
+294. gerador-axios-js | Gerador de Código Axios | devops | snippet axios
+295. gerador-postman-body | Gerador de Body para Postman | devops | json/raw/form-data
+296. verificador-cabecalhos-http-manual | Verificador de Cabeçalhos HTTP Manual | devops | analisar texto de headers
+297. parser-cookie | Parser de Cookie | devops | separar cookie string
+298. gerador-cookie | Gerador de Cookie | devops | nome valor expires path
+299. parser-jwt-claims | Parser de Claims JWT | devops | listar claims
+300. gerador-webhook-payload | Gerador de Payload de Webhook | devops | dados fake
+301. gerador-sitemap-xml | Gerador de Sitemap XML | seo | gerar xml a partir de urls
+302. gerador-sitemap-html | Gerador de Sitemap HTML | seo | lista html de urls
+303. gerador-canonical-tag | Gerador de Canonical Tag | seo | tag canonical
+304. gerador-open-graph | Gerador de Open Graph | seo | tags sociais
+305. gerador-twitter-cards | Gerador de Twitter Cards | seo | tags sociais
+306. gerador-schema-article | Gerador de Schema Article | seo | json-ld article
+307. gerador-schema-organization | Gerador de Schema Organization | seo | json-ld organization
+308. gerador-schema-product | Gerador de Schema Product | seo | json-ld product
+309. gerador-schema-event | Gerador de Schema Event | seo | json-ld event
+310. gerador-schema-video | Gerador de Schema Video | seo | json-ld video
+311. gerador-schema-local-business | Gerador de Schema Local Business | seo | json-ld local business
+312. gerador-schema-person | Gerador de Schema Person | seo | json-ld person
+313. gerador-schema-website | Gerador de Schema Website | seo | json-ld website
+314. gerador-schema-webpage | Gerador de Schema WebPage | seo | json-ld webpage
+315. gerador-schema-howto | Gerador de Schema HowTo | seo | json-ld howto
+316. gerador-meta-description | Gerador de Meta Description | seo | montar descrição
+317. gerador-title-seo | Gerador de Title SEO | seo | montar title
+318. calculadora-ctr | Calculadora de CTR | seo | click-through rate
+319. calculadora-taxa-rejeicao | Calculadora de Taxa de Rejeição | seo | bounce rate
+320. calculadora-taxa-conversao | Calculadora de Taxa de Conversão | seo | conversão
+321. analisador-comprimento-url | Analisador de Comprimento de URL | seo | contar caracteres
+322. analisador-slug | Analisador de Slug | seo | tamanho e limpeza
+323. extrator-titulos-seo | Extrator de Titles | seo | extrair titles de HTML manual
+324. extrator-meta-description | Extrator de Meta Description | seo | extrair descrição de HTML manual
+325. extrator-headings-html | Extrator de Headings do HTML | seo | listar H1-H6
+326. gerador-legenda-instagram | Gerador de Legenda para Instagram | marketing | montar legenda
+327. gerador-legenda-tiktok | Gerador de Legenda para TikTok | marketing | montar legenda
+328. gerador-legenda-youtube | Gerador de Descrição para YouTube | marketing | montar descrição
+329. gerador-hashtags-instagram | Gerador de Hashtags para Instagram | marketing | sugerir hashtags
+330. gerador-hashtags-youtube | Gerador de Hashtags para YouTube | marketing | sugerir hashtags
+331. gerador-hashtags-tiktok | Gerador de Hashtags para TikTok | marketing | sugerir hashtags
+332. gerador-bio-instagram | Gerador de Bio para Instagram | marketing | montar bio
+333. gerador-bio-tiktok | Gerador de Bio para TikTok | marketing | montar bio
+334. gerador-bio-linkedin | Gerador de Bio para LinkedIn | marketing | resumo profissional
+335. gerador-headline-anuncio | Gerador de Headline de Anúncio | marketing | títulos curtos
+336. gerador-call-to-action | Gerador de CTA | marketing | chamadas para ação
+337. gerador-slogan | Gerador de Slogan | marketing | slogans curtos
+338. gerador-nome-marca | Gerador de Nome de Marca | marketing | nomes de marca
+339. gerador-nome-loja | Gerador de Nome de Loja | marketing | nomes comerciais
+340. gerador-nome-dominio | Gerador de Ideias de Domínio | marketing | domínios sugestivos
+341. gerador-utm | Gerador de UTM | marketing | montar parâmetros UTM
+342. parser-utm | Parser de UTM | marketing | ler parâmetros UTM
+343. calculadora-cpc | Calculadora de CPC | marketing | custo por clique
+344. calculadora-cpm | Calculadora de CPM | marketing | custo por mil
+345. calculadora-cpa | Calculadora de CPA | marketing | custo por aquisição
+346. calculadora-roas | Calculadora de ROAS | marketing | retorno sobre anúncios
+347. calculadora-ltv | Calculadora de LTV | marketing | lifetime value
+348. calculadora-churn | Calculadora de Churn | marketing | taxa de cancelamento
+349. calculadora-engajamento-instagram | Calculadora de Engajamento Instagram | marketing | taxa de engajamento
+350. calculadora-engajamento-youtube | Calculadora de Engajamento YouTube | marketing | taxa de engajamento
+351. gerador-planejamento-semanal | Gerador de Planejamento Semanal | produtividade | montar semana
+352. gerador-planejamento-diario | Gerador de Planejamento Diário | produtividade | tarefas do dia
+353. gerador-checklist | Gerador de Checklist | produtividade | checklist simples
+354. gerador-lista-compras | Gerador de Lista de Compras | produtividade | lista organizada
+355. gerador-lista-tarefas | Gerador de To-Do List | produtividade | tarefas
+356. calculadora-pomodoro | Calculadora Pomodoro | produtividade | ciclos de foco
+357. cronometro-estudos | Cronômetro de Estudos | produtividade | controlar tempo
+358. cronometro-treino | Cronômetro de Treino | produtividade | controlar séries
+359. temporizador-reverso | Temporizador Reverso | produtividade | countdown simples
+360. despertador-online-simples | Despertador Online Simples | produtividade | alarme local
+361. calculadora-prioridade-tarefas | Calculadora de Prioridade de Tarefas | produtividade | matriz simples
+362. calculadora-produtividade-horas | Calculadora de Produtividade por Hora | produtividade | tarefas/hora
+363. calculadora-meta-diaria | Calculadora de Meta Diária | produtividade | meta por dias restantes
+364. calculadora-meta-semanal | Calculadora de Meta Semanal | produtividade | meta semanal
+365. calculadora-meta-mensal | Calculadora de Meta Mensal | produtividade | meta mensal
+366. contador-dias-uteis | Contador de Dias Úteis | produtividade | calcular dias úteis
+367. contador-fins-de-semana | Contador de Fins de Semana | produtividade | contar sábados e domingos
+368. calculadora-dias-entre-datas | Calculadora de Dias entre Datas | produtividade | diferença entre datas
+369. calculadora-semanas-entre-datas | Calculadora de Semanas entre Datas | produtividade | diferença entre datas
+370. calculadora-meses-entre-datas | Calculadora de Meses entre Datas | produtividade | diferença entre datas
+371. calculadora-anos-entre-datas | Calculadora de Anos entre Datas | produtividade | diferença entre datas
+372. calculadora-data-futura | Calculadora de Data Futura | produtividade | adicionar dias
+373. calculadora-data-passada | Calculadora de Data Passada | produtividade | subtrair dias
+374. gerador-agenda-horarios | Gerador de Agenda de Horários | produtividade | blocos de horário
+375. divisor-objetivo-etapas | Divisor de Objetivo em Etapas | produtividade | quebrar meta em partes
+376. calculadora-nota-enem-simples | Calculadora de Nota ENEM Simples | educacao | média ponderada básica
+377. calculadora-nota-vestibular | Calculadora de Nota de Vestibular | educacao | média simples
+378. calculadora-percentual-acertos | Calculadora de Percentual de Acertos | educacao | acertos por questões
+379. calculadora-questoes-restantes | Calculadora de Questões Restantes | educacao | meta de questões
+380. calculadora-tempo-por-questao | Calculadora de Tempo por Questão | educacao | planejamento de prova
+381. calculadora-redacao-palavras | Calculadora de Palavras para Redação | educacao | contar e estimar tamanho
+382. sorteador-alunos | Sorteador de Alunos | educacao | sorteio simples
+383. sorteador-grupos | Sorteador de Grupos | educacao | dividir em grupos
+384. gerador-tabuada | Gerador de Tabuada | educacao | tabuada personalizada
+385. gerador-questoes-aleatorias | Gerador de Questões Aleatórias | educacao | números e operações
+386. gerador-contas-matematica | Gerador de Contas de Matemática | educacao | operações básicas
+387. gerador-palavras-soletrar | Gerador de Palavras para Soletrar | educacao | lista simples
+388. gerador-lista-estudo | Gerador de Lista de Estudos | educacao | plano básico
+389. calculadora-presenca-escolar | Calculadora de Presença Escolar | educacao | frequência
+390. calculadora-faltas-maximas | Calculadora de Faltas Máximas | educacao | limite de faltas
+391. calculadora-nota-minima | Calculadora de Nota Mínima para Aprovação | educacao | nota necessária
+392. calculadora-media-bimestral | Calculadora de Média Bimestral | educacao | média por bimestre
+393. calculadora-media-trimestral | Calculadora de Média Trimestral | educacao | média por trimestre
+394. calculadora-horas-estudo | Calculadora de Horas de Estudo | educacao | total semanal/mensal
+395. cronograma-provas | Gerador de Cronograma de Provas | educacao | agenda de provas
+396. conversor-numeros-romanos-estudo | Conversor de Números Romanos Educacional | educacao | decimal e romano
+397. gerador-alfabeto-fonetico | Gerador de Alfabeto Fonético | educacao | soletração
+398. gerador-cartoes-estudo | Gerador de Flashcards Texto | educacao | pergunta e resposta
+399. embaralhador-perguntas | Embaralhador de Perguntas | educacao | ordem aleatória
+400. gerador-certificado-texto | Gerador de Texto de Certificado | educacao | modelo de certificado
+401. gerador-recibo | Gerador de Recibo | administrativo | texto de recibo
+402. gerador-declaracao-simples | Gerador de Declaração Simples | administrativo | modelo básico
+403. gerador-contrato-simples | Gerador de Contrato Simples | administrativo | modelo básico
+404. gerador-procuracao-simples | Gerador de Procuração Simples | administrativo | modelo básico
+405. gerador-carta-formal | Gerador de Carta Formal | administrativo | texto formatado
+406. gerador-oficio | Gerador de Ofício | administrativo | modelo simples
+407. gerador-ata-reuniao | Gerador de Ata de Reunião | administrativo | texto estruturado
+408. gerador-orcamento | Gerador de Orçamento | administrativo | itens e total
+409. calculadora-reajuste-contrato | Calculadora de Reajuste de Contrato | administrativo | percentual de reajuste
+410. calculadora-multa-contratual | Calculadora de Multa Contratual | administrativo | percentual sobre valor
+411. calculadora-prazo-processual-simples | Calculadora de Prazo Processual Simples | administrativo | contagem básica de dias
+412. contador-caracteres-documento | Contador de Caracteres para Documento | administrativo | limite de texto
+413. formatador-cnpj | Formatador de CNPJ | administrativo | aplicar máscara
+414. desformatador-cnpj | Desformatador de CNPJ | administrativo | remover máscara
+415. formatador-cpf | Formatador de CPF | administrativo | aplicar máscara
+416. desformatador-cpf | Desformatador de CPF | administrativo | remover máscara
+417. formatador-cep | Formatador de CEP | administrativo | aplicar máscara
+418. desformatador-cep | Desformatador de CEP | administrativo | remover máscara
+419. formatador-telefone | Formatador de Telefone | administrativo | aplicar máscara
+420. desformatador-telefone | Desformatador de Telefone | administrativo | remover máscara
+421. gerador-numero-protocolo | Gerador de Número de Protocolo | administrativo | gerar protocolo
+422. gerador-numero-pedido | Gerador de Número de Pedido | administrativo | gerar número
+423. gerador-codigo-barras-fake | Gerador de Código de Barras Fake | administrativo | numeração simples
+424. gerador-chave-pix-aleatoria | Gerador de Chave PIX Aleatória Fake | administrativo | valor de teste
+425. formatador-moeda-brl | Formatador de Moeda BRL | administrativo | formatar número em real
+426. gerador-paleta-cores | Gerador de Paleta de Cores | design | paletas aleatórias
+427. conversor-hex-rgb | Conversor de HEX para RGB | design | converter cor
+428. conversor-rgb-hex | Conversor de RGB para HEX | design | converter cor
+429. conversor-rgb-hsl | Conversor de RGB para HSL | design | converter cor
+430. conversor-hsl-rgb | Conversor de HSL para RGB | design | converter cor
+431. seletor-cor-complementar | Gerador de Cor Complementar | design | cor oposta
+432. seletor-cor-analogica | Gerador de Cores Análogas | design | combinação cromática
+433. seletor-cor-triade | Gerador de Cores em Tríade | design | combinação cromática
+434. gerador-gradiente-css | Gerador de Gradiente CSS | design | gradientes lineares
+435. gerador-box-shadow-css | Gerador de Box Shadow CSS | design | sombra CSS
+436. gerador-text-shadow-css | Gerador de Text Shadow CSS | design | sombra texto
+437. gerador-border-radius-css | Gerador de Border Radius CSS | design | bordas arredondadas
+438. gerador-clamp-css | Gerador de Clamp CSS | design | tipografia responsiva
+439. gerador-grid-css | Gerador de Grid CSS | design | grid básico
+440. gerador-flex-css | Gerador de Flex CSS | design | container flex
+441. gerador-botao-css | Gerador de Botão CSS | design | botão estilizado
+442. gerador-card-css | Gerador de Card CSS | design | bloco estilizado
+443. gerador-loader-css | Gerador de Loader CSS | design | animação básica
+444. gerador-aspect-ratio-css | Gerador de Aspect Ratio CSS | design | proporção
+445. gerador-media-query | Gerador de Media Query | design | breakpoints
+446. calculadora-contraste-cores | Calculadora de Contraste de Cores | design | contraste entre duas cores
+447. verificador-legibilidade-cores | Verificador de Legibilidade de Cores | design | texto e fundo
+448. gerador-favicon-texto | Gerador de Favicon Texto | design | favicon com letra
+449. gerador-placeholder-avatar | Gerador de Avatar Placeholder | design | avatar com iniciais
+450. gerador-padrao-xadrez-css | Gerador de Padrão Xadrez CSS | design | background pattern
+451. gerador-numero-aleatorio | Gerador de Número Aleatório | utilitarios | random simples
+452. gerador-numero-loteria | Gerador de Números de Loteria | utilitarios | números aleatórios sem repetição
+453. sorteador-nomes | Sorteador de Nomes | utilitarios | sorteio em lista
+454. sorteador-item-lista | Sorteador de Item da Lista | utilitarios | escolher um item
+455. sorteador-times | Sorteador de Times | utilitarios | dividir equipes
+456. lancador-moeda | Lançador de Moeda | utilitarios | cara ou coroa
+457. rolagem-dado | Rolagem de Dado | utilitarios | dado de 6 faces
+458. rolagem-dados-rpg | Rolagem de Dados RPG | utilitarios | d4 d6 d8 d10 d12 d20
+459. gerador-senha-pin | Gerador de PIN | utilitarios | pin numérico
+460. gerador-codigo-verificacao | Gerador de Código de Verificação | utilitarios | código numérico
+461. gerador-codigo-cupom | Gerador de Código de Cupom | utilitarios | cupom aleatório
+462. gerador-id-curto | Gerador de ID Curto | utilitarios | id alfanumérico
+463. embaralhador-lista | Embaralhador de Lista | utilitarios | ordem aleatória
+464. removedor-itens-duplicados-lista | Removedor de Duplicados da Lista | utilitarios | lista única
+465. contador-itens-lista | Contador de Itens da Lista | utilitarios | total de linhas/itens
+466. divisor-lista-em-blocos | Divisor de Lista em Blocos | utilitarios | grupos por tamanho
+467. mesclador-listas | Mesclador de Listas | utilitarios | unir listas
+468. intercalador-listas | Intercalador de Listas | utilitarios | alternar itens
+469. gerador-codigo-morse | Gerador de Código Morse | utilitarios | texto para morse
+470. decoder-codigo-morse | Decoder de Código Morse | utilitarios | morse para texto
+471. gerador-nome-arquivo-seguro | Gerador de Nome de Arquivo Seguro | utilitarios | limpar nome
+472. removedor-caracteres-especiais-arquivo | Removedor de Caracteres de Nome de Arquivo | utilitarios | sanitizar
+473. gerador-resumo-lista | Gerador de Resumo de Lista | utilitarios | total e estatísticas simples
+474. calculadora-percentual-lista | Calculadora Percentual em Lista | utilitarios | percentual por item
+475. gerador-linha-do-tempo-texto | Gerador de Linha do Tempo em Texto | utilitarios | eventos em sequência
+476. leitor-csv-basico | Leitor CSV Básico | dados | parsear csv em tabela
+477. leitor-json-basico | Leitor JSON Básico | dados | parsear json em tabela
+478. leitor-xml-basico | Leitor XML Básico | dados | parsear xml em árvore simples
+479. json-para-tabela-html | JSON para Tabela HTML | dados | tabela visual
+480. csv-para-tabela-html | CSV para Tabela HTML | dados | tabela visual
+481. xml-para-tabela-html | XML para Tabela HTML | dados | tabela visual simples
+482. tabela-html-para-json | Tabela HTML para JSON | dados | extrair estrutura
+483. tabela-html-para-csv | Tabela HTML para CSV | dados | extrair estrutura
+484. gerador-tabela-html | Gerador de Tabela HTML | dados | tabela a partir de colunas/linhas
+485. gerador-markdown-table | Gerador de Tabela Markdown | dados | tabela markdown
+486. markdown-table-para-html | Markdown Table para HTML | dados | converter tabela
+487. html-para-markdown-table | HTML para Markdown Table | dados | converter tabela
+488. removedor-colunas-csv | Removedor de Colunas CSV | dados | selecionar colunas
+489. extrator-colunas-csv | Extrator de Colunas CSV | dados | selecionar colunas
+490. inversor-linhas-colunas | Inversor de Linhas e Colunas | dados | transpor tabela
+491. gerador-matriz-aleatoria | Gerador de Matriz Aleatória | dados | matriz numérica
+492. somador-colunas | Somador de Colunas | dados | somatório por coluna
+493. media-colunas | Média de Colunas | dados | média por coluna
+494. contador-registros | Contador de Registros | dados | contar linhas/tabela
+495. gerador-indice-array-js | Gerador de Array JS | dados | lista para código
+496. gerador-indice-array-php | Gerador de Array PHP | dados | lista para código
+497. gerador-objeto-json | Gerador de Objeto JSON | dados | chave valor
+498. parser-chave-valor | Parser de Chave=Valor | dados | converter em estrutura
+499. conversor-chave-valor-json | Conversor Chave=Valor para JSON | dados | converter estrutura
+500. conversor-json-chave-valor | Conversor JSON para Chave=Valor | dados | converter estrutura
