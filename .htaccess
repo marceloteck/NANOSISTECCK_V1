@@ -1,0 +1,51 @@
+RewriteEngine On
+
+RewriteCond %{THE_REQUEST} \s/+admin\.php[\s?] [NC]
+RewriteRule ^admin\.php$ /admin [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+politica-privacidade\.php[\s?] [NC]
+RewriteRule ^politica-privacidade\.php$ /politica-de-privacidade [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+termos-de-uso\.php[\s?] [NC]
+RewriteRule ^termos-de-uso\.php$ /termos-de-uso [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+ferramentas/index-ferramentas\.php[\s?] [NC]
+RewriteRule ^ferramentas/index-ferramentas\.php$ /ferramentas [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+ferramentas/([a-z0-9-]+)\.php[\s?] [NC]
+RewriteRule ^ferramentas/([a-z0-9-]+)\.php$ /ferramentas/$1 [R=301,L]
+
+RewriteRule ^admin/?$ admin/index.php [L,QSA]
+RewriteRule ^ferramentas/?$ ferramentas/index-ferramentas.php [L,QSA]
+RewriteRule ^ferramentas/([a-z0-9-]+)/?$ ferramentas/$1.php [L,QSA]
+RewriteRule ^politica-de-privacidade/?$ politica-privacidade.php [L,QSA]
+RewriteRule ^termos-de-uso/?$ termos-de-uso.php [L,QSA]
+RewriteRule ^sitemap\.xml$ sitemap.php [L,QSA]
+RewriteRule ^robots\.txt$ robots.php [L,QSA]
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/javascript "access plus 7 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header append Cache-Control "public"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>

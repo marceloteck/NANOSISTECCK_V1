@@ -1,18 +1,37 @@
 {
   "branding": {
-    "site_name": "NANOSISTECCK",
-    "description": "Ecossistema de ferramentas digitais úteis, rápidas e inteligentes."
+    "site_name": "NANOSISTECCK Tools",
+    "short_name": "NANOSISTECCK",
+    "description": "Ecossistema de ferramentas digitais úteis, rápidas e inteligentes.",
+    "tagline": "Ferramentas online para finanças, texto, produtividade e automação."
+  },
+  "company": {
+    "name": "NANOSISTECCK",
+    "url": "https://tools.nanosistecck.com",
+    "logo": "https://tools.nanosistecck.com/assets/brand/og-default.svg",
+    "email": "",
+    "telephone": ""
+  },
+  "social": {
+    "twitter": ""
   },
   "ads": {
     "leaderboard": {
       "enabled": false,
       "html": "",
-      "fallback_text": "📢 Espaço para Anúncio – Google AdSense"
+      "fallback_text": "Espaço para anúncio - Google AdSense"
     },
     "rectangle": {
       "enabled": false,
       "html": "",
-      "fallback_text": "📢 Espaço para Anúncio – Google AdSense"
+      "fallback_text": "Espaço para anúncio - Google AdSense"
     }
+  },
+  "seo": {
+    "default_image": "https://tools.nanosistecck.com/assets/brand/og-default.svg",
+    "default_title": "Ferramentas Online Profissionais | NANOSISTECCK Tools",
+    "default_description": "Ferramentas online rápidas para finanças, texto, produtividade e desenvolvimento.",
+    "default_keywords": "ferramentas online, calculadoras online, geradores online, produtividade",
+    "pages": {}
   }
 }

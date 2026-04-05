@@ -1,51 +1,43 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Termos de Uso | NANOSISTECCK Tools</title>
-  <meta name="description" content="Termos de Uso do NANOSISTECCK Tools. Leia os termos e condições de uso das ferramentas." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tools.nanosistecck.com/termos-de-uso.php" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header class="site-header" id="site-header"></header>
-  <main>
-    <div class="tool-page">
-      <h1 style="margin-bottom:1.5rem;">Termos de Uso</h1>
-      <div class="seo-content">
-        <p>Última atualização: Janeiro de 2025</p>
-        <p>Ao acessar e usar o <strong>NANOSISTECCK Tools</strong>, você concorda com os seguintes termos.</p>
+<?php
 
-        <h2>1. Uso das Ferramentas</h2>
-        <p>As ferramentas disponíveis neste site são fornecidas gratuitamente para uso pessoal, educacional e profissional. É proibido usar as ferramentas para atividades ilegais, fraudulentas ou prejudiciais.</p>
+declare(strict_types=1);
 
-        <h2>2. Gerador de CPF</h2>
-        <p>Os CPFs gerados pelo sistema são exclusivamente para fins de <strong>desenvolvimento, testes e educação</strong>. O uso desses números para fraudes, cadastros falsos ou qualquer atividade ilegal é estritamente proibido e constitui crime, podendo gerar responsabilidade civil e criminal.</p>
+require_once __DIR__ . '/config/bootstrap.php';
 
-        <h2>3. Precisão das Informações</h2>
-        <p>As calculadoras e ferramentas são fornecidas para fins informativos. Os resultados são baseados nos dados inseridos pelo usuário. O NANOSISTECCK não se responsabiliza por decisões financeiras tomadas com base nos resultados das calculadoras.</p>
+ns_redirect_legacy_url('/termos-de-uso');
+ns_render_page_start('terms');
+?>
+<main>
+  <div class="tool-page">
+    <nav class="breadcrumb" aria-label="Navegação breadcrumb">
+      <a href="<?= ns_escape(ns_href('/')) ?>">Início</a>
+      <span class="sep">›</span>
+      <span>Termos de Uso</span>
+    </nav>
 
-        <h2>4. Disponibilidade</h2>
-        <p>Nos esforçamos para manter o site disponível 24 horas por dia, mas não garantimos disponibilidade contínua. Podemos interromper ou modificar os serviços a qualquer momento.</p>
+    <h1 style="margin-bottom:1.5rem;">Termos de Uso</h1>
+    <div class="seo-content">
+      <p>Última atualização: abril de 2026</p>
+      <p>Ao acessar o <strong>NANOSISTECCK Tools</strong>, você concorda com estes termos para uso das ferramentas, conteúdos e recursos administrativos da plataforma.</p>
 
-        <h2>5. Propriedade Intelectual</h2>
-        <p>Todo o conteúdo deste site, incluindo código, design e textos, são propriedade do NANOSISTECCK ou de seus licenciadores. É proibida a reprodução sem autorização.</p>
+      <h2>1. Uso permitido</h2>
+      <p>As ferramentas são fornecidas para uso pessoal, educacional e profissional legítimo. É proibido utilizá-las para fraude, abuso, automação maliciosa ou qualquer prática ilegal.</p>
 
-        <h2>6. Modificações</h2>
-        <p>Reservamos o direito de modificar estes termos a qualquer momento. A continuidade do uso do site após modificações constitui aceite dos novos termos.</p>
+      <h2>2. Resultados e responsabilidade</h2>
+      <p>Calculadoras e geradores entregam resultados baseados nas entradas informadas. O usuário é responsável por validar números, fórmulas e impacto operacional antes de tomar decisões financeiras, jurídicas ou técnicas.</p>
 
-        <h2>7. Lei Aplicável</h2>
-        <p>Estes termos são regidos pelas leis brasileiras. Qualquer disputa será submetida à jurisdição dos tribunais brasileiros.</p>
-      </div>
+      <h2>3. Uso do gerador de CPF</h2>
+      <p>O gerador de CPF existe exclusivamente para desenvolvimento, QA e educação. O uso de documentos gerados para fraude, cadastro indevido ou falsidade ideológica é proibido.</p>
+
+      <h2>4. Disponibilidade do serviço</h2>
+      <p>A plataforma pode evoluir, ser modificada ou ficar indisponível temporariamente por manutenção, implantação ou ajustes de infraestrutura sem aviso prévio.</p>
+
+      <h2>5. Propriedade intelectual</h2>
+      <p>Layout, código, textos, estrutura e identidade visual pertencem ao NANOSISTECCK, exceto quando indicado de outra forma. Reprodução integral sem autorização não é permitida.</p>
+
+      <h2>6. Mudanças futuras</h2>
+      <p>Os termos podem ser ajustados a qualquer momento. O uso contínuo do site após alterações representa concordância com a versão vigente.</p>
     </div>
-  </main>
-  <footer class="site-footer" id="site-footer"></footer>
-  <script src="js/main.js"></script>
-  <script src="js/layout.js"></script>
-</body>
-</html>
+  </div>
+</main>
+<?php ns_render_page_end(); ?>

@@ -1,37 +1,38 @@
-/* =============================================
-   NANOSISTECCK – main.js
-   Utilitários globais reutilizados
-   ============================================= */
+document.addEventListener('DOMContentLoaded', function () {
+  var hamburger = document.getElementById('hamburger');
+  var nav = document.getElementById('main-nav');
 
-(function markActiveLink() {
-  document.addEventListener('DOMContentLoaded', function () {
-    setTimeout(function () {
-      const current = window.location.pathname;
-      document.querySelectorAll('.main-nav a').forEach(function (link) {
-        const href = link.getAttribute('href') || '';
-        if (!href) return;
-        const cleanHref = href.replace(/index\.php$/, '').replace(/\/$/, '');
-        const cleanCurrent = current.replace(/index\.php$/, '').replace(/\/$/, '');
-        if (cleanHref && cleanCurrent.endsWith(cleanHref)) {
-          link.classList.add('active');
-        }
-      });
-    }, 50);
-  });
-})();
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', function () {
+      var isOpen = nav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!hamburger.contains(event.target) && !nav.contains(event.target)) {
+        nav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+});
 
 function copyToClipboard(text, btn) {
   navigator.clipboard.writeText(text).then(function () {
-    if (!btn) return;
-    const original = btn.innerHTML;
+    if (!btn) {
+      return;
+    }
+
+    var original = btn.innerHTML;
     btn.innerHTML = '✓ Copiado!';
     btn.classList.add('copied');
+
     setTimeout(function () {
       btn.innerHTML = original;
       btn.classList.remove('copied');
     }, 2000);
   }).catch(function () {
-    const ta = document.createElement('textarea');
+    var ta = document.createElement('textarea');
     ta.value = text;
     document.body.appendChild(ta);
     ta.select();
@@ -52,8 +53,11 @@ function fmtNum(n, decimals) {
 }
 
 function showResult(boxId) {
-  const box = document.getElementById(boxId);
-  if (!box) return;
+  var box = document.getElementById(boxId);
+  if (!box) {
+    return;
+  }
+
   box.classList.add('show');
   box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }

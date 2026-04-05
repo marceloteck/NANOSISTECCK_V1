@@ -1,0 +1,17 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="32" fill="#0F1B35"/>
+  <circle cx="180" cy="146" r="140" fill="#1A73E8" fill-opacity="0.25"/>
+  <circle cx="1018" cy="514" r="180" fill="#00C48C" fill-opacity="0.18"/>
+  <rect x="90" y="84" width="154" height="154" rx="28" fill="url(#paint0_linear)"/>
+  <path d="M141 188V133H162.4L194 173.8V133H216V188H194.6L163 147.2V188H141Z" fill="white"/>
+  <text x="90" y="320" fill="white" font-size="68" font-family="Inter, Arial, sans-serif" font-weight="800">NANOSISTECCK Tools</text>
+  <text x="90" y="390" fill="#D5E1FF" font-size="30" font-family="Inter, Arial, sans-serif" font-weight="500">Ferramentas online para finanças, texto e produtividade.</text>
+  <rect x="90" y="450" width="290" height="58" rx="14" fill="#FF6B2B"/>
+  <text x="132" y="488" fill="white" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="700">SEO técnico e UX forte</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="90" y1="84" x2="244" y2="238" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A73E8"/>
+      <stop offset="1" stop-color="#00C48C"/>
+    </linearGradient>
+  </defs>
+</svg>
