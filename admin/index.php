@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach (['leaderboard', 'rectangle'] as $slotName) {
         $updated['ads'][$slotName]['enabled'] = isset($_POST[$slotName . '_enabled']);
         $updated['ads'][$slotName]['html'] = trim((string) ($_POST[$slotName . '_html'] ?? ''));
-        $updated['ads'][$slotName]['fallback_text'] = trim((string) ($_POST[$slotName . '_fallback'] ?? 'Espaço para anúncio'));
+        $updated['ads'][$slotName]['fallback_text'] = trim((string) ($_POST[$slotName . '_fallback'] ?? 'Espa�o para an�ncio'));
     }
 
     $updated['seo']['pages'] = $updated['seo']['pages'] ?? [];
@@ -58,9 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (ns_save_settings($updated)) {
         $settings = ns_load_settings();
-        $saveMessage = 'Configurações salvas com sucesso.';
+        $saveMessage = 'Configura��es salvas com sucesso.';
     } else {
-        $errorMessage = 'Não foi possível gravar o arquivo de configuração.';
+        $errorMessage = 'N�o foi poss�vel gravar o arquivo de configura��o.';
     }
 }
 
@@ -70,13 +70,13 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
   <section class="section">
     <div class="container admin-shell">
       <div class="section-header admin-header">
-        <span class="section-eyebrow">Administração</span>
-        <h1>Painel de SEO, branding e conteúdo técnico</h1>
-        <p>Gerencie meta tags, compartilhamento social, anúncios e identidade do site sem duplicar configuração entre páginas.</p>
+        <span class="section-eyebrow">Administra��o</span>
+        <h1>Painel de SEO, branding e conte�do t�cnico</h1>
+        <p>Gerencie meta tags, compartilhamento social, an�ncios e identidade do site sem duplicar configura��o entre p�ginas.</p>
       </div>
 
       <?php if ($saveMessage !== null): ?>
-        <div class="notice notice-success"><span>✓</span><span><?= ns_escape($saveMessage) ?></span></div>
+        <div class="notice notice-success"><span>?</span><span><?= ns_escape($saveMessage) ?></span></div>
       <?php endif; ?>
 
       <?php if ($errorMessage !== null): ?>
@@ -88,8 +88,8 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
           <h2>Base implantada</h2>
           <ul class="seo-content">
             <li>URLs limpas com redirect 301</li>
-            <li>Canonical, Open Graph e Twitter Cards por página</li>
-            <li>Sitemap e robots dinâmicos</li>
+            <li>Canonical, Open Graph e Twitter Cards por p�gina</li>
+            <li>Sitemap e robots din�micos</li>
             <li>Estrutura pronta para novas ferramentas</li>
           </ul>
         </aside>
@@ -109,7 +109,7 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="brand_description">Descrição institucional</label>
+                <label for="brand_description">Descri��o institucional</label>
                 <textarea class="form-control" id="brand_description" name="brand_description" rows="3"><?= ns_escape($settings['branding']['description']) ?></textarea>
               </div>
               <div class="form-group">
@@ -137,7 +137,7 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
                 <input class="form-control" id="company_logo" name="company_logo" value="<?= ns_escape($settings['company']['logo']) ?>" />
               </div>
               <div class="form-group">
-                <label for="default_image">Imagem SEO padrão</label>
+                <label for="default_image">Imagem SEO padr�o</label>
                 <input class="form-control" id="default_image" name="default_image" value="<?= ns_escape($settings['seo']['default_image']) ?>" />
               </div>
             </div>
@@ -158,24 +158,24 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
           </section>
 
           <section class="tool-box">
-            <h2>SEO padrão</h2>
+            <h2>SEO padr�o</h2>
             <div class="form-group">
-              <label for="default_title">Título padrão</label>
+              <label for="default_title">T�tulo padr�o</label>
               <input class="form-control" id="default_title" name="default_title" value="<?= ns_escape($settings['seo']['default_title']) ?>" />
             </div>
             <div class="form-group">
-              <label for="default_description">Descrição padrão</label>
+              <label for="default_description">Descri��o padr�o</label>
               <textarea class="form-control" id="default_description" name="default_description" rows="3"><?= ns_escape($settings['seo']['default_description']) ?></textarea>
             </div>
             <div class="form-group">
-              <label for="default_keywords">Keywords padrão</label>
+              <label for="default_keywords">Keywords padr�o</label>
               <input class="form-control" id="default_keywords" name="default_keywords" value="<?= ns_escape($settings['seo']['default_keywords']) ?>" />
             </div>
           </section>
 
           <section class="tool-box">
-            <h2>Anúncios</h2>
-            <?php foreach (['leaderboard' => 'Leaderboard', 'rectangle' => 'Retângulo'] as $slotKey => $slotLabel): ?>
+            <h2>An�ncios</h2>
+            <?php foreach (['leaderboard' => 'Leaderboard', 'rectangle' => 'Ret�ngulo'] as $slotKey => $slotLabel): ?>
               <div class="admin-subsection">
                 <div class="form-group">
                   <label><input type="checkbox" name="<?= ns_escape($slotKey) ?>_enabled" <?= !empty($settings['ads'][$slotKey]['enabled']) ? 'checked' : '' ?> /> Habilitar <?= ns_escape($slotLabel) ?></label>
@@ -193,7 +193,7 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
           </section>
 
           <section class="tool-box">
-            <h2>SEO por página</h2>
+            <h2>SEO por p�gina</h2>
             <?php foreach ($pages as $pageKey => $page): ?>
               <?php if ($pageKey === 'admin') { continue; } ?>
               <?php $meta = ns_page_meta($pageKey); ?>

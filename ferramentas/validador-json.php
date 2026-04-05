@@ -1,0 +1,25 @@
+<?php
+declare(strict_types=1);
+require_once dirname(__DIR__) . '/config/bootstrap.php';
+ns_redirect_legacy_url('/ferramentas/validador-json');
+ns_render_page_start('tool:validador-json');
+?>
+<main><div class="tool-page">
+  <nav class="breadcrumb" aria-label="Navega��o breadcrumb"><a href="<?= ns_escape(ns_href('/')) ?>">In�cio</a><span class="sep">�</span><a href="<?= ns_escape(ns_href('/ferramentas')) ?>">Ferramentas</a><span class="sep">�</span><span>Validador JSON</span></nav>
+  <?php ns_render_ad_slot('leaderboard'); ?>
+  <div class="tool-header"><div class="tool-page-icon" style="background:linear-gradient(135deg,#eafbf0,#cff4dd);">?</div><div><h1>Validador JSON Online</h1><p>Verifique se um JSON est� v�lido com retorno instant�neo e feedback simples direto no navegador.</p><span class="tag tag-green">Desenvolvimento</span></div></div>
+  <div class="tool-box">
+    <div class="form-group"><label for="json-validar">JSON</label><textarea id="json-validar" class="form-control" rows="10" placeholder='{"status":"ok"}'></textarea></div>
+    <div class="form-row"><button type="button" class="btn btn-primary" onclick="validarJSON()">Validar JSON</button><button type="button" class="btn btn-outline" onclick="limparValidadorJSON()">Limpar</button><button type="button" class="copy-btn" onclick="copiarValidadorJSON(this)">Copiar diagn�stico</button></div>
+    <div class="result-box show" id="resultado-validar-json"><div class="result-label">Diagn�stico</div><div class="result-value" id="json-diagnostico">Aguardando valida��o</div><div id="json-detalhe" style="margin-top:1rem;color:var(--text2);">Cole um JSON e clique no bot�o para validar.</div></div>
+  </div>
+  <?php ns_render_ad_slot('rectangle'); ?>
+  <div class="seo-content"><h2>O que � essa ferramenta</h2><p>O validador JSON online verifica se a estrutura de um JSON est� correta antes do uso em API, configura��o, front-end ou integra��o. Em vez de descobrir o erro em tempo de execu��o, voc� pode testar o conte�do antes e economizar tempo de debug.</p><p>Como a an�lise roda no navegador, o resultado � instant�neo e n�o exige envio do conte�do para o servidor.</p><h2>Como usar</h2><p>Cole o JSON no campo principal e clique em validar JSON. Se a sintaxe estiver correta, a p�gina indica que o conte�do � v�lido. Caso contr�rio, exibe uma mensagem clara informando que existe erro de estrutura.</p><p>Depois voc� pode copiar o diagn�stico gerado para compartilhar com outro desenvolvedor ou registrar em um ticket.</p><h2>Exemplo de uso</h2><p>Se um payload de API est� falhando, voc� pode colar o conte�do na ferramenta e validar em segundos. Isso ajuda a detectar rapidamente v�rgulas sobrando, aspas incorretas, chaves abertas ou outros problemas comuns.</p><p>� uma utilidade simples, mas muito pr�tica para produtividade t�cnica.</p><h2>Perguntas frequentes</h2><h3>Mostra o objeto formatado?</h3><p>N�o nesta vers�o. Aqui o foco � validar e informar se a estrutura est� correta.</p><h3>Meus dados s�o enviados para fora?</h3><p>N�o. O processamento � local, feito no pr�prio navegador.</p><h3>Funciona com arrays JSON?</h3><p>Sim. A ferramenta valida tanto objetos quanto arrays JSON v�lidos.</p></div>
+  <div class="related-tools"><h2>Ferramentas relacionadas</h2><div class="related-grid"><a href="<?= ns_escape(ns_href('/ferramentas/formatador-json')) ?>" class="related-card"><span class="related-card-icon">??</span> Formatador JSON</a><a href="<?= ns_escape(ns_href('/ferramentas/conversor-texto')) ?>" class="related-card"><span class="related-card-icon">??</span> Conversor de Texto</a><a href="<?= ns_escape(ns_href('/ferramentas/gerador-senhas')) ?>" class="related-card"><span class="related-card-icon">??</span> Gerador de Senhas</a></div></div>
+</div></main>
+<script>
+function validarJSON(){const texto=document.getElementById('json-validar').value.trim();if(!texto){document.getElementById('json-diagnostico').textContent='Nenhum JSON informado';document.getElementById('json-detalhe').textContent='Cole um JSON para validar.';return;}try{JSON.parse(texto);document.getElementById('json-diagnostico').textContent='JSON v�lido';document.getElementById('json-detalhe').textContent='A estrutura foi lida corretamente pelo analisador do navegador.';}catch(error){document.getElementById('json-diagnostico').textContent='JSON inv�lido';document.getElementById('json-detalhe').textContent='H� erro de sintaxe no conte�do informado. Revise chaves, colchetes, v�rgulas e aspas.';}}
+function limparValidadorJSON(){document.getElementById('json-validar').value='';document.getElementById('json-diagnostico').textContent='Aguardando valida��o';document.getElementById('json-detalhe').textContent='Cole um JSON e clique no bot�o para validar.';}
+function copiarValidadorJSON(button){copyToClipboard(document.getElementById('json-diagnostico').textContent+'\n'+document.getElementById('json-detalhe').textContent,button);}
+</script>
+<?php ns_render_page_end(); ?>

@@ -20,7 +20,7 @@ ns_render_page_start('home');
             <span>⚡</span> <?= count($tools) ?> Ferramentas gratuitas
           </div>
           <h1>Ferramentas online<br><span>rápidas, úteis e profissionais</span></h1>
-          <p>Calculadoras financeiras, geradores e conversores prontos para uso imediato. Tudo com foco em velocidade, mobile-first e experiência limpa.</p>
+          <p>Use calculadoras, geradores e utilitários online com resposta imediata, instruções claras e páginas pensadas para resolver tarefas reais sem complicação.</p>
           <div class="hero-actions">
             <a href="<?= ns_escape(ns_href('/ferramentas')) ?>" class="btn btn-primary btn-lg">Ver ferramentas</a>
             <a href="<?= ns_escape(ns_href('/ferramentas')) ?>" class="btn btn-secondary btn-lg">Catálogo completo</a>
@@ -73,8 +73,8 @@ ns_render_page_start('home');
     <div class="container">
       <div class="section-header">
         <span class="section-eyebrow">Ferramentas</span>
-        <h2 id="tools-heading">Catálogo técnico preparado para crescer</h2>
-        <p>Cada ferramenta agora nasce dentro de uma base comum de SEO, schema, canonical e URLs limpas. Isso reduz erro humano e acelera futuras entregas.</p>
+        <h2 id="tools-heading">Ferramentas úteis para tarefas do dia a dia</h2>
+        <p>Encontre páginas objetivas para calcular, validar, converter e escrever melhor. Cada ferramenta foi organizada para entregar resposta rápida, explicação simples e navegação fácil em qualquer tela.</p>
       </div>
 
       <div class="tools-grid">
@@ -104,30 +104,30 @@ ns_render_page_start('home');
     <div class="container">
       <div style="max-width:760px; margin:0 auto;">
         <span class="section-eyebrow">Sobre o projeto</span>
-        <h2 id="about-heading">SEO técnico, UX estável e manutenção previsível</h2>
+        <h2 id="about-heading">Conteúdo útil, resposta rápida e navegação simples</h2>
         <p style="margin:.85rem 0 1.5rem; font-size:1.05rem; color:var(--text2);">
-          O <strong>NANOSISTECCK Tools</strong> foi reorganizado para entregar performance, rastreabilidade e gestão centralizada. O público enxerga páginas rápidas; o admin controla branding e meta tags sem retrabalho.
+          O <strong>NANOSISTECCK Tools</strong> foi estruturado para ajudar o usuário a resolver tarefas práticas com rapidez. O foco é oferecer páginas leves, explicativas e úteis, sem excesso de etapas e com informações fáceis de aplicar.
         </p>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; margin-top:2rem;">
           <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
             <div style="font-size:1.8rem;margin-bottom:.5rem;">⚡</div>
             <h3 style="font-size:1rem;margin-bottom:.4rem;">Carregamento enxuto</h3>
-            <p style="font-size:.88rem;">Header e footer saem direto do PHP, sem depender de injeção via JavaScript para o conteúdo estrutural.</p>
+            <p style="font-size:.88rem;">As páginas foram feitas para abrir rápido, especialmente em celular, com foco em experiência direta e sem peso desnecessário.</p>
           </div>
           <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
             <div style="font-size:1.8rem;margin-bottom:.5rem;">🔎</div>
-            <h3 style="font-size:1rem;margin-bottom:.4rem;">SEO completo</h3>
-            <p style="font-size:.88rem;">Canonical, Open Graph, Twitter Card, JSON-LD e sitemap dinâmico alinhados com as páginas reais.</p>
+            <h3 style="font-size:1rem;margin-bottom:.4rem;">SEO bem estruturado</h3>
+            <p style="font-size:.88rem;">Title, descrição, URLs limpas e dados estruturados ajudam cada ferramenta a ser encontrada e entendida com mais facilidade.</p>
           </div>
           <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
             <div style="font-size:1.8rem;margin-bottom:.5rem;">📱</div>
-            <h3 style="font-size:1rem;margin-bottom:.4rem;">Mobile first</h3>
-            <p style="font-size:.88rem;">Grid, menu e navegação foram mantidos responsivos para preservar a experiência em telas pequenas.</p>
+            <h3 style="font-size:1rem;margin-bottom:.4rem;">Experiência simples</h3>
+            <p style="font-size:.88rem;">A navegação foi pensada para reduzir atrito: preencher, calcular, entender o resultado e seguir para a próxima tarefa.</p>
           </div>
           <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
             <div style="font-size:1.8rem;margin-bottom:.5rem;">🧩</div>
-            <h3 style="font-size:1rem;margin-bottom:.4rem;">Escalável</h3>
-            <p style="font-size:.88rem;">O catálogo centraliza links, categorias e cards, o que diminui risco ao adicionar novas ferramentas no futuro.</p>
+            <h3 style="font-size:1rem;margin-bottom:.4rem;">Catálogo escalável</h3>
+            <p style="font-size:.88rem;">Novas ferramentas entram com padrão consistente de conteúdo, SEO e usabilidade para manter qualidade à medida que o site cresce.</p>
           </div>
         </div>
       </div>
@@ -137,23 +137,23 @@ ns_render_page_start('home');
   <section class="section section--alt" aria-label="Boas práticas de SEO e estrutura">
     <div class="container">
       <div style="max-width:760px; margin:0 auto;" class="seo-content">
-        <h2>Como o site ficou mais forte para Google e compartilhamento</h2>
-        <p>O projeto agora usa uma base técnica única para evitar inconsistência entre páginas, mantendo títulos, descrições, canonical, schema e metas sociais sob a mesma regra.</p>
+        <h2>Como o site foi estruturado para ser mais útil para o usuário</h2>
+        <p>O objetivo não é apenas listar ferramentas, mas entregar páginas que expliquem o que fazem, como usar e quando o resultado pode ajudar. Isso melhora a experiência do visitante e fortalece a qualidade editorial do projeto.</p>
 
         <h3>URLs amigáveis e consistentes</h3>
-        <p>As ferramentas passam a responder em rotas limpas como <strong>/ferramentas/juros-simples</strong>, com redirecionamento 301 do formato antigo com <strong>.php</strong>.</p>
+        <p>As ferramentas usam rotas curtas e claras, o que facilita compartilhamento, entendimento do tema da página e navegação entre conteúdos relacionados.</p>
 
-        <h3>Estrutura que o crawler entende</h3>
-        <p>Header, footer e links internos agora saem prontos no HTML. Isso melhora legibilidade para robôs, aumenta previsibilidade do DOM e reduz dependência de JavaScript para SEO básico.</p>
+        <h3>Estrutura fácil de interpretar</h3>
+        <p>Os elementos principais da página, como navegação, links internos e conteúdo essencial, já chegam prontos no HTML para melhorar leitura por usuários e buscadores.</p>
 
-        <h3>Gestão centralizada</h3>
-        <p>O painel administrativo em <strong>/admin</strong> permite editar as meta tags de todas as páginas e ferramentas sem abrir arquivo por arquivo.</p>
+        <h3>Conteúdo com padrão consistente</h3>
+        <p>O projeto mantém uma base central para organizar meta tags, categorias e navegação, o que ajuda a preservar clareza, qualidade e manutenção previsível.</p>
 
         <ul>
-          <li>Dados estruturados com JSON-LD para site, coleção de ferramentas e páginas individuais</li>
-          <li>Robots e sitemap gerados pelo código a partir do catálogo real do projeto</li>
-          <li>Links internos consistentes entre home, catálogo e ferramentas relacionadas</li>
-          <li>Base pronta para novas páginas sem duplicar SEO manualmente</li>
+          <li>Ferramentas com explicação prática, resultado claro e ações rápidas como copiar e limpar</li>
+          <li>Links internos consistentes entre home, catálogo e páginas relacionadas</li>
+          <li>Base técnica preparada para crescer sem perder padrão de SEO e usabilidade</li>
+          <li>Conteúdo pensado para ser útil de verdade, e não apenas preencher espaço</li>
         </ul>
       </div>
     </div>

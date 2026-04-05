@@ -1,0 +1,30 @@
+<?php
+declare(strict_types=1);
+require_once dirname(__DIR__) . '/config/bootstrap.php';
+ns_redirect_legacy_url('/ferramentas/gerador-meta-tags');
+ns_render_page_start('tool:gerador-meta-tags');
+?>
+<main><div class="tool-page">
+  <nav class="breadcrumb" aria-label="Navegação breadcrumb"><a href="<?= ns_escape(ns_href('/')) ?>">Início</a><span class="sep">›</span><a href="<?= ns_escape(ns_href('/ferramentas')) ?>">Ferramentas</a><span class="sep">›</span><span>Gerador de Meta Tags</span></nav>
+  <?php ns_render_ad_slot('leaderboard'); ?>
+  <div class="tool-header"><div class="tool-page-icon" style="background:linear-gradient(135deg,#fff7ea,#ffe2b9);">🏷️</div><div><h1>Gerador de Meta Tags</h1><p>Monte meta tags básicas de SEO para título, descrição, robots e Open Graph com visual rápido e código pronto.</p><span class="tag tag-orange">SEO</span></div></div>
+  <div class="tool-box">
+    <div class="form-row"><div class="form-group"><label for="meta-title">Title</label><input type="text" id="meta-title" class="form-control" /></div><div class="form-group"><label for="meta-url">URL canônica</label><input type="text" id="meta-url" class="form-control" /></div></div>
+    <div class="form-group"><label for="meta-description">Meta description</label><textarea id="meta-description" class="form-control" rows="4"></textarea></div>
+    <div class="form-row"><div class="form-group"><label for="meta-robots">Robots</label><input type="text" id="meta-robots" class="form-control" value="index,follow" /></div><div class="form-group"><label for="meta-image">Imagem OG</label><input type="text" id="meta-image" class="form-control" /></div></div>
+    <div class="form-row"><button type="button" class="btn btn-primary" onclick="gerarMetaTags()">Gerar meta tags</button><button type="button" class="btn btn-outline" onclick="limparMetaTags()">Limpar</button><button type="button" class="copy-btn" onclick="copiarMetaTags(this)">Copiar código</button></div>
+    <div class="notice notice-warn" id="erro-meta" style="display:none;"><span>⚠️</span><span id="erro-meta-texto"></span></div>
+    <div class="form-group" style="margin-top:1rem;"><label for="meta-codigo">Código gerado</label><textarea id="meta-codigo" class="form-control" rows="12" readonly></textarea></div>
+  </div>
+  <?php ns_render_ad_slot('rectangle'); ?>
+  <div class="seo-content"><h2>O que é essa ferramenta</h2><p>O gerador de meta tags cria um bloco básico de código HTML com tags importantes para SEO e compartilhamento social. Isso inclui title, description, canonical, robots e campos principais de Open Graph.</p><p>É útil para páginas institucionais, posts, produtos e projetos que precisam de uma base rápida de otimização técnica.</p><h2>Como usar</h2><p>Preencha os campos principais com título, descrição, URL e imagem, depois clique em gerar meta tags. O código aparece em uma área pronta para cópia. Se faltarem dados essenciais, a ferramenta pede o preenchimento mínimo.</p><p>Isso agiliza a montagem inicial de páginas e checklists de publicação.</p><h2>Exemplo de uso</h2><p>Ao lançar uma nova landing page ou artigo, você pode usar essa ferramenta para gerar a base técnica antes de subir o conteúdo ao site. Isso ajuda a evitar esquecimento de campos importantes.</p><p>Ela não substitui estratégia editorial, mas acelera a etapa operacional do SEO técnico.</p><h2>Perguntas frequentes</h2><h3>Ela cria schema também?</h3><p>Não nesta versão. O foco é gerar meta tags básicas e úteis para implementação rápida.</p><h3>Posso usar em qualquer site?</h3><p>Sim. Basta adaptar o código ao HTML do projeto.</p><h3>O código já sai pronto para copiar?</h3><p>Sim. A ferramenta monta o bloco em formato fácil de colar.</p></div>
+  <div class="related-tools"><h2>Ferramentas relacionadas</h2><div class="related-grid"><a href="<?= ns_escape(ns_href('/ferramentas/gerador-robots-txt')) ?>" class="related-card"><span class="related-card-icon">🤖</span> Robots.txt</a><a href="<?= ns_escape(ns_href('/ferramentas/gerador-slug-url')) ?>" class="related-card"><span class="related-card-icon">🔗</span> Gerador de Slug</a><a href="<?= ns_escape(ns_href('/ferramentas/formatador-json')) ?>" class="related-card"><span class="related-card-icon">🧩</span> Formatador JSON</a></div></div>
+</div></main>
+<script>
+function erroMeta(msg){document.getElementById('erro-meta-texto').textContent=msg;document.getElementById('erro-meta').style.display='flex';}
+function limparErroMeta(){document.getElementById('erro-meta').style.display='none';}
+function gerarMetaTags(){const title=document.getElementById('meta-title').value.trim();const description=document.getElementById('meta-description').value.trim();const url=document.getElementById('meta-url').value.trim();const robots=document.getElementById('meta-robots').value.trim()||'index,follow';const image=document.getElementById('meta-image').value.trim();limparErroMeta();if(!title||!description||!url){erroMeta('Preencha pelo menos title, meta description e URL canônica.');return;}let codigo='<title>'+title+'</title>\n';codigo+='<meta name=\"description\" content=\"'+description+'\" />\n';codigo+='<meta name=\"robots\" content=\"'+robots+'\" />\n';codigo+='<link rel=\"canonical\" href=\"'+url+'\" />\n';codigo+='<meta property=\"og:title\" content=\"'+title+'\" />\n';codigo+='<meta property=\"og:description\" content=\"'+description+'\" />\n';codigo+='<meta property=\"og:url\" content=\"'+url+'\" />\n';if(image){codigo+='<meta property=\"og:image\" content=\"'+image+'\" />\n';}document.getElementById('meta-codigo').value=codigo;}
+function limparMetaTags(){['meta-title','meta-description','meta-url','meta-image'].forEach(function(id){document.getElementById(id).value='';});document.getElementById('meta-robots').value='index,follow';document.getElementById('meta-codigo').value='';limparErroMeta();}
+function copiarMetaTags(button){const texto=document.getElementById('meta-codigo').value;if(!texto){erroMeta('Gere o código antes de copiar.');return;}copyToClipboard(texto,button);}
+</script>
+<?php ns_render_page_end(); ?>

@@ -22,7 +22,7 @@ ns_render_page_start('tools');
     <div class="section-header" style="text-align:left; margin-bottom:2rem;">
       <span class="section-eyebrow">Ferramentas</span>
       <h1>Todas as Ferramentas Online</h1>
-      <p>Catálogo organizado por categoria, com páginas otimizadas para SEO técnico, compartilhamento e crescimento futuro do projeto.</p>
+      <p>Explore calculadoras, ferramentas de texto, utilitários para desenvolvimento e páginas de SEO feitas para responder rápido e explicar bem cada resultado.</p>
     </div>
 
     <?php ns_render_ad_slot('leaderboard'); ?>
@@ -45,8 +45,8 @@ ns_render_page_start('tools');
     <?php endforeach; ?>
 
     <div class="seo-content" style="max-width:760px; margin:3rem auto 0;">
-      <h2>Estrutura preparada para novas ferramentas</h2>
-      <p>O catálogo agora usa um mapa central de ferramentas. Isso significa menos repetição de links, mais consistência de SEO e inclusão mais segura de novas páginas no sitemap, footer e painel administrativo.</p>
+      <h2>Como usar o catálogo</h2>
+      <p>Escolha uma categoria, abra a ferramenta desejada e siga as instruções da própria página. Cada utilitário foi pensado para entregar resultado imediato, linguagem clara e navegação simples, mantendo um padrão mais forte de qualidade editorial e utilidade real para o visitante.</p>
     </div>
   </div>
 </main>

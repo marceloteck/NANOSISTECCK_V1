@@ -1,23 +1,23 @@
 # NANOSISTECCK Tools
 
-> **"Não estamos criando sites, estamos construindo ativos digitais."**
+> **"N�o estamos criando sites, estamos construindo ativos digitais."**
 
 Plataforma de ferramentas online gratuitas do ecossistema **NANOSISTECCK**.
 Foco inicial: `tools.nanosistecck.com`
 
 ---
 
-## 🚀 Funcionalidades Implementadas
+## ?? Funcionalidades Implementadas
 
-### ✅ Página Principal
+### ? P�gina Principal
 - Hero section com CTAs
-- Barra de estatísticas
+- Barra de estat�sticas
 - Grid de 10 ferramentas com cards interativos
-- Seção "Sobre" com benefícios
-- Conteúdo SEO otimizado (300+ palavras)
-- Slots de anúncios (AdSense-ready): topo, meio, rodapé
+- Se��o "Sobre" com benef�cios
+- Conte�do SEO otimizado (300+ palavras)
+- Slots de an�ncios (AdSense-ready): topo, meio, rodap�
 
-### ✅ 10 Ferramentas Individuais (cada uma com SEO completo)
+### ? 10 Ferramentas Individuais (cada uma com SEO completo)
 
 | # | Ferramenta | URL |
 |---|-----------|-----|
@@ -32,105 +32,105 @@ Foco inicial: `tools.nanosistecck.com`
 | 9 | Conversor de Texto | `/ferramentas/conversor-texto.php` |
 | 10 | Gerador de CPF (educacional) | `/ferramentas/gerador-cpf.php` |
 
-### ✅ SEO
-- Title + meta description únicos por página
+### ? SEO
+- Title + meta description �nicos por p�gina
 - H1, H2, H3 estruturados
-- 300+ palavras de conteúdo por ferramenta
-- URLs amigáveis
+- 300+ palavras de conte�do por ferramenta
+- URLs amig�veis
 - Schema.org (WebSite) na home
 - Canonical URLs
 - Open Graph + Twitter Card
 - `sitemap.xml` completo
 - `robots.txt` configurado
-- Breadcrumbs navegáveis
+- Breadcrumbs naveg�veis
 
-### ✅ Layout e Design
-- CSS modular e reutilizável (`css/style.css`)
+### ? Layout e Design
+- CSS modular e reutiliz�vel (`css/style.css`)
 - JS global (`js/main.js`) + injetor de layout (`js/layout.js`)
-- Header e Footer dinâmicos (injetados via JS)
-- Design minimalista tecnológico
+- Header e Footer din�micos (injetados via JS)
+- Design minimalista tecnol�gico
 - Paleta: azul (#1a73e8) + verde (#00c48c) + laranja (#ff6b2b)
 - Tipografia Inter (Google Fonts)
 - Mobile First / Responsivo
 - Menu hamburguer para mobile
 
-### ✅ Monetização (base pronta)
-- 3 slots de anúncio por página (topo leaderboard, meio rectangle, rodapé)
-- Placeholders substituíveis por tags AdSense com 1 linha de HTML
+### ? Monetiza��o (base pronta)
+- 3 slots de an�ncio por p�gina (topo leaderboard, meio rectangle, rodap�)
+- Placeholders substitu�veis por tags AdSense com 1 linha de HTML
 
-### ✅ Páginas Institucionais
-- Política de Privacidade
+### ? P�ginas Institucionais
+- Pol�tica de Privacidade
 - Termos de Uso
 
 ---
 
-## 📁 Estrutura de Arquivos
+## ?? Estrutura de Arquivos
 
 ```
 /
-├── index.php                     → Página inicial
-├── sitemap.xml                    → Sitemap para SEO
-├── robots.txt                     → Regras para crawlers
-├── politica-privacidade.php
-├── termos-de-uso.php
-│
-├── css/
-│   └── style.css                  → CSS global e componentes
-│
-├── js/
-│   ├── main.js                    → Utilitários JS globais
-│   └── layout.js                  → Header/Footer dinâmicos
-│
-└── ferramentas/
-    ├── index-ferramentas.php     → Índice categorizado
-    ├── juros-simples.php
-    ├── juros-compostos.php
-    ├── simulador-financiamento.php
-    ├── calculadora-porcentagem.php
-    ├── calculadora-idade.php
-    ├── gerador-nomes.php
-    ├── gerador-senhas.php
-    ├── contador-caracteres.php
-    ├── conversor-texto.php
-    └── gerador-cpf.php
++-- index.php                     ? P�gina inicial
++-- sitemap.xml                    ? Sitemap para SEO
++-- robots.txt                     ? Regras para crawlers
++-- politica-privacidade.php
++-- termos-de-uso.php
+�
++-- css/
+�   +-- style.css                  ? CSS global e componentes
+�
++-- js/
+�   +-- main.js                    ? Utilit�rios JS globais
+�   +-- layout.js                  ? Header/Footer din�micos
+�
++-- ferramentas/
+    +-- index-ferramentas.php     ? �ndice categorizado
+    +-- juros-simples.php
+    +-- juros-compostos.php
+    +-- simulador-financiamento.php
+    +-- calculadora-porcentagem.php
+    +-- calculadora-idade.php
+    +-- gerador-nomes.php
+    +-- gerador-senhas.php
+    +-- contador-caracteres.php
+    +-- conversor-texto.php
+    +-- gerador-cpf.php
 ```
 
 ---
 
-## 🔜 Próximas Etapas Recomendadas
+## ?? Pr�ximas Etapas Recomendadas
 
-### Semana 1 – Publicação
-- [ ] Registrar domínio `nanosistecck.com` e subdomínio `tools`
-- [ ] Hospedar o site (Cloudflare Pages, Netlify, Vercel — gratuito)
+### Semana 1 � Publica��o
+- [ ] Registrar dom�nio `nanosistecck.com` e subdom�nio `tools`
+- [ ] Hospedar o site (Cloudflare Pages, Netlify, Vercel � gratuito)
 - [ ] Cadastrar no Google Search Console
-- [ ] Solicitar indexação manual das 12 páginas
-- [ ] Substituir placeholders de anúncio pelo código real do AdSense
+- [ ] Solicitar indexa��o manual das 12 p�ginas
+- [ ] Substituir placeholders de an�ncio pelo c�digo real do AdSense
 
-### Semana 2 – Crescimento
-- [ ] Adicionar favicon e ícone do site
+### Semana 2 � Crescimento
+- [ ] Adicionar favicon e �cone do site
 - [ ] Adicionar Google Analytics (GA4)
-- [ ] Criar mais 10-20 ferramentas (expansão)
+- [ ] Criar mais 10-20 ferramentas (expans�o)
 - [ ] Compartilhar no Facebook, Pinterest e grupos do WhatsApp
 
-### Fase 2 – Expansão
-- [ ] `dev.nanosistecck.com` — snippets e códigos
-- [ ] `receitas.nanosistecck.com` — conteúdo de alto tráfego
-- [ ] `jogos.nanosistecck.com` — engajamento
-- [ ] `lotofacil.nanosistecck.com` — freemium
+### Fase 2 � Expans�o
+- [ ] `dev.nanosistecck.com` � snippets e c�digos
+- [ ] `receitas.nanosistecck.com` � conte�do de alto tr�fego
+- [ ] `jogos.nanosistecck.com` � engajamento
+- [ ] `lotofacil.nanosistecck.com` � freemium
 
 ---
 
-## 🛠️ Modelo de Negócio
+## ??? Modelo de Neg�cio
 
-1. **Tráfego Orgânico (SEO)** — cada ferramenta = 1 página indexável
-2. **Google AdSense** — 3 slots por página (pronto para ativar)
-3. **Produtos Digitais** — futuro
-4. **Área Premium** — futuro
-5. **Afiliados** — futuro
+1. **Tr�fego Org�nico (SEO)** � cada ferramenta = 1 p�gina index�vel
+2. **Google AdSense** � 3 slots por p�gina (pronto para ativar)
+3. **Produtos Digitais** � futuro
+4. **�rea Premium** � futuro
+5. **Afiliados** � futuro
 
 ---
 
-## 🎨 Design System
+## ?? Design System
 
 | Token | Valor |
 |-------|-------|
@@ -143,14 +143,14 @@ Foco inicial: `tools.nanosistecck.com`
 
 ---
 
-## 📊 Métricas a Acompanhar
+## ?? M�tricas a Acompanhar
 
-- Páginas indexadas no Google Search Console
-- Acessos diários (Google Analytics)
-- Tempo médio na página
-- Taxa de rejeição por ferramenta
-- Receita AdSense (após aprovação)
+- P�ginas indexadas no Google Search Console
+- Acessos di�rios (Google Analytics)
+- Tempo m�dio na p�gina
+- Taxa de rejei��o por ferramenta
+- Receita AdSense (ap�s aprova��o)
 
 ---
 
-*NANOSISTECCK – Executar com inteligência, publicar com velocidade, escalar com consistência.*
+*NANOSISTECCK � Executar com intelig�ncia, publicar com velocidade, escalar com consist�ncia.*

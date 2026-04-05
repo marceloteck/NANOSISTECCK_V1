@@ -2,6 +2,153 @@
 
 declare(strict_types=1);
 
+function ns_normalize_text_output(string $html): string
+{
+    static $replace = null;
+
+    if ($replace === null) {
+        $replace = [
+            'Â©' => '©',
+            'Ã¡' => 'á',
+            'Ã¢' => 'â',
+            'Ã£' => 'ã',
+            'Ã ' => 'à',
+            'Ã¤' => 'ä',
+            'Ã©' => 'é',
+            'Ãª' => 'ê',
+            'Ã­' => 'í',
+            'Ã³' => 'ó',
+            'Ã´' => 'ô',
+            'Ãµ' => 'õ',
+            'Ãº' => 'ú',
+            'Ã¼' => 'ü',
+            'Ã§' => 'ç',
+            'Ã' => 'Á',
+            'Ã‚' => 'Â',
+            'Ãƒ' => 'Ã',
+            'Ã€' => 'À',
+            'Ã‰' => 'É',
+            'ÃŠ' => 'Ê',
+            'Ã“' => 'Ó',
+            'Ã”' => 'Ô',
+            'Ã•' => 'Õ',
+            'Ãš' => 'Ú',
+            'Ã‡' => 'Ç',
+            'â€”' => '—',
+            'â€“' => '-',
+            'â€˜' => "'",
+            'â€™' => "'",
+            'â€œ' => '"',
+            'â€' => '"',
+            'â€¦' => '...',
+            'â€¢' => '•',
+            'â„¢' => '™',
+            'â€º' => '›',
+            'â€¹' => '‹',
+            'âš ï¸' => '⚠️',
+            'âš–ï¸' => '⚖️',
+            'â“' => '❓',
+            'ðŸ’°' => '💰',
+            'ðŸ“ˆ' => '📈',
+            'ðŸ ' => '🏠',
+            'ðŸŽ‚' => '🎂',
+            'ðŸ·ï¸' => '🏷️',
+            'ðŸ·' => '🏷️',
+            'ðŸ“' => '📐',
+            'ðŸ“' => '📝',
+            'ðŸ’µ' => '💵',
+            'ðŸ§®' => '🧮',
+            'ðŸ’¹' => '💹',
+            'ðŸ“Š' => '📊',
+            'ðŸ”„' => '🔄',
+            'ðŸ”' => '🔢',
+            'ðŸ¦' => '🐦',
+            'ðŸ”' => '🔁',
+            'ðŸ” ' => '🔠',
+            'ðŸ”¡' => '🔡',
+            'ðŸ–£ï¸' => '🖣️',
+            'ðŸ›£ï¸' => '🛣️',
+            'ðŸ’¾' => '💾',
+            'ðŸ§¾' => '🧾',
+            'ðŸ§­' => '🧭',
+            'ðŸªª' => '🪪',
+            'ðŸ”' => '🔐',
+            'ðŸ”“' => '🔓',
+            'ðŸ”—' => '🔗',
+            'ðŸ“§' => '📧',
+            'ðŸŒ' => '🌐',
+            'ï¿½rea' => 'área',
+            'ï¿½reas' => 'áreas',
+            'ï¿½gua' => 'água',
+            'ï¿½ngulo' => 'ângulo',
+            'ï¿½rvore' => 'árvore',
+            'ï¿½cido' => 'ácido',
+            'O que ï¿½ essa ferramenta' => 'O que é essa ferramenta',
+            'O que � essa ferramenta' => 'O que é essa ferramenta',
+            'Como usar' => 'Como usar',
+            'Inï¿½cio' => 'Início',
+            'In�cio' => 'Início',
+            'Navegaï¿½ï¿½o' => 'Navegação',
+            'Navega��o' => 'Navegação',
+            'breadcrumb"><a href="<?= ns_escape(ns_href(\'/\')) ?>">Início</a><span class="sep">ï¿½</span>' => 'breadcrumb"><a href="<?= ns_escape(ns_href(\'/\')) ?>">Início</a><span class="sep">›</span>',
+            'breadcrumb"><a href="<?= ns_escape(ns_href(\'/\')) ?>">Início</a><span class="sep">�</span>' => 'breadcrumb"><a href="<?= ns_escape(ns_href(\'/\')) ?>">Início</a><span class="sep">›</span>',
+            '<span class="sep">ï¿½</span>' => '<span class="sep">›</span>',
+            '<span class="sep">�</span>' => '<span class="sep">›</span>',
+            'Calculadora de ï¿½rea do Cï¿½rculo' => 'Calculadora de Área do Círculo',
+            'Calculadora de ï¿½rea do Quadrado' => 'Calculadora de Área do Quadrado',
+            'Calculadora de ï¿½rea do Triï¿½ngulo' => 'Calculadora de Área do Triângulo',
+            'cï¿½rculo' => 'círculo',
+            'Cï¿½rculo' => 'Círculo',
+            'triï¿½ngulo' => 'triângulo',
+            'Triï¿½ngulo' => 'Triângulo',
+            'Matemï¿½tica' => 'Matemática',
+            'Finanï¿½as' => 'Finanças',
+            'Saï¿½de' => 'Saúde',
+            'Conversï¿½o' => 'Conversão',
+            'informaï¿½ï¿½o' => 'informação',
+            'validaï¿½ï¿½o' => 'validação',
+            'fabricaï¿½ï¿½o' => 'fabricação',
+            'anotaï¿½ï¿½o' => 'anotação',
+            'operaï¿½ï¿½o' => 'operação',
+            'aplicaï¿½ï¿½o' => 'aplicação',
+            'relaï¿½ï¿½o' => 'relação',
+            'superfï¿½cie' => 'superfície',
+            'pï¿½gina' => 'página',
+            'fï¿½rmula' => 'fórmula',
+            'clï¿½ssica' => 'clássica',
+            'cï¿½lculo' => 'cálculo',
+            'cï¿½lculos' => 'cálculos',
+            'rï¿½pido' => 'rápido',
+            'rï¿½pida' => 'rápida',
+            'botï¿½o' => 'botão',
+            'orï¿½amento' => 'orçamento',
+            'peï¿½as' => 'peças',
+            'tï¿½cnicas' => 'técnicas',
+            'nï¿½mero' => 'número',
+            'vï¿½lido' => 'válido',
+            'vï¿½lida' => 'válida',
+            'uï¿½' => 'u²',
+            'ï¿½' => 'é',
+            '??' => '⚠️',
+            '>?</div>' => '>⭕</div>',
+        ];
+    }
+
+    return strtr($html, $replace);
+}
+
+function ns_start_output_normalizer(): void
+{
+    static $started = false;
+
+    if ($started) {
+        return;
+    }
+
+    ob_start('ns_normalize_text_output');
+    $started = true;
+}
+
 function ns_catalog(): array
 {
     static $catalog;
@@ -19,8 +166,8 @@ function ns_default_settings(): array
         'branding' => [
             'site_name' => 'NANOSISTECCK Tools',
             'short_name' => 'NANOSISTECCK',
-            'description' => 'Ecossistema de ferramentas digitais úteis, rápidas e inteligentes.',
-            'tagline' => 'Ferramentas online para finanças, texto, produtividade e automação.',
+            'description' => 'Ferramentas online explicativas, rápidas e úteis para cálculos, texto, SEO e produtividade.',
+            'tagline' => 'Use calculadoras, geradores e validadores com resposta imediata e conteúdo fácil de entender.',
         ],
         'company' => [
             'name' => 'NANOSISTECCK',
@@ -47,7 +194,7 @@ function ns_default_settings(): array
         'seo' => [
             'default_image' => 'https://tools.nanosistecck.com/assets/brand/og-default.svg',
             'default_title' => 'Ferramentas Online Profissionais | NANOSISTECCK Tools',
-            'default_description' => 'Ferramentas online rápidas para finanças, texto, produtividade e desenvolvimento.',
+            'default_description' => 'Ferramentas online rápidas e explicativas para finanças, texto, SEO, produtividade e desenvolvimento.',
             'default_keywords' => 'ferramentas online, calculadoras online, geradores online, produtividade',
             'pages' => [],
         ],
@@ -502,6 +649,7 @@ function ns_render_footer(): void
 
 function ns_render_page_start(string $pageKey, array $options = []): void
 {
+    ns_start_output_normalizer();
     $meta = ns_page_meta($pageKey, $options['meta'] ?? []);
     $settings = ns_load_settings();
     $twitter = trim((string) ($settings['social']['twitter'] ?? ''));
