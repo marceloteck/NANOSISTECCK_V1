@@ -78,20 +78,7 @@ ns_render_page_start('tool:juros-compostos');
 
     <?php ns_render_ad_slot('rectangle'); ?>
 
-    <div class="seo-content">
-      <h2>O que são juros compostos?</h2>
-      <p>Nos juros compostos, o rendimento de cada período volta para a base de cálculo seguinte, criando o efeito de juros sobre juros.</p>
-      <h3>Por que isso importa</h3>
-      <p>Em horizontes médios e longos, pequenas diferenças na taxa mensal produzem grande variação no resultado final.</p>
-      <h3>Quando comparar</h3>
-      <ul>
-        <li>Investimentos com reinvestimento do rendimento</li>
-        <li>Simulações de aposentadoria e reserva</li>
-        <li>Comparação entre produtos financeiros</li>
-      </ul>
-    </div>
-
-    <div class="related-tools">
+    <div class="seo-content"><h2>O que esta ferramenta resolve</h2><p>Calculadora de Juros Compostos foi estruturada para resolver uma tarefa prática com execução rápida no navegador, sem instalação. Use Calculadora de Juros Compostos para executar a tarefa com rapidez.</p><h2>Quando usar</h2><p>Use quando você precisa de uma resposta imediata para trabalho, estudo, operação ou validação técnica e quer reduzir retrabalho.</p><h2>Quando NÃO usar</h2><p>Não use como única base para decisões críticas sem revisão humana, validação de contexto e conferência de unidades/entradas.</p><h2>Erros comuns</h2><ul><li>Preencher campos com unidade errada.</li><li>Interpretar resultado sem contexto do problema real.</li><li>Copiar saída sem validar premissas e limites.</li></ul><h2>Exemplo prático</h2><p>Preencha os campos com dados reais, execute, valide a interpretação exibida na tela e só então use o resultado em relatório, orçamento ou documentação.</p><h2>Boas práticas de qualidade</h2><p>Revise dados de entrada, mantenha rastreabilidade da origem dos números e faça dupla checagem quando o resultado impactar finanças, saúde, jurídico ou compliance.</p></div><div class="related-tools">
       <h2>Ferramentas relacionadas</h2>
       <div class="related-grid">
         <a href="<?= ns_escape(ns_href('/ferramentas/juros-simples')) ?>" class="related-card"><span class="related-card-icon">💰</span> Juros Simples</a>

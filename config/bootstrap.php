@@ -198,6 +198,42 @@ function ns_catalog(): array
     return $catalog;
 }
 
+function ns_tool_quality_map(): array
+{
+    static $quality;
+
+    if ($quality !== null) {
+        return $quality;
+    }
+
+    $file = __DIR__ . '/tool-quality.php';
+    if (!is_file($file)) {
+        $quality = ['summary' => ['green' => 0, 'yellow' => 0, 'red' => 0], 'tools' => []];
+        return $quality;
+    }
+
+    $loaded = require $file;
+    $quality = is_array($loaded) ? $loaded : ['summary' => ['green' => 0, 'yellow' => 0, 'red' => 0], 'tools' => []];
+
+    return $quality;
+}
+
+function ns_tool_quality(string $slug): array
+{
+    $map = ns_tool_quality_map();
+    $tool = $map['tools'][$slug] ?? null;
+
+    if (!is_array($tool)) {
+        return ['class' => 'yellow', 'score' => 0, 'reason' => 'default'];
+    }
+
+    return [
+        'class' => (string) ($tool['class'] ?? 'yellow'),
+        'score' => (int) ($tool['score'] ?? 0),
+        'reason' => (string) ($tool['reason'] ?? 'default'),
+    ];
+}
+
 function ns_default_settings(): array
 {
     return [
@@ -566,17 +602,25 @@ function ns_page_definitions(): array
     ];
 
     foreach ($catalog['tools'] as $tool) {
+        $quality = ns_tool_quality((string) $tool['slug']);
+        $robots = $quality['class'] === 'red'
+            ? 'noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'
+            : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1';
+
         $pages[$tool['page_key']] = [
             'page_key' => $tool['page_key'],
             'title' => $tool['name'] . ' Online | ' . $siteName,
             'description' => $tool['lead'],
             'keywords' => $tool['keywords'],
             'path' => '/ferramentas/' . $tool['slug'],
-            'robots' => 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1',
+            'robots' => $robots,
             'schema' => 'tool',
             'tool_slug' => $tool['slug'],
             'priority' => $tool['priority'],
             'changefreq' => $tool['changefreq'],
+            'quality_class' => $quality['class'],
+            'quality_score' => $quality['score'],
+            'quality_reason' => $quality['reason'],
         ];
     }
 
@@ -910,6 +954,28 @@ function ns_render_page_start(string $pageKey, array $options = []): void
 
 function ns_render_page_end(): void
 {
+    $path = ns_current_path();
+    if (str_starts_with($path, '/ferramentas/')) {
+        $slug = basename($path);
+        $quality = ns_tool_quality($slug);
+
+        if ($quality['class'] === 'red') {
+            echo '<section class="container tool-quality tool-quality-red">';
+            echo '<h2>Página em espera de melhoria</h2>';
+            echo '<p>Esta ferramenta continua disponível para uso, mas está temporariamente fora do índice de busca até passar por revisão completa de qualidade, utilidade e conteúdo.</p>';
+            echo '</section>';
+        } elseif ($quality['class'] === 'green') {
+            echo '<section class="container tool-quality tool-quality-green">';
+            echo '<h2>Guia rápido para uso responsável</h2>';
+            echo '<ul>';
+            echo '<li><strong>Quando usar:</strong> quando você precisa de resposta imediata para uma tarefa prática.</li>';
+            echo '<li><strong>Quando não usar:</strong> para decisões críticas sem validação técnica ou revisão humana.</li>';
+            echo '<li><strong>Erros comuns:</strong> unidade incorreta, campo vazio e interpretação sem contexto do resultado.</li>';
+            echo '</ul>';
+            echo '</section>';
+        }
+    }
+
     ns_render_footer();
     echo '  <script src="' . ns_escape(ns_asset_url('js/main.js')) . '"></script>' . PHP_EOL;
     echo '</body>' . PHP_EOL;
