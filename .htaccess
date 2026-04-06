@@ -18,9 +18,16 @@ RewriteRule ^ferramentas/index-ferramentas\.php$ /ferramentas [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+ferramentas/([a-z0-9-]+)\.php[\s?] [NC]
 RewriteRule ^ferramentas/([a-z0-9-]+)\.php$ /ferramentas/$1 [R=301,L]
 
+# ADMIN
 RewriteRule ^admin/?$ admin/index.php [L,QSA]
+RewriteRule ^admin/cadastro/?$ admin/cadastro.php [L,QSA]
+RewriteRule ^admin/login/?$ admin/login.php [L,QSA]
+
+# FERRAMENTAS
 RewriteRule ^ferramentas/?$ ferramentas/index-ferramentas.php [L,QSA]
 RewriteRule ^ferramentas/([a-z0-9-]+)/?$ ferramentas/$1.php [L,QSA]
+
+# PÁGINAS
 RewriteRule ^politica-de-privacidade/?$ politica-privacidade.php [L,QSA]
 RewriteRule ^termos-de-uso/?$ termos-de-uso.php [L,QSA]
 RewriteRule ^sitemap\.xml$ sitemap.php [L,QSA]

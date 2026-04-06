@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 require_once dirname(__DIR__) . '/config/bootstrap.php';
 
+$stderr = defined('STDERR') ? STDERR : fopen('php://stderr', 'w');
+$stdout = defined('STDOUT') ? STDOUT : fopen('php://stdout', 'w');
+
 if (PHP_SAPI !== 'cli') {
-    fwrite(STDERR, "Este script deve ser executado via CLI.\n");
+    fwrite($stderr, "Este script deve ser executado via CLI.\n");
     exit(1);
 }
 
@@ -13,12 +16,12 @@ $username = trim((string) ($argv[1] ?? ''));
 $password = (string) ($argv[2] ?? '');
 
 if ($username === '' || $password === '') {
-    fwrite(STDERR, "Uso: php scripts/create_admin_user.php <usuario> <senha>\n");
+    fwrite($stderr, "Uso: php scripts/create_admin_user.php <usuario> <senha>\n");
     exit(1);
 }
 
 if (strlen($password) < 12) {
-    fwrite(STDERR, "A senha precisa ter no mínimo 12 caracteres.\n");
+    fwrite($stderr, "A senha precisa ter no mínimo 12 caracteres.\n");
     exit(1);
 }
 
@@ -34,4 +37,4 @@ $stmt->execute([
     ':password_hash' => $hash,
 ]);
 
-fwrite(STDOUT, "Usuário administrador '{$normalizedUsername}' criado/atualizado com sucesso.\n");
+fwrite($stdout, "Usuário administrador '{$normalizedUsername}' criado/atualizado com sucesso.\n");
