@@ -22,6 +22,7 @@ RewriteRule ^ferramentas/([a-z0-9-]+)\.php$ /ferramentas/$1 [R=301,L]
 RewriteRule ^admin/?$ admin/index.php [L,QSA]
 RewriteRule ^admin/cadastro/?$ admin/cadastro.php [L,QSA]
 RewriteRule ^admin/login/?$ admin/login.php [L,QSA]
+RewriteRule ^admin/([a-z0-9-]+)/?$ admin/$1.php [L,QSA]
 
 # FERRAMENTAS
 RewriteRule ^ferramentas/?$ ferramentas/index-ferramentas.php [L,QSA]
