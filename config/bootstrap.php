@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/admin-db.php';
+
 function ns_normalize_text_output(string $html): string
 {
     static $replace = null;
@@ -128,6 +130,42 @@ function ns_normalize_text_output(string $html): string
             'vï¿½lido' => 'válido',
             'vï¿½lida' => 'válida',
             'uï¿½' => 'u²',
+            'N�o' => 'Não',
+            'n�o' => 'não',
+            'voc�' => 'você',
+            'est�' => 'está',
+            's�o' => 'são',
+            '�til' => 'útil',
+            'p�gina' => 'página',
+            'conte�do' => 'conteúdo',
+            'bot�o' => 'botão',
+            'f�rmula' => 'fórmula',
+            'm�dia' => 'média',
+            'dist�ncia' => 'distância',
+            'amig�vel' => 'amigável',
+            'instant�neo' => 'instantâneo',
+            'pr�tica' => 'prática',
+            'usu�rio' => 'usuário',
+            'refer�ncia' => 'referência',
+            'c�digo' => 'código',
+            'v�lido' => 'válido',
+            'inv�lido' => 'inválido',
+            'poss�vel' => 'possível',
+            'ser�' => 'será',
+            'quil�metros' => 'quilômetros',
+            'tri�ngulo' => 'triângulo',
+            'Matem�tica' => 'Matemática',
+            'Tr�s' => 'Três',
+            'pre�o' => 'preço',
+            'rela�' => 'relaç',
+            'Navega�' => 'Navegaç',
+            'propor�' => 'proporç',
+            'valida�' => 'validaç',
+            '�o' => 'ão',
+            '�es' => 'ões',
+            '�rea' => 'área',
+            'c�lculo' => 'cálculo',
+            'In�cio' => 'Início',
             'ï¿½' => 'é',
             '??' => '⚠️',
             '>?</div>' => '>⭕</div>',
@@ -249,57 +287,6 @@ function ns_save_settings(array $settings): bool
     return file_put_contents(ns_settings_file(), $encoded . PHP_EOL) !== false;
 }
 
-function ns_admin_db_file(): string
-{
-    return dirname(__DIR__) . '/data/admin.sqlite';
-}
-
-function ns_admin_db(): PDO
-{
-    static $pdo;
-
-    if ($pdo instanceof PDO) {
-        return $pdo;
-    }
-
-    $dbFile = ns_admin_db_file();
-    $dbDir = dirname($dbFile);
-
-    if (!is_dir($dbDir)) {
-        mkdir($dbDir, 0755, true);
-    }
-
-    $pdo = new PDO('sqlite:' . $dbFile);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-    ns_admin_run_migrations($pdo);
-
-    return $pdo;
-}
-
-function ns_admin_run_migrations(PDO $pdo): void
-{
-    $pdo->exec('CREATE TABLE IF NOT EXISTS admin_users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT NOT NULL UNIQUE,
-        password_hash TEXT NOT NULL,
-        is_active INTEGER NOT NULL DEFAULT 1,
-        last_login_at TEXT DEFAULT NULL,
-        created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
-    )');
-
-    $pdo->exec('CREATE TABLE IF NOT EXISTS admin_login_attempts (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT NOT NULL,
-        ip_address TEXT NOT NULL,
-        user_agent TEXT NOT NULL,
-        success INTEGER NOT NULL DEFAULT 0,
-        attempted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
-    )');
-}
-
 function ns_admin_start_session(): void
 {
     if (session_status() === PHP_SESSION_ACTIVE) {
@@ -330,7 +317,7 @@ function ns_admin_is_rate_limited(string $username): bool
     $pdo = ns_admin_db();
     $stmt = $pdo->prepare('SELECT COUNT(*) FROM admin_login_attempts
         WHERE success = 0
-          AND attempted_at >= datetime("now", "-15 minutes")
+          AND attempted_at >= DATE_SUB(UTC_TIMESTAMP(), INTERVAL 15 MINUTE)
           AND (username = :username OR ip_address = :ip)');
     $stmt->execute([
         ':username' => strtolower(trim($username)),
@@ -376,7 +363,7 @@ function ns_admin_login(array $user): void
     $_SESSION['admin_logged_at'] = time();
 
     $pdo = ns_admin_db();
-    $stmt = $pdo->prepare('UPDATE admin_users SET last_login_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = :id');
+    $stmt = $pdo->prepare('UPDATE admin_users SET last_login_at = UTC_TIMESTAMP(), updated_at = UTC_TIMESTAMP() WHERE id = :id');
     $stmt->execute([':id' => (int) $user['id']]);
 }
 
