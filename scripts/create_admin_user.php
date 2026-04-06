@@ -27,7 +27,7 @@ $normalizedUsername = strtolower($username);
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $stmt = $pdo->prepare('INSERT INTO admin_users (username, password_hash, is_active) VALUES (:username, :password_hash, 1)
-    ON CONFLICT(username) DO UPDATE SET password_hash = excluded.password_hash, is_active = 1, updated_at = CURRENT_TIMESTAMP');
+    ON DUPLICATE KEY UPDATE password_hash = VALUES(password_hash), is_active = 1, updated_at = UTC_TIMESTAMP()');
 
 $stmt->execute([
     ':username' => $normalizedUsername,

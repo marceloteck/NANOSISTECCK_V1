@@ -159,7 +159,7 @@ Foco inicial: `tools.nanosistecck.com`
 
 ## Administração segura (novo)
 
-O painel `/admin` agora exige autenticação em banco de dados SQLite (`/data/admin.sqlite`) e possui camada de segurança com:
+O painel `/admin` agora exige autenticação em banco de dados MySQL (configurado por variáveis de ambiente) e possui camada de segurança com:
 
 - Sessão com cookies `HttpOnly`, `SameSite` e proteção contra fixation.
 - Proteção CSRF em login e salvamento de configurações.
@@ -174,6 +174,8 @@ php scripts/create_admin_user.php <usuario> <senha-forte>
 ```
 
 > Recomendação: usar senha com 12+ caracteres, combinando letras, números e símbolos.
+
+Variáveis suportadas para conexão: `NS_ADMIN_DB_HOST`, `NS_ADMIN_DB_PORT`, `NS_ADMIN_DB_NAME`, `NS_ADMIN_DB_USER`, `NS_ADMIN_DB_PASS` e `NS_ADMIN_DB_CHARSET`.
 
 ### Cadastro inicial via página (apenas 1 usuário)
 
