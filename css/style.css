@@ -740,3 +740,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .tool-header { flex-direction: column; gap: .75rem; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+.tool-quality{margin:2rem auto 0;padding:1rem 1.25rem;border-radius:12px;border:1px solid var(--border);background:var(--surface)}
+.tool-quality h2{font-size:1.05rem;margin-bottom:.45rem}
+.tool-quality p,.tool-quality li{color:var(--text2);font-size:.92rem;line-height:1.55}
+.tool-quality ul{margin:.25rem 0 0 1.1rem}
+.tool-quality-red{border-color:#f3c4c4;background:#fff6f6}
+.tool-quality-green{border-color:#b7e7ce;background:#f2fff8}
