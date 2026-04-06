@@ -154,3 +154,28 @@ Foco inicial: `tools.nanosistecck.com`
 ---
 
 *NANOSISTECCK � Executar com intelig�ncia, publicar com velocidade, escalar com consist�ncia.*
+
+---
+
+## Administração segura (novo)
+
+O painel `/admin` agora exige autenticação em banco de dados SQLite (`/data/admin.sqlite`) e possui camada de segurança com:
+
+- Sessão com cookies `HttpOnly`, `SameSite` e proteção contra fixation.
+- Proteção CSRF em login e salvamento de configurações.
+- Limite de tentativas de login (5 falhas em 15 minutos por usuário/IP).
+- Registro de tentativas de login para auditoria.
+- Headers de segurança no painel administrativo (CSP, no-cache, anti-frame).
+
+### Criar/atualizar usuário admin
+
+```bash
+php scripts/create_admin_user.php <usuario> <senha-forte>
+```
+
+> Recomendação: usar senha com 12+ caracteres, combinando letras, números e símbolos.
+
+### Cadastro inicial via página (apenas 1 usuário)
+
+- Acesse `/admin/cadastro` para criar o primeiro administrador.
+- Após criar o primeiro usuário, essa página é bloqueada e passa a redirecionar automaticamente para `/admin/login`.

@@ -5,6 +5,7 @@ declare(strict_types=1);
 require_once dirname(__DIR__) . '/config/bootstrap.php';
 
 ns_redirect_legacy_url('/admin');
+ns_admin_require_auth();
 
 $settings = ns_load_settings();
 $saveMessage = null;
@@ -12,55 +13,59 @@ $errorMessage = null;
 $pages = ns_page_definitions();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $updated = $settings;
+    if (!ns_csrf_validate($_POST['csrf_token'] ?? null)) {
+        $errorMessage = 'Sessão inválida. Atualize a página e tente novamente.';
+    } else {
+        $updated = $settings;
 
-    $updated['branding']['site_name'] = trim((string) ($_POST['site_name'] ?? $settings['branding']['site_name']));
-    $updated['branding']['short_name'] = trim((string) ($_POST['short_name'] ?? $settings['branding']['short_name']));
-    $updated['branding']['description'] = trim((string) ($_POST['brand_description'] ?? $settings['branding']['description']));
-    $updated['branding']['tagline'] = trim((string) ($_POST['tagline'] ?? $settings['branding']['tagline']));
+        $updated['branding']['site_name'] = trim((string) ($_POST['site_name'] ?? $settings['branding']['site_name']));
+        $updated['branding']['short_name'] = trim((string) ($_POST['short_name'] ?? $settings['branding']['short_name']));
+        $updated['branding']['description'] = trim((string) ($_POST['brand_description'] ?? $settings['branding']['description']));
+        $updated['branding']['tagline'] = trim((string) ($_POST['tagline'] ?? $settings['branding']['tagline']));
 
-    $updated['company']['name'] = trim((string) ($_POST['company_name'] ?? $settings['company']['name']));
-    $updated['company']['url'] = rtrim(trim((string) ($_POST['company_url'] ?? $settings['company']['url'])), '/');
-    $updated['company']['logo'] = trim((string) ($_POST['company_logo'] ?? $settings['company']['logo']));
-    $updated['company']['email'] = trim((string) ($_POST['company_email'] ?? $settings['company']['email']));
-    $updated['company']['telephone'] = trim((string) ($_POST['company_telephone'] ?? $settings['company']['telephone']));
+        $updated['company']['name'] = trim((string) ($_POST['company_name'] ?? $settings['company']['name']));
+        $updated['company']['url'] = rtrim(trim((string) ($_POST['company_url'] ?? $settings['company']['url'])), '/');
+        $updated['company']['logo'] = trim((string) ($_POST['company_logo'] ?? $settings['company']['logo']));
+        $updated['company']['email'] = trim((string) ($_POST['company_email'] ?? $settings['company']['email']));
+        $updated['company']['telephone'] = trim((string) ($_POST['company_telephone'] ?? $settings['company']['telephone']));
 
-    $updated['social']['twitter'] = trim((string) ($_POST['twitter'] ?? $settings['social']['twitter']));
-    $updated['seo']['default_image'] = trim((string) ($_POST['default_image'] ?? $settings['seo']['default_image']));
-    $updated['seo']['default_title'] = trim((string) ($_POST['default_title'] ?? $settings['seo']['default_title']));
-    $updated['seo']['default_description'] = trim((string) ($_POST['default_description'] ?? $settings['seo']['default_description']));
-    $updated['seo']['default_keywords'] = trim((string) ($_POST['default_keywords'] ?? $settings['seo']['default_keywords']));
+        $updated['social']['twitter'] = trim((string) ($_POST['twitter'] ?? $settings['social']['twitter']));
+        $updated['seo']['default_image'] = trim((string) ($_POST['default_image'] ?? $settings['seo']['default_image']));
+        $updated['seo']['default_title'] = trim((string) ($_POST['default_title'] ?? $settings['seo']['default_title']));
+        $updated['seo']['default_description'] = trim((string) ($_POST['default_description'] ?? $settings['seo']['default_description']));
+        $updated['seo']['default_keywords'] = trim((string) ($_POST['default_keywords'] ?? $settings['seo']['default_keywords']));
 
-    foreach (['leaderboard', 'rectangle'] as $slotName) {
-        $updated['ads'][$slotName]['enabled'] = isset($_POST[$slotName . '_enabled']);
-        $updated['ads'][$slotName]['html'] = trim((string) ($_POST[$slotName . '_html'] ?? ''));
-        $updated['ads'][$slotName]['fallback_text'] = trim((string) ($_POST[$slotName . '_fallback'] ?? 'Espa�o para an�ncio'));
-    }
-
-    $updated['seo']['pages'] = $updated['seo']['pages'] ?? [];
-
-    foreach ($pages as $pageKey => $page) {
-        if ($pageKey === 'admin') {
-            continue;
+        foreach (['leaderboard', 'rectangle'] as $slotName) {
+            $updated['ads'][$slotName]['enabled'] = isset($_POST[$slotName . '_enabled']);
+            $updated['ads'][$slotName]['html'] = trim((string) ($_POST[$slotName . '_html'] ?? ''));
+            $updated['ads'][$slotName]['fallback_text'] = trim((string) ($_POST[$slotName . '_fallback'] ?? 'Espaço para anúncio'));
         }
 
-        $prefix = 'seo_' . preg_replace('/[^a-z0-9_:-]/i', '_', $pageKey) . '_';
-        $updated['seo']['pages'][$pageKey] = [
-            'title' => trim((string) ($_POST[$prefix . 'title'] ?? $page['title'])),
-            'description' => trim((string) ($_POST[$prefix . 'description'] ?? $page['description'])),
-            'keywords' => trim((string) ($_POST[$prefix . 'keywords'] ?? $page['keywords'])),
-            'og_title' => trim((string) ($_POST[$prefix . 'og_title'] ?? $page['title'])),
-            'og_description' => trim((string) ($_POST[$prefix . 'og_description'] ?? $page['description'])),
-            'image' => trim((string) ($_POST[$prefix . 'image'] ?? ($settings['seo']['default_image'] ?? ''))),
-            'robots' => trim((string) ($_POST[$prefix . 'robots'] ?? $page['robots'])),
-        ];
-    }
+        $updated['seo']['pages'] = $updated['seo']['pages'] ?? [];
 
-    if (ns_save_settings($updated)) {
-        $settings = ns_load_settings();
-        $saveMessage = 'Configura��es salvas com sucesso.';
-    } else {
-        $errorMessage = 'N�o foi poss�vel gravar o arquivo de configura��o.';
+        foreach ($pages as $pageKey => $page) {
+            if ($pageKey === 'admin' || $pageKey === 'admin_login' || $pageKey === 'admin_register') {
+                continue;
+            }
+
+            $prefix = 'seo_' . preg_replace('/[^a-z0-9_:-]/i', '_', $pageKey) . '_';
+            $updated['seo']['pages'][$pageKey] = [
+                'title' => trim((string) ($_POST[$prefix . 'title'] ?? $page['title'])),
+                'description' => trim((string) ($_POST[$prefix . 'description'] ?? $page['description'])),
+                'keywords' => trim((string) ($_POST[$prefix . 'keywords'] ?? $page['keywords'])),
+                'og_title' => trim((string) ($_POST[$prefix . 'og_title'] ?? $page['title'])),
+                'og_description' => trim((string) ($_POST[$prefix . 'og_description'] ?? $page['description'])),
+                'image' => trim((string) ($_POST[$prefix . 'image'] ?? ($settings['seo']['default_image'] ?? ''))),
+                'robots' => trim((string) ($_POST[$prefix . 'robots'] ?? $page['robots'])),
+            ];
+        }
+
+        if (ns_save_settings($updated)) {
+            $settings = ns_load_settings();
+            $saveMessage = 'Configurações salvas com sucesso.';
+        } else {
+            $errorMessage = 'Não foi possível gravar o arquivo de configuração.';
+        }
     }
 }
 
@@ -70,9 +75,9 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
   <section class="section">
     <div class="container admin-shell">
       <div class="section-header admin-header">
-        <span class="section-eyebrow">Administra��o</span>
-        <h1>Painel de SEO, branding e conte�do t�cnico</h1>
-        <p>Gerencie meta tags, compartilhamento social, an�ncios e identidade do site sem duplicar configura��o entre p�ginas.</p>
+        <span class="section-eyebrow">Administração</span>
+        <h1>Painel de SEO, branding e conteúdo técnico</h1>
+        <p>Gerencie meta tags, compartilhamento social, anúncios e identidade do site sem duplicar configuração entre páginas.</p>
       </div>
 
       <?php if ($saveMessage !== null): ?>
@@ -88,13 +93,14 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
           <h2>Base implantada</h2>
           <ul class="seo-content">
             <li>URLs limpas com redirect 301</li>
-            <li>Canonical, Open Graph e Twitter Cards por p�gina</li>
-            <li>Sitemap e robots din�micos</li>
+            <li>Canonical, Open Graph e Twitter Cards por página</li>
+            <li>Sitemap e robots dinâmicos</li>
             <li>Estrutura pronta para novas ferramentas</li>
           </ul>
         </aside>
 
         <form method="post" class="admin-form">
+          <input type="hidden" name="csrf_token" value="<?= ns_escape(ns_csrf_token()) ?>" />
           <section class="tool-box">
             <h2>Branding</h2>
             <div class="form-row">
@@ -109,7 +115,7 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="brand_description">Descri��o institucional</label>
+                <label for="brand_description">Descrição institucional</label>
                 <textarea class="form-control" id="brand_description" name="brand_description" rows="3"><?= ns_escape($settings['branding']['description']) ?></textarea>
               </div>
               <div class="form-group">
@@ -137,7 +143,7 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
                 <input class="form-control" id="company_logo" name="company_logo" value="<?= ns_escape($settings['company']['logo']) ?>" />
               </div>
               <div class="form-group">
-                <label for="default_image">Imagem SEO padr�o</label>
+                <label for="default_image">Imagem SEO padrão</label>
                 <input class="form-control" id="default_image" name="default_image" value="<?= ns_escape($settings['seo']['default_image']) ?>" />
               </div>
             </div>
@@ -158,24 +164,24 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
           </section>
 
           <section class="tool-box">
-            <h2>SEO padr�o</h2>
+            <h2>SEO padrão</h2>
             <div class="form-group">
-              <label for="default_title">T�tulo padr�o</label>
+              <label for="default_title">Título padrão</label>
               <input class="form-control" id="default_title" name="default_title" value="<?= ns_escape($settings['seo']['default_title']) ?>" />
             </div>
             <div class="form-group">
-              <label for="default_description">Descri��o padr�o</label>
+              <label for="default_description">Descrição padrão</label>
               <textarea class="form-control" id="default_description" name="default_description" rows="3"><?= ns_escape($settings['seo']['default_description']) ?></textarea>
             </div>
             <div class="form-group">
-              <label for="default_keywords">Keywords padr�o</label>
+              <label for="default_keywords">Keywords padrão</label>
               <input class="form-control" id="default_keywords" name="default_keywords" value="<?= ns_escape($settings['seo']['default_keywords']) ?>" />
             </div>
           </section>
 
           <section class="tool-box">
-            <h2>An�ncios</h2>
-            <?php foreach (['leaderboard' => 'Leaderboard', 'rectangle' => 'Ret�ngulo'] as $slotKey => $slotLabel): ?>
+            <h2>Anúncios</h2>
+            <?php foreach (['leaderboard' => 'Leaderboard', 'rectangle' => 'Retângulo'] as $slotKey => $slotLabel): ?>
               <div class="admin-subsection">
                 <div class="form-group">
                   <label><input type="checkbox" name="<?= ns_escape($slotKey) ?>_enabled" <?= !empty($settings['ads'][$slotKey]['enabled']) ? 'checked' : '' ?> /> Habilitar <?= ns_escape($slotLabel) ?></label>
@@ -193,9 +199,9 @@ ns_render_page_start('admin', ['is_admin' => true, 'body_class' => 'admin-body']
           </section>
 
           <section class="tool-box">
-            <h2>SEO por p�gina</h2>
+            <h2>SEO por página</h2>
             <?php foreach ($pages as $pageKey => $page): ?>
-              <?php if ($pageKey === 'admin') { continue; } ?>
+              <?php if ($pageKey === 'admin' || $pageKey === 'admin_login' || $pageKey === 'admin_register') { continue; } ?>
               <?php $meta = ns_page_meta($pageKey); ?>
               <?php $prefix = 'seo_' . preg_replace('/[^a-z0-9_:-]/i', '_', $pageKey) . '_'; ?>
               <div class="admin-subsection">

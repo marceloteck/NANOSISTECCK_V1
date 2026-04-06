@@ -249,6 +249,195 @@ function ns_save_settings(array $settings): bool
     return file_put_contents(ns_settings_file(), $encoded . PHP_EOL) !== false;
 }
 
+function ns_admin_db_file(): string
+{
+    return dirname(__DIR__) . '/data/admin.sqlite';
+}
+
+function ns_admin_db(): PDO
+{
+    static $pdo;
+
+    if ($pdo instanceof PDO) {
+        return $pdo;
+    }
+
+    $dbFile = ns_admin_db_file();
+    $dbDir = dirname($dbFile);
+
+    if (!is_dir($dbDir)) {
+        mkdir($dbDir, 0755, true);
+    }
+
+    $pdo = new PDO('sqlite:' . $dbFile);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    ns_admin_run_migrations($pdo);
+
+    return $pdo;
+}
+
+function ns_admin_run_migrations(PDO $pdo): void
+{
+    $pdo->exec('CREATE TABLE IF NOT EXISTS admin_users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT NOT NULL UNIQUE,
+        password_hash TEXT NOT NULL,
+        is_active INTEGER NOT NULL DEFAULT 1,
+        last_login_at TEXT DEFAULT NULL,
+        created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )');
+
+    $pdo->exec('CREATE TABLE IF NOT EXISTS admin_login_attempts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT NOT NULL,
+        ip_address TEXT NOT NULL,
+        user_agent TEXT NOT NULL,
+        success INTEGER NOT NULL DEFAULT 0,
+        attempted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )');
+}
+
+function ns_admin_start_session(): void
+{
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        return;
+    }
+
+    ini_set('session.use_only_cookies', '1');
+    ini_set('session.cookie_httponly', '1');
+    ini_set('session.use_strict_mode', '1');
+    session_name('ns_admin_session');
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path' => '/',
+        'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+        'httponly' => true,
+        'samesite' => 'Lax',
+    ]);
+    session_start();
+}
+
+function ns_client_ip(): string
+{
+    return trim((string) ($_SERVER['REMOTE_ADDR'] ?? '0.0.0.0'));
+}
+
+function ns_admin_is_rate_limited(string $username): bool
+{
+    $pdo = ns_admin_db();
+    $stmt = $pdo->prepare('SELECT COUNT(*) FROM admin_login_attempts
+        WHERE success = 0
+          AND attempted_at >= datetime("now", "-15 minutes")
+          AND (username = :username OR ip_address = :ip)');
+    $stmt->execute([
+        ':username' => strtolower(trim($username)),
+        ':ip' => ns_client_ip(),
+    ]);
+
+    return (int) $stmt->fetchColumn() >= 5;
+}
+
+function ns_admin_record_login_attempt(string $username, bool $success): void
+{
+    $pdo = ns_admin_db();
+    $stmt = $pdo->prepare('INSERT INTO admin_login_attempts (username, ip_address, user_agent, success)
+        VALUES (:username, :ip_address, :user_agent, :success)');
+    $stmt->execute([
+        ':username' => strtolower(trim($username)),
+        ':ip_address' => ns_client_ip(),
+        ':user_agent' => substr((string) ($_SERVER['HTTP_USER_AGENT'] ?? 'unknown'), 0, 255),
+        ':success' => $success ? 1 : 0,
+    ]);
+}
+
+function ns_admin_verify_credentials(string $username, string $password): ?array
+{
+    $pdo = ns_admin_db();
+    $stmt = $pdo->prepare('SELECT id, username, password_hash, is_active FROM admin_users WHERE username = :username LIMIT 1');
+    $stmt->execute([':username' => strtolower(trim($username))]);
+    $user = $stmt->fetch();
+
+    if (!$user || (int) $user['is_active'] !== 1) {
+        return null;
+    }
+
+    return password_verify($password, $user['password_hash']) ? $user : null;
+}
+
+function ns_admin_login(array $user): void
+{
+    ns_admin_start_session();
+    session_regenerate_id(true);
+    $_SESSION['admin_user_id'] = (int) $user['id'];
+    $_SESSION['admin_username'] = (string) $user['username'];
+    $_SESSION['admin_logged_at'] = time();
+
+    $pdo = ns_admin_db();
+    $stmt = $pdo->prepare('UPDATE admin_users SET last_login_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = :id');
+    $stmt->execute([':id' => (int) $user['id']]);
+}
+
+function ns_admin_logout(): void
+{
+    ns_admin_start_session();
+    $_SESSION = [];
+
+    if (ini_get('session.use_cookies')) {
+        $params = session_get_cookie_params();
+        setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'] ?? '', (bool) $params['secure'], (bool) $params['httponly']);
+    }
+
+    session_destroy();
+}
+
+function ns_admin_is_authenticated(): bool
+{
+    ns_admin_start_session();
+    return isset($_SESSION['admin_user_id']) && is_int($_SESSION['admin_user_id']);
+}
+
+function ns_admin_require_auth(): void
+{
+    if (ns_admin_is_authenticated()) {
+        return;
+    }
+
+    header('Location: ' . ns_href('/admin/login'));
+    exit;
+}
+
+function ns_admin_has_any_user(): bool
+{
+    $pdo = ns_admin_db();
+    $count = (int) $pdo->query('SELECT COUNT(*) FROM admin_users')->fetchColumn();
+    return $count > 0;
+}
+
+function ns_csrf_token(): string
+{
+    ns_admin_start_session();
+
+    if (!isset($_SESSION['csrf_token']) || !is_string($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+
+    return $_SESSION['csrf_token'];
+}
+
+function ns_csrf_validate(?string $token): bool
+{
+    ns_admin_start_session();
+
+    if (!isset($_SESSION['csrf_token']) || !is_string($_SESSION['csrf_token'])) {
+        return false;
+    }
+
+    return is_string($token) && hash_equals($_SESSION['csrf_token'], $token);
+}
+
 function ns_site_url(): string
 {
     $settings = ns_load_settings();
@@ -360,6 +549,28 @@ function ns_page_definitions(): array
             'description' => 'Painel administrativo para branding, anúncios e meta tags da NANOSISTECCK Tools.',
             'keywords' => 'painel administrativo nanosistecck',
             'path' => '/admin',
+            'robots' => 'noindex,nofollow',
+            'schema' => 'webpage',
+            'priority' => '0.1',
+            'changefreq' => 'monthly',
+        ],
+        'admin_login' => [
+            'page_key' => 'admin_login',
+            'title' => 'Login do Administrador | ' . $siteName,
+            'description' => 'Acesso seguro ao painel administrativo da NANOSISTECCK Tools.',
+            'keywords' => 'login administrador nanosistecck',
+            'path' => '/admin/login',
+            'robots' => 'noindex,nofollow',
+            'schema' => 'webpage',
+            'priority' => '0.1',
+            'changefreq' => 'monthly',
+        ],
+        'admin_register' => [
+            'page_key' => 'admin_register',
+            'title' => 'Cadastro Inicial do Administrador | ' . $siteName,
+            'description' => 'Cadastro único do primeiro usuário administrador da NANOSISTECCK Tools.',
+            'keywords' => 'cadastro administrador nanosistecck',
+            'path' => '/admin/cadastro',
             'robots' => 'noindex,nofollow',
             'schema' => 'webpage',
             'priority' => '0.1',
@@ -583,6 +794,9 @@ function ns_render_header(string $pageKey, bool $isAdmin = false): void
 
     if ($isAdmin) {
         echo '          <a href="' . ns_escape(ns_href('/admin')) . '" class="nav-cta btn active">Admin</a>' . PHP_EOL;
+        if (ns_admin_is_authenticated()) {
+            echo '          <a href="' . ns_escape(ns_href('/admin/logout')) . '" class="btn" rel="nofollow">Sair</a>' . PHP_EOL;
+        }
     } else {
         echo '          <a href="' . ns_escape(ns_href('/ferramentas')) . '" class="nav-cta btn">Explorar</a>' . PHP_EOL;
     }
@@ -655,6 +869,15 @@ function ns_render_page_start(string $pageKey, array $options = []): void
     $twitter = trim((string) ($settings['social']['twitter'] ?? ''));
     $bodyClass = trim((string) ($options['body_class'] ?? ''));
     $isAdmin = !empty($options['is_admin']);
+
+    if ($isAdmin) {
+        header('X-Frame-Options: DENY');
+        header('X-Content-Type-Options: nosniff');
+        header('Referrer-Policy: no-referrer');
+        header("Content-Security-Policy: default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';");
+        header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+        header('Pragma: no-cache');
+    }
 
     echo '<!DOCTYPE html>' . PHP_EOL;
     echo '<html lang="pt-BR">' . PHP_EOL;
