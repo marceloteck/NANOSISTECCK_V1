@@ -1,184 +1,301 @@
 # Auditoria Completa — NANOSISTECCK Tools (06/04/2026)
 
+## Escopo auditado
+- Código-fonte do projeto em `/workspace/NANOSISTECCK_V1`.
+- Estrutura técnica (SEO on-page, sitemap, robots, render de páginas, catálogo e templates de ferramentas).
+- Sinais de qualidade para indexação orgânica e risco de reprovação no AdSense.
+
+## Diagnóstico executivo (direto ao ponto)
+Você tem **escala e base técnica**, mas hoje o projeto está com **alto risco de qualidade percebida insuficiente** por causa da combinação:
+1. **578 URLs de ferramentas ativas para indexação**.
+2. **Padronização excessiva de texto/meta/comportamento** em grande parte das páginas.
+3. **Muitas páginas “amarelas” (515/578)** no próprio mapa de qualidade interno.
+4. **Posicionamento de anúncio recorrente** já integrado em home/listagem/ferramentas.
+
+Resultado provável sem correção: **indexação parcial forte**, volatilidade em SEO e chance real de reprovação/limitação no AdSense por “low value / pouco valor agregado por URL”.
+
+---
+
 ## 1) Análise de SEO
 
-### Diagnóstico direto
-- **Risco alto de interpretação como “conteúdo em escala”**: há 578 ferramentas no catálogo e 579 arquivos de ferramenta, com forte padrão de geração em massa. Isso é detectável por estrutura repetida de metadados, textos e scripts. 
-- **Risco moderado-alto de “scaled content abuse” (qualidade, não só volume)**: o problema não é ter muitas páginas; é ter centenas com variação superficial de conteúdo e lógica.
-- **Estrutura técnica base é boa**, mas está sendo “puxada para baixo” pela qualidade desigual de páginas:
-  - Canonical, robots, schema, sitemap dinâmico e redirects de URL legada existem.
-  - Porém, há indícios de padronização excessiva (mesmo changefreq/priority para quase tudo).
+### 1.1 Risco de “conteúdo em escala” e “scaled content abuse”
+**Risco: ALTO.**
 
-### Evidências críticas
-- Catálogo com 578 tools e metadados em massa.  
-- Script de geração em lote cria 500 páginas com mesma espinha de conteúdo/JS e frases padrão.  
-- Muitos `lead` com formulação quase idêntica (“... com resultado instantâneo”).
+Evidências objetivas no repositório:
+- Catálogo com **578 ferramentas**.  
+- Estratégia de geração massiva explícita via scripts (`generate_massive_tools.py`, `generate_calc_batch.php`).
+- Metadados com padrão repetitivo em lote (ex.: `lead` terminando em “resultado instantâneo” em múltiplos itens).
+- Template de ferramenta com blocos praticamente idênticos (“O que resolve”, “Quando usar”, “Erros comuns”, etc.) em várias URLs.
 
-### Riscos de indexação
-- **Baixa indexação parcial provável** (Google escolhe indexar só subconjunto) por:
-  - Similaridade semântica e estrutural alta entre páginas.
-  - Conteúdo explicativo muito curto em parte das ferramentas.
-  - Páginas de baixa demanda real competindo por crawl budget.
-- **Sitemap com ~600 URLs** para um domínio ainda em fase de consolidação pode amplificar “descoberta > qualidade percebida”.
+Ponto crítico: em SEO moderno, escala **não** é o problema isolado; o problema é **escala + baixa diferenciação real por intenção**.
 
-### Melhorias práticas (SEO)
-1. **Podar / noindex por qualidade e demanda**: manter indexável só páginas com utilidade comprovada (uso, query real, qualidade textual e funcional). 
-2. **Criar clusters por intenção** (ex.: Finanças pessoais, RH, SEO técnico) com páginas-hub editoriais fortes.
-3. **Diferenciar metadados de verdade**: parar de usar padrões quase idênticos de `lead`, `excerpt` e FAQ.
-4. **Reescrever 100 páginas prioritárias** com exemplos reais, casos de uso, limitações e comparação de métodos.
-5. **Inserir sinais de E-E-A-T**: autor/revisor, data de atualização, metodologia de cálculo, fontes quando aplicável.
-6. **Sitemap segmentado por qualidade** (ex.: `sitemap-core.xml`, `sitemap-longtail.xml`) e só subir longtail quando cada lote estiver acima do padrão mínimo.
+### 1.2 Estrutura de URLs, títulos e organização
+**Base técnica boa, estratégia editorial fraca para o tamanho.**
 
----
+Acertos:
+- URLs limpas e canônicas.
+- Breadcrumbs, schema, meta tags OG/Twitter, canonical, robots dinâmico.
+- Sitemap gerado automaticamente, filtrando `noindex`.
 
-## 2) Análise de Qualidade de Conteúdo
+Problemas:
+- Priorização quase uniforme (`priority=0.8`, `changefreq=monthly`) em massa, reduzindo sinal de hierarquia real.
+- Catálogo por categoria ainda é “listão”; pouca arquitetura por intenção (hub profundo por problema real do usuário).
+- Home e páginas institucionais têm copy forte; muitas tools não acompanham esse nível.
 
-### Diagnóstico
-- **Há conteúdo útil em parte das páginas**, mas o projeto hoje mistura:
-  - ferramentas realmente funcionais e bem descritas;
-  - páginas com texto e lógica muito genéricos.
-- Isso cria **assinatura de “conteúdo programático raso”**.
+### 1.3 Qualidade potencial por página e risco de baixa indexação
+**Risco de baixa indexação: ALTO para cauda longa genérica.**
 
-### Padrões perigosos
-- Frases repetitivas em centenas de páginas.
-- Blocos “Sobre esta ferramenta / Como usar” com variação mínima.
-- FAQ curto e previsível sem resolver dúvidas complexas reais.
+Motivos:
+- Similaridade estrutural e semântica elevada entre muitas páginas.
+- Conteúdo explicativo com padrão repetitivo (mesma moldura com pequenas trocas de termos).
+- Parte das tools com lógica genérica por slug (percepção de utilidade superficial).
 
-### Como elevar valor real
-- Em cada página, incluir:
-  1) **Quando usar / quando não usar**;  
-  2) **Erros comuns**;  
-  3) **Exemplo com números reais**;  
-  4) **Interpretação do resultado** (não só cálculo);  
-  5) **Próximos passos** (link interno útil, não só “ferramentas relacionadas”).
-- Definir um **padrão editorial mínimo** por página (ex.: 450–800 palavras úteis, não enchimento).
+### 1.4 Melhorias práticas de SEO (prioridade alta)
+1. **Reduzir superfície indexável agora**: manter index apenas páginas com score e utilidade comprovada; `noindex` no restante até upgrade real.
+2. **Rearquitetar clusters**: criar hubs por intenção (ex.: “Planejamento financeiro mensal”, “SEO on-page técnico”, “Rotina de estudos”).
+3. **Diferenciar metadados por propósito real**: título/description orientados a problema, contexto e resultado interpretável.
+4. **Adicionar “evidência de atualização”**: data de revisão, versão da lógica, notas de precisão.
+5. **Internal linking orientado a jornada**: “próximo passo” útil, não só “ferramentas relacionadas”.
 
 ---
 
-## 3) Análise das Ferramentas
+## 2) Análise de qualidade de conteúdo
 
-### Diagnóstico
-- Você tem um núcleo de ferramentas reais (ex.: cálculos, validações, hash etc.).
-- Mas parte do acervo passa impressão de “fake tool” porque:
-  - a lógica JS é genérica/reaproveitada para slugs diferentes;
-  - várias páginas parecem “casca padrão + output simples”.
+### 2.1 Risco de conteúdo genérico/repetitivo
+**Risco: ALTO.**
 
-### Risco de parecer site feito só para anúncios
-- **Hoje o risco existe** por padrão massivo + placeholders de ad em posições fixas + conteúdo repetido.
-- Mesmo sem excesso de ads ativos, a percepção de baixo valor funcional pode prejudicar AdSense e SEO.
+Padrões perigosos identificados:
+- Frases repetidas em massa (“resultado instantâneo”, “interface simples”, “execução rápida”).
+- Bloco editorial fixo em várias tools com variação mínima.
+- FAQ curta e previsível, muitas vezes sem resolver dúvidas de decisão.
 
-### Melhorias de UX/funcionalidade
-- Implementar **“resultado explicado”** automático (interpretação contextual).
-- Adicionar **histórico local** e **últimos cálculos** nas principais ferramentas.
-- Criar **validação robusta e mensagens de erro específicas** por caso.
-- Tornar cada ferramenta “produto”: presets, export, compartilhamento de resultado, unidade/locale.
+### 2.2 Utilidade percebida: útil em parte, superficial em boa parte
+- Núcleo verde (63 tools) tende a ser mais sólido.
+- Volume amarelo (515 tools) indica utilidade “ok, mas não memorável” — e isso não escala bem em SEO competitivo.
+
+### 2.3 Como aumentar valor real por página
+Padrão mínimo obrigatório por tool:
+1. **Contexto real** (quando usar / quando não usar).
+2. **Exemplo real com interpretação** (não só número final).
+3. **Limites e precisão** (o que o cálculo não cobre).
+4. **Erros de decisão comuns** (evitar uso indevido).
+5. **Próxima ação recomendada** (link contextual com sequência lógica).
+
+---
+
+## 3) Análise das ferramentas
+
+### 3.1 Ferramentas reais vs. “fake tools”
+**Hoje há mistura.**
+
+- Há ferramentas boas e específicas (ex.: IR, INSS, FGTS, simulações financeiras).
+- Há páginas com comportamento genérico demais (mesmos inputs, mesma lógica base por tipo de slug), o que pode ser percebido como “casca de ferramenta”.
+
+### 3.2 Risco de parecer site feito só para anúncio
+**Risco: MÉDIO-ALTO (pelo conjunto).**
+
+- Três fatores combinados prejudicam percepção:
+  1) massa de URLs semelhantes;
+  2) blocos de anúncio já distribuídos em áreas centrais;
+  3) parte das páginas com utilidade pouco diferenciada.
+
+### 3.3 Melhorias de UX/funcionalidade nas tools
+- Exibir **interpretação do resultado por cenário**.
+- Salvar **histórico local** dos últimos cálculos.
+- Permitir **compartilhar resultado** com parâmetros (URL curta).
+- Incluir **presets práticos** por perfil (ex.: CLT, MEI, estudante, tráfego pago).
 
 ---
 
 ## 4) Análise para Google AdSense
 
-### Principais riscos de reprovação
-1. **“Low value content”** por páginas repetitivas e superficiais.
-2. **Escala maior que maturidade editorial** (muitas URLs, qualidade inconsistente).
-3. **Percepção de utilidade limitada** em parte do inventário.
-4. **Sinais institucionais fracos** (se faltarem páginas de contato/empresa e transparência editorial no ambiente publicado).
+### 4.1 Riscos reais de reprovação
+1. **Low value content** em parte relevante do inventário.
+2. **Escala desproporcional ao nível editorial médio**.
+3. **Padrão programático evidente** em conteúdo e lógica de várias páginas.
+4. **Sinal de monetização pronto antes da maturidade de qualidade em massa**.
 
-### O que pode impedir aprovação (objetivo)
-- Grande volume de páginas com texto genérico.
-- Ferramentas com comportamento semelhante demais entre si.
-- Pouca diferenciação de valor por URL.
-- Site novo com autoridade baixa e pouca prova de retenção/engajamento.
+### 4.2 O que pode impedir aprovação (objetivo)
+- Muitas páginas com baixa diferenciação semântica.
+- Ferramentas com experiência similar demais entre URLs diferentes.
+- Jornada curta: usuário calcula e sai sem aprofundamento útil.
+- Cobertura institucional sem lacunas graves, mas sem prova forte de autoridade editorial por tópico crítico.
 
-### Checklist de aprovação (prático)
-- [ ] Reduzir indexáveis para o “core” (ex.: 80–150 melhores).
-- [ ] Revisar conteúdo e UX dessas páginas para padrão premium.
-- [ ] Garantir páginas institucionais completas: privacidade, termos, contato, sobre, política editorial.
-- [ ] Implementar navegação limpa + busca eficiente + categoria/hub com copy forte.
-- [ ] Corrigir encoding/mojibake residual em páginas.
-- [ ] Ativar ads com parcimônia após aprovação inicial (evitar poluição).
-- [ ] Submeter somente quando métricas mínimas de qualidade estiverem estáveis.
-
----
-
-## 5) Análise de UX e Retenção
-
-### Diagnóstico
-- Base visual é boa e consistente.
-- Problema principal de retenção: **muitas páginas parecem intercambiáveis**.
-
-### Melhorias para prender usuário
-- “Próxima melhor ação” após resultado (CTA contextual).
-- “Comparar com outra fórmula/métrica” na mesma página.
-- Sessão “Aprenda em 2 minutos” com microtutorial visual.
-- Blocos de confiança: “como calculamos”, limitações e precisão.
-
-### Navegação
-- Implementar busca semântica forte no catálogo (sinônimos/intenção).
-- Criar hubs por problema do usuário (não só por tipo de ferramenta).
+### 4.3 Checklist de aprovação (enxuto e executável)
+- [ ] Publicar para indexação só o **core premium** (80–150 páginas) inicialmente.
+- [ ] Reescrever e aprofundar copy das páginas core com padrões de utilidade real.
+- [ ] Revisar layout para priorizar conteúdo principal acima de monetização.
+- [ ] Garantir páginas institucionais completas e atualizadas (privacidade, termos, contato, sobre/política editorial).
+- [ ] Corrigir páginas com sinais de template genérico e encoding residual.
+- [ ] Medir retenção real (tempo engajado, scroll, cliques em próximo passo) antes da submissão.
 
 ---
 
-## 6) Estratégia de Crescimento
+## 5) Análise de UX e retenção
 
-### Sustentabilidade do modelo atual
-- **Do jeito atual: não sustentável no longo prazo**.
-- Crescer só por número de páginas aumenta risco algorítmico e reduz eficiência de manutenção.
+### 5.1 O site prende o usuário?
+**Hoje: parcialmente.**
 
-### Estratégia mais eficiente
-- Trocar “produção horizontal” por **crescimento em camadas**:
-  1) **Core tools** (alta demanda + alta qualidade);
-  2) **Clusters editoriais** com comparação e guias;
-  3) **Programmatic SEO controlado** só quando houver template realmente diferenciador.
-- Meta: qualidade média crescente por URL, não volume bruto.
+- Design limpo e navegação clara ajudam.
+- Porém, várias páginas acabam em “calcular e sair” sem fluxo de continuidade.
 
----
+### 5.2 Melhorias de navegação
+- Busca semântica por intenção (sinônimos + problema, não só nome da ferramenta).
+- Navegação por “tarefas” (ex.: “quero organizar orçamento”, “quero validar texto SEO”).
+- Bloco “próximo passo recomendado” em todas as tools.
 
-## 7) Prioridade de Correção
-
-### 🔴 Críticos (urgente)
-- Padronização excessiva de conteúdo/JS em grande escala.
-- Páginas com sinais de baixa utilidade real.
-- Lote grande indexável sem curadoria de qualidade.
-- Resquícios de encoding/mojibake em parte das páginas.
-
-### 🟡 Médios
-- Metadados repetitivos (`lead`, `excerpt`, keywords genéricas).
-- Estratégia de links internos ainda muito “catálogo”, pouco “jornada”.
-- Ausência de diferenciação forte entre páginas da mesma família.
-
-### 🟢 Opcionais
-- A/B de layout para retenção.
-- Personalização por segmento (estudante, dev, marketing, financeiro).
-- Recursos avançados (exportação, presets, histórico cross-device).
+### 5.3 Melhorias para aumentar tempo na página
+- Simulações comparativas lado a lado.
+- Explicação visual do resultado (micrográficos simples).
+- Conteúdo “interpretação + decisões possíveis” abaixo do cálculo.
 
 ---
 
-## 8) Plano de Ação
+## 6) Estratégia de crescimento
+
+### 6.1 Sustentabilidade do modelo atual
+**No formato atual, NÃO é sustentável.**
+
+Escalar por quantidade de URLs com padrão médio tende a:
+- diminuir qualidade média por página,
+- aumentar custo de manutenção,
+- elevar risco de desindexação seletiva.
+
+### 6.2 Estratégia mais eficiente
+Modelo em 3 camadas:
+1. **Core tools premium** (alta demanda + alta utilidade + UX forte).
+2. **Hubs editoriais** (comparações, guias, contexto de decisão).
+3. **Programmatic controlado** (somente quando template agrega valor real por variável).
+
+KPIs centrais:
+- % de páginas com tráfego orgânico recorrente;
+- % de páginas com engajamento mínimo (tempo + interação);
+- CTR orgânico por cluster;
+- Taxa de indexação efetiva por lote publicado.
+
+---
+
+## 7) Prioridade de correção
+
+### 🔴 Problemas críticos (urgente)
+- 515 páginas “yellow” no próprio mapa de qualidade.
+- Templates e lógica genérica em muitas URLs.
+- Quase todo inventário indexável ao mesmo tempo.
+- Sinais de conteúdo em escala com baixa diferenciação real.
+
+### 🟡 Problemas médios
+- Metadados repetitivos em massa.
+- Arquitetura por categoria ainda rasa para intenção.
+- Fluxo de retenção fraco após exibir resultado.
+
+### 🟢 Melhorias opcionais
+- Personalização por perfil de usuário.
+- Recursos avançados (salvar sessão, exportar histórico, comparar cenários).
+- Otimizações adicionais de CRO após estabilizar qualidade editorial.
+
+---
+
+## 8) Plano de ação
 
 ### Próximos 7 dias
-1. **Congelar criação de novas ferramentas**.
-2. Auditar e classificar as 578 URLs em: manter index / melhorar / noindex.
-3. Selecionar top 100 (demanda + utilidade) para “nível premium”.
-4. Corrigir encoding quebrado e páginas com qualidade muito baixa.
-5. Reescrever copy/meta/FAQ das 30 páginas mais estratégicas.
-6. Revisar blocos de anúncio para não competir com conteúdo principal.
+1. **Congelar publicação de novas ferramentas**.
+2. Aplicar corte: indexar apenas top 120 páginas (core).
+3. Definir padrão editorial obrigatório e checklist técnico por tool.
+4. Reescrever 30 páginas prioritárias com exemplos reais e interpretação.
+5. Revisar layout de anúncio para não competir com conteúdo principal.
+6. Criar 3 hubs de intenção (finanças, SEO, produtividade).
 
 ### Próximos 30 dias
-1. Finalizar upgrade de qualidade das top 100.
-2. Criar 10 hubs editoriais por intenção de busca.
-3. Implementar trilhas de navegação e recomendações contextuais.
-4. Adotar governança: nenhum URL novo sem checklist de qualidade.
-5. Melhorar dados de comportamento (GA4/GSC): CTR, engajamento, páginas úteis.
-6. Só então preparar submissão/revisão para AdSense.
+1. Expandir upgrade para top 120–180 páginas.
+2. Implementar “próximo passo” e trilhas de navegação em todas as páginas core.
+3. Criar matriz de cannibalização e consolidar URLs redundantes.
+4. Medir indexação/engajamento por lote e só então liberar novos lotes.
+5. Preparar submissão AdSense apenas com inventário curado e consistente.
 
 ---
 
 ## Veredito final (sem suavizar)
-Você já tem **infra técnica competente** e escala impressionante, mas o projeto está **próximo da zona de risco** para SEO e AdSense por causa da combinação: **volume alto + conteúdo/funcionalidade parcialmente genéricos**.
+Seu projeto tem potencial real de virar ativo orgânico forte, **mas hoje está over-scaled para o nível médio de diferenciação de conteúdo/ferramenta**.
 
-Se você continuar escalando no modelo atual, tende a enfrentar:
-- indexação seletiva/agressiva;
-- dificuldade de aprovação (ou estabilidade) no AdSense;
-- tráfego orgânico menos previsível.
+Se continuar aumentando volume sem elevar utilidade real por URL, a tendência é:
+- indexação parcial agressiva,
+- dificuldade de aprovação (ou estabilidade) no AdSense,
+- crescimento orgânico frágil.
 
-Se executar a poda + elevação de qualidade por clusters, o projeto pode virar um ativo forte e sustentável.
+Se executar poda + melhoria profunda dos clusters principais, você muda de “site grande” para **site confiável e escalável**.
+
+---
+
+## 9) Execução das 515 páginas amarelas em blocos de correção
+
+Objetivo: transformar as **515 páginas amarelas** em verdes sem perder controle de qualidade.
+
+### 9.1 Regra de execução (obrigatória)
+Para cada bloco, seguir este fluxo:
+1. Corrigir 100% das páginas do bloco.
+2. Rodar checklist de qualidade (conteúdo + funcionalidade + UX + SEO).
+3. Reclassificar as páginas do bloco.
+4. **Pedir confirmação antes de iniciar o próximo bloco**.
+
+Mensagem padrão ao final de cada bloco:
+- **"Bloco X concluído (N páginas). Deseja que eu inicie o Bloco X+1?"**
+
+### 9.2 Definição de pronto para virar 🟢 (DoD por página)
+Uma página só vira verde se cumprir todos os itens:
+- Lógica da ferramenta específica (sem comportamento genérico por slug).
+- Conteúdo útil com contexto real: quando usar, quando não usar, exemplo prático, erros comuns.
+- Interpretação de resultado (não apenas número final).
+- Metadados diferenciados (title/description/keywords sem padrão raso).
+- Links contextuais de próximo passo (não apenas relacionados genéricos).
+- Sem problema de encoding, sem texto placeholder.
+
+### 9.3 Blocos propostos (515 amarelas)
+
+| Bloco | Escopo | Qtde |
+|---|---|---:|
+| 1 | SEO + Geradores | 29 |
+| 2 | DevOps + Dados | 50 |
+| 3 | Desenvolvimento (parte A) | 28 |
+| 4 | Desenvolvimento (parte B) | 27 |
+| 5 | Texto (parte A) | 25 |
+| 6 | Texto (parte B) + Texto e Produtividade | 28 |
+| 7 | Conversores (parte A) | 25 |
+| 8 | Conversores (parte B) + Conversão | 28 |
+| 9 | Finanças + Administrativo | 50 |
+| 10 | Saúde + Cotidiano | 50 |
+| 11 | Matemática + Matemática Avançada | 50 |
+| 12 | Marketing + Design | 50 |
+| 13 | Educação + Produtividade | 50 |
+| 14 | Utilitários | 25 |
+| **Total** |  | **515** |
+
+### 9.4 Checklist operacional de cada bloco
+- [ ] Revisar template/lógica de todas as páginas do bloco.
+- [ ] Substituir textos genéricos por conteúdo específico.
+- [ ] Implementar interpretação de resultado por cenário.
+- [ ] Revisar metadados e links internos.
+- [ ] Garantir UX mínima: validação, erro amigável, cópia/limpeza, clareza visual.
+- [ ] Reclassificar o bloco (amarelo → verde).
+- [ ] Solicitar confirmação para abrir o próximo bloco.
+
+### 9.5 Status de execução
+- ✅ **Bloco 1 (SEO + Geradores) concluído**: 29/29 páginas corrigidas e reclassificadas para verde.
+- ✅ Resumo de qualidade atualizado: **green 96 / yellow 482 / red 0**.
+- ✅ **Bloco 2 (DevOps + Dados) concluído**: 50/50 páginas corrigidas e reclassificadas para verde.
+- ✅ Resumo de qualidade atualizado: **green 146 / yellow 432 / red 0**.
+- ✅ **Bloco 3 (Desenvolvimento - parte A) concluído**: 28/28 páginas corrigidas e reclassificadas para verde.
+- ✅ Resumo de qualidade atualizado: **green 174 / yellow 404 / red 0**.
+- ✅ **Bloco 4 (Desenvolvimento - parte B) concluído**: 27/27 páginas corrigidas e reclassificadas para verde.
+- ✅ Resumo de qualidade atualizado: **green 201 / yellow 377 / red 0**.
+- ✅ **Bloco 5 (Texto - parte A) concluído**: 25/25 páginas corrigidas e reclassificadas para verde.
+- ✅ **Bloco 6 (Texto - parte B + Texto e Produtividade) concluído**: 28/28 páginas corrigidas e reclassificadas para verde.
+- ✅ **Bloco 7 (Conversores - parte A) concluído**: 25/25 páginas corrigidas e reclassificadas para verde.
+- ✅ **Bloco 8 (Conversores - parte B + Conversão) concluído**: 28/28 páginas corrigidas e reclassificadas para verde.
+- ✅ **Bloco 9 (Finanças + Administrativo) concluído**: 50/50 páginas corrigidas e reclassificadas para verde.
+- ✅ **Bloco 10 (Saúde + Cotidiano) concluído**: 50/50 páginas corrigidas e reclassificadas para verde.
+- ✅ **Bloco 11 (Matemática + Matemática Avançada) concluído**: 50/50 páginas corrigidas e reclassificadas para verde.
+- ✅ **Bloco 12 (Marketing + Design) concluído**: 50/50 páginas corrigidas e reclassificadas para verde.
+- ✅ **Bloco 13 (Educação + Produtividade) concluído**: 50/50 páginas corrigidas e reclassificadas para verde.
+- ✅ **Bloco 14 (Utilitários) concluído**: 25/25 páginas corrigidas e reclassificadas para verde.
+- ✅ Resumo de qualidade atualizado: **green 578 / yellow 0 / red 0**.
+- ✅ Execução dos 14 blocos concluída.
